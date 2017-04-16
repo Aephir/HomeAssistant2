@@ -1,0 +1,84 @@
+###########################
+#                         #
+#      CUSTOMIZATION      #
+#                         #
+###########################
+
+switch.fibaro_system_fgwpef_wall_plug_gen5_switch_3_0:
+   friendly_name: Z-Wave Switch 1
+switch.wine_fridge:
+   entity_picture: /local/images/wine_fridge_2.jpg
+switch.espresso_machine:
+  entity_picture: /local/images/silvia.jpg
+#  custom_ui_state_card: custom_cover
+#  extra_badge:
+#    entity_id: sensor.power_espresso
+#    attribute: power_consumption
+#    unit: W
+#    blacklist_states: 0
+media_player.libreelec:
+   icon: info
+media_player.ue46es8005:
+   friendly_name: Lving Room TV
+light.hue_lightstrip_plus_1:
+   friendly_name: Lighstrip
+light.hue_ambiance_lamp_1:
+   friendly_name: Ambiance1
+light.hue_ambiance_lamp_2:
+   friendly_name: Ambiance2
+switch.tv_kodi:
+   entity_picture: /local/images/ue46es8005_3.jpg
+switch.kettle:
+   entity_picture: /local/images/ikettle.jpg
+sensor.fibaro_system_fgwpef_wall_plug_gen5_power_3_4:
+   friendly_name: Media Power
+sensor.yr_symbol:
+   friendly_name: Weather
+sensor.yr_temperature:
+   friendly_name: Temperature
+script.livingroommediaoff:
+   icon: mdi:power
+sensor.yr_windSpeed:
+   icon: mdi:weather-windy
+sensor.yr_windDirection:
+   icon: mdi:compass
+sensor.yr_precipitation:
+   icon: mdi:weather-pouring
+sensor.yr_cloudiness:
+   icon: mdi:weather-cloudy
+script.scene_living_room_bright:
+   icon: mdi:lightbulb-outline
+script.scene_living_room_normal:
+   icon: mdi:lightbulb-outline
+script.scene_living_room_dim:
+   icon: mdi:lightbulb-outline
+script.scene_bedroom_dim:
+   icon: mdi:lightbulb-outline
+script.scene_living_room_off:
+   icon: mdi:lightbulb
+script.scene_sleepy_bedroom:
+   icon: mdi:lightbulb-outline
+script.scene_sleepy_living_room:
+   icon: mdi:lightbulb-outline
+script.going_to_bed:
+   icon: mdi:hotel
+script.going_to_sleep:
+   icon: mdi:sleep
+script.ifttt_desktop_computer_off:
+   icon: mdi:power
+sensor.dark_sky_humidity:
+   friendly_name: Humidity
+sensor.dark_sky_wind_bearing:
+   friendly_name: Wind Bearing
+sensor.dark_sky_wind_speed:
+   friendly_name: Wind Speed
+sensor.dark_sky_precip_intensity:
+   friendly_name: Precipitation
+sensor.dark_sky_summary:
+   friendly_name: Weather
+sensor.dark_sky_hourly_summary:
+   friendly_name: Weather Today
+sensor.dark_sky_daily_summary:
+   friendly_name: Weather Week
+script.mopidy_shut_off:
+   icon: mdi:music-off

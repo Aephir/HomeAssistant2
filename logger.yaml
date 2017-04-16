@@ -1,0 +1,10 @@
+####################
+#                  #
+#      LOGGER      #
+#                  #
+####################
+
+default: warn
+logs:
+  homeassistant.components.wemo: debug
+

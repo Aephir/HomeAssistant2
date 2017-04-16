@@ -1,0 +1,28 @@
+##################################
+#                                #
+#      GLOBAL CUSTOMIZATION      #
+#                                #
+##################################
+
+################
+#    Lights    #
+################
+
+light.*:
+  custom_ui_state_card: custom_light
+  state_card_mode: single-line
+  stretch_slider: true
+  extra_data_template: "{power_consumption!=0}W"
+  slider_theme:
+    min: 10
+    max: 255
+    pin: true
+    off_when_min: false
+    report_when_not_changed: false
+#  extra_badge:
+#    entity_id: sensor.my_sensor  # Will take precedence over attribute and unit below.
+#    attribute: power_consumption
+#    unit: W
+#    blacklist_states: 0
+
+

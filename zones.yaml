@@ -1,0 +1,42 @@
+####################
+#                  #
+#       ZONES      #
+#                  #
+####################
+
+- name: !secret zone1name
+  latitude: !secret zone1lat
+  longitude: !secret zone1lon
+  radius: 200
+  icon: mdi:home
+
+- name: !secret zone2name
+  latitude: !secret zone2lat 
+  longitude: !secret zone2lon 
+  radius: 200
+  icon: mdi:biohazard
+
+- name: !secret zone3name
+  latitude: !secret zone2lat 
+  longitude: !secret zone2lon 
+  radius: 200
+  icon: mdi:cake-variant
+
+- name: !secret zone4name
+  latitude: !secret zone4lat 
+  longitude: !secret zone4lon 
+  radius: 2000
+  icon: mdi:human-female
+
+- name: !secret zone5name
+  latitude: !secret zone5lat 
+  longitude: !secret zone5lon 
+  radius: 50
+  icon: mdi:shopping
+
+- name: !secret zone6name
+  latitude: !secret zone6lat 
+  longitude: !secret zone6lon 
+  radius: 1300
+  icon: mdi:city
+

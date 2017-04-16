@@ -1,0 +1,12 @@
+############################
+#                          #
+#      CUSTOM PANELS       #
+#                          #
+############################
+
+- name: testpanel
+  sidebar_title: Testing Panel
+  sidebar_icon: mdi:work
+  config:
+    hello: world
+

@@ -1,0 +1,67 @@
+#####################
+#                   #
+#      SENSORS      #
+#                   #
+#####################
+
+#################
+#    Weather    #
+#################
+
+- platform: yr
+  monitored_conditions:
+    - symbol
+    - temperature
+    - humidity
+    - fog
+    - pressure
+    - precipitation
+    - windSpeed
+    - windDirection
+    - cloudiness
+
+- platform: moon
+
+- platform: darksky
+  api_key: !secret darkskyapi
+  monitored_conditions:
+    - summary
+    - precip_type
+    - precip_intensity
+    - precip_probability
+    - humidity
+    - visibility
+    - nearest_storm_distance
+    - temperature
+    - apparent_temperature
+    - humidity
+    - wind_speed
+    - wind_bearing
+    - hourly_summary
+    - daily_summary
+    - temperature_min
+    - temperature_max
+    - precip_intensity_max
+  units: si
+  update_interval: 00:30:00
+
+#################
+#    Devices    #
+#################
+
+#- platform: template
+#  sensors:
+#    battery_MYPHONEID:
+#      unit_of_measurement: '%'
+#      value_template: >-
+#          {%- if states.device_tracker.aephirs7edge.attributes.battery %}
+#              {{ states.device_tracker.aephirs7edge.attributes.battery|round }}
+#          {% else %}
+#              Unknown
+#          {%- endif %}
+
+- platform: mqtt
+  state_topic: "owntracks/aephir_owntracks/phone"
+  name: "Aephir Phone Battery"
+  unit_of_measurement: "%"
+  value_template: "{{ value_json.batt }}"

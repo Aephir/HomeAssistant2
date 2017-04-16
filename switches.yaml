@@ -1,0 +1,92 @@
+######################
+#                    #
+#      SWITCHES      #
+#                    #
+######################
+
+
+
+
+###############
+#    Media    #
+###############
+  
+- platform: command_line
+  switches:
+    tv_kodi:
+       command_on: ssh -i /home/homeassistant/connection/privatekey_libreelec root@192.168.0.155 "echo 'on 0' | cec-client -s"
+       command_off: ssh -i /home/homeassistant/connection/privatekey_libreelec root@192.168.0.155 "echo 'standby 0' | cec-client -s"
+       friendly_name: TV
+
+###############
+#    Plugs    #
+###############
+
+- platform: command_line
+  switches:
+    livingroom:
+       command_on: 
+         - services: switch.turn_on
+           data:
+             entity_id: switch.fibaro_system_fgwpef_wall_plug_gen5_switch_3_0
+       command_off: script.livingroommediaoff
+       friendly_name: Lving Room Media
+
+###############
+#    Light    #
+###############
+
+- platform: flux
+  lights:
+    - light.bedroom
+  name: Bedroom Flux
+  start_time: '8:00'
+  stop_time: '06:00'
+  start_colortemp: 4000
+  sunset_colortemp: 3000
+  stop_colortemp: 1900
+  brightness: 200
+  disable_brightness_adjust: False
+  mode: xy
+
+#################
+#    Devices    #
+#################
+
+#############
+#__iKettle__#
+- platform: command_line
+  switches:
+    kettle:
+       command_on: echo -e "HELLOKETTLE\nset sys output 0x4\nset sys output 0x80\n" | nc  192.168.0.20 2000
+       command_off: echo -e "HELLOKETTLE\nset sys output 0x4\nset sys output 0x0\n" | nc  192.168.0.20 2000
+       friendly_name: iKettle
+
+
+################
+#__Desktop PC__#
+#- platform: command_line
+#  switches:
+#    Desktop_PC:
+#      offcmd: 'net rpc shutdown -I 192.168.0.15 ## If needed ## -U user%password'
+
+#- platform: wake_on_lan
+#  mac_address: "80:3F:5D:17:1E:A5"
+#  name: "WOL"
+#  host: "192.168.0.15"
+
+#- platform: template
+#  switches:
+#    copy:
+#      value_template: '{{ states.switch.wol.state }}'
+#      turn_on:
+#        service: switch.turn_on
+#        entity_id: switch.wol
+#      turn_off:
+#        service: switch.turn_off
+#        entity_id: switch.pc
+
+#- platform: wemo
+#  switches:
+#    - switch.wine_fridge
+#    - switch.espresso_machine

@@ -1,0 +1,26 @@
+###########################
+#                         #
+#      INPUT SLIDERS      #
+#                          #
+###########################
+
+###############
+#    Media    #
+###############
+
+libreelecvolume:
+  icon: mdi:volume-high
+  name: libreELEC Volume
+  initial: 30
+  min: 1
+  max: 100
+  step: 1
+
+ue46es8005volume:
+  icon: mdi:volume-high
+  name: TV Volume
+  initial: 30
+  min: 1
+  max: 100
+  step: 1
+

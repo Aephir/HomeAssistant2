@@ -1,0 +1,144 @@
+############################
+#                          #
+#      CONFIGURATION       #
+#                          #
+############################
+
+#################
+#    General    #
+#################
+
+homeassistant:
+  name: Home
+  latitude: !secret latitude
+  longitude: !secret longitude
+  elevation: !secret elevation
+  unit_system: metric
+  time_zone: !secret timezone
+  customize: !include customize.yaml
+  customize_glob: !include customize_glob.yaml
+
+##############
+#    HTTP    #
+##############
+
+http:
+  api_password: !secret api_password
+  ssl_certificate: !secret my_ssl_certificate
+  ssl_key: !secret my_ssl_key
+  base_url: !secret secret_base_url
+  ip_ban_enabled: True
+  login_attempts_threshold: 3
+
+###############
+#    IFTTT    #
+###############
+
+ifttt:
+  key: !secret iftttkey
+
+#######################
+#    Notifications    #
+#######################
+
+##############
+##__Notify__##
+notify:
+  - name: pigmail
+    platform: smtp
+    server: smtp.gmail.com
+    port: 587
+    timeout: 15
+    sender: !secret pi_gmail
+    starttls: true
+    username: !secret pi_gmail
+    password: !secret pi_gmail_password
+    recipient: !secret my_gmail
+  - platform: kodi
+    name: libreelecnotify
+    host: 192.168.0.155
+  - platform: joaoapps_join
+    device_id: !secret joaoapps_device_id
+    name: droid
+    api_key: !secret join_api_key
+############
+##__Join__##
+joaoapps_join:
+  - name: android
+    device_id: group.android
+    api_key: !secret join_api_key
+
+#######################
+#    Miscellaneous    #
+#######################
+
+zwave:
+  usb_path: /dev/ttyACM0
+  config_path: /usr/local/lib/python3.4/dist-packages/libopenzwave-0.3.2-py3.4-linux-armv7l.egg/config/
+wemo:
+  static:
+    - 192.168.0.6
+    - 192.168.0.11
+
+#################
+#    Enables    #
+#################
+
+config:
+conversation:
+frontend:
+history:
+recorder:
+  purge_days: 8
+logbook:
+sun:
+tts:
+  platform: picotts
+updater:
+
+#################
+#    Include    #
+#################
+
+##################
+#__Automation__##
+#automation: !include automation.yaml
+###################
+#__Custom Panels__#
+panel_custom: !include panel_custom.yaml
+#############
+#__Devices__#
+switch: !include switches.yaml
+sensor: !include sensors.yaml
+media_player: !include media_player.yaml
+############
+#__Groups__#
+group: !include groups.yaml
+###########
+#__Input__#
+#input_slider: !include input_slider.yaml
+input_select: !include input_select.yaml
+###########
+#__Light__#
+light: !include light.yaml
+############
+#__Logger__#
+logger: !include logger.yaml
+##########
+#__MQTT__#
+mqtt: !include mqtt.yaml
+############
+#__Scenes__#
+scene: !include scenes.yaml
+#############
+#__Scripts__#
+script: !include scripts.yaml
+####################
+#__Shell Commands__#
+shell_command: !include shell_commands.yaml
+##############
+#__Trackers__#
+device_tracker: !include device_tracker.yaml
+###########
+#__Zones__#
+zone: !include zones.yaml

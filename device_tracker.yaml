@@ -1,0 +1,22 @@
+#############################
+#                           #
+#      DEVICE TRACKERS      #
+#                           #
+#############################
+
+##############
+#    MQTT    #
+##############
+
+#  - platform: mqtt
+#    devices:
+#      phone: /location/phone
+#      mymacboopro: /
+
+###################
+#    Owntracks    #
+###################
+
+  - platform: owntracks
+    max_gps_accuracy: 200
+
