@@ -39,3 +39,47 @@
 ####################
 #__Media Controls__#
 
+
+#######################
+#__Sunset Automation__#
+
+- alias: Aephir Home Sun Down
+  trigger:
+    - platform: sun
+      event: sunset
+      offset: '-01:00:00'
+  condition:
+    - condition: state
+      entity_id: device_tracker.aephir
+      state: 'home'
+  action:
+    service: scene.turn_on
+    entity_id: scene.living_room_normal_fade
+
+- alias: Sun Down Aephir Home
+  trigger:
+    - platform: state
+      entity_id: device_tracker.aephir
+      from: 'not_home'
+      to: 'home'
+      state: 'home'
+    condition:
+      - platform: state
+        entity_id: sun.sun
+        state: 'below_horizon'
+  action:
+    service: scene.turn_on
+    entity_id: scene.living_room_normal_fade
+
+#########################
+#__Update Notification__#
+
+automation:
+  alias: 'Update Available Notifications'
+  trigger:
+    platform: state
+    entity_id: updater.updater
+  action:
+    service: notify.notify
+    data:
+      message: 'Update for Home Assistant is available.'

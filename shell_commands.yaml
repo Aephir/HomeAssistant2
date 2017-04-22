@@ -8,26 +8,26 @@
 #    iKettle Commands    #
 ##########################
 
-ikettle100: bash /home/pi/shell_commands/ikettlecontrol.sh "0x80"
-ikettle95: bash /home/pi/shell_commands/ikettlecontrol.sh "0x02"
-ikettle80: /home/pi/shell_commands/ikettlecontrol.sh "0x4000"
-ikettle65: /home/pi/shell_commands/ikettlecontrol.sh "0x200"
-#ikettleoff: /home/pi/shell_commands/ikettlecontrol.sh "0x0"
-ikettleoff1: /home/pi/shell_commands/ikettleoff1.sh
-ikettleon: /home/pi/shell_commands/ikettleon.sh
+ikettle100: bash /home/homeassistant/.homeassistant/shell_scripts/ikettlecontrol.sh "0x80"
+ikettle95: bash /home/homeassistant/.homeassistant/shell_scripts/ikettlecontrol.sh "0x02"
+ikettle80: /home/homeassistant/.homeassistant/shell_scripts/ikettlecontrol.sh "0x4000"
+ikettle65: /home/homeassistant/.homeassistant/shell_scripts/ikettlecontrol.sh "0x200"
+#ikettleoff: /home/homeassistant/.homeassistant/shell_scripts/ikettlecontrol.sh "0x0"
+ikettleoff1: /home/homeassistant/.homeassistant/shell_scripts/ikettleoff1.sh
+ikettleon: /home/homeassistant/.homeassistant/shell_scripts/ikettleon.sh
 
 ########################
 #    Media Commands    #
 ########################
 
 ##########
-#__Kodi__#
-sshtokodi: bash /home/pi/shell_commands/sshtokodi.sh
-shutdownkodi: /home/pi/shell_commands/shutdownkodi.sh
+#__libreELEC__#
+ssh_to_libreelec: bash /home/homeassistant/.homeassistant/shell_scripts/sshtokodi.sh
+libreelec_off: /home/homeassistant/.homeassistant/shell_scripts/shutdownkodi.sh
 ########
 #__TV__#
-tvon: /home/pi/shell_commands/tvon.sh 
-tvoff: /home/pi/shell_commands/tvoff.sh
+tvon: /home/homeassistant/.homeassistant/shell_scripts/tvon.sh 
+#tvoff: /home/pi/shell_commands/tvoff.sh
 ############
 #__Mopidy__#
-mopidy_off: /home/pi/shell_commands/shutdown_mopidy.sh
+mopidy_off: /home/homeassistant/.homeassistant/shell_scripts/shutdown_mopidy.sh

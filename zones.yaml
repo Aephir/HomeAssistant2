@@ -17,8 +17,8 @@
   icon: mdi:biohazard
 
 - name: !secret zone3name
-  latitude: !secret zone2lat 
-  longitude: !secret zone2lon 
+  latitude: !secret zone3lat 
+  longitude: !secret zone3lon 
   radius: 200
   icon: mdi:cake-variant
 

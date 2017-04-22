@@ -1,0 +1,52 @@
+########################
+#                      #
+#      CONDITION       #
+#                      #
+########################
+
+#########################
+#    Location States    #
+#########################
+
+##############
+#__All Home__#
+- alias: All Home
+  condition: and
+  conditions:
+    - condition: state
+      entity_id: 'device_tracker.aephir'
+      state: 'home'
+    - condition: state
+      entity_id: 'device_tracker.angela'
+      state: 'home'
+
+###############
+#__None Home__#
+- alias: None Home
+  condition: and
+  conditions:
+    - condition: state
+      entity_id: 'device_tracker.aephir'
+      state: 'not_home'
+    - condition: state
+      entity_id: 'device_tracker.angela'
+      state: 'not_home'
+
+#########################
+#    Combined States    #
+#########################
+
+##########################
+#__I'm Home, Sun's Down__#
+- alias: Aephir Home Sun Down
+  condition: and
+  conditions:
+    - condition: state
+      entity_id: 'device_tracker.aephir'
+      state: 'not_home'
+    - condition: sun
+      after: sunset
+      offset: '-01:00:00'
+    - platform: state
+      entity_id: device_tracker.aephir
+

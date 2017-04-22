@@ -1,0 +1,63 @@
+#########################
+#                       #
+#       LOCATION        #
+#         BASED         #
+#      AUTOMATION       #
+#                       #
+#########################
+
+#################################
+#    Power Off Home When Out    #
+#################################
+
+############
+#__Scenes__#
+
+- alias: Aephir Arriving Home
+  trigger:
+    - platform: state
+      entity_id: input_boolean.aephirhome
+      from: 'off'
+      to: 'on'
+  condition:
+    condition: sun
+    after: sunset
+    after_offset: "-1:00:00"
+  action:
+    - service: switch.turn_on
+      entity_id: switch.fibaro_system_fgwpef_wall_plug_gen5_switch_3_0
+    - service: scene.turn_on
+      entity_id: scene.living_room_normal_fade
+
+
+#################################
+#    Power Off Home When Out    #
+#################################
+
+##########################
+#__Last One Leaves Home__#
+
+- alias: 'Shutdown Everything When Everyone Leaves 360'
+  trigger:
+    - platform
+      entity_id: input_boolean.someonehome360
+      from: 'on'
+      to: 'off'
+  action:
+    - service: script.turn_on
+      entity_id: script.everone_left_turn_off_evrything
+
+#- alias: Last One Leaves
+#  trigger:
+#    - platform: state
+#      entity_id: condition.none_home
+#      from: 'false'
+#      to: 'true'
+#  action:
+#    - service: homeassistant.turn_off
+#      entity_id: group.all_lights
+#    - service: script.turn_on
+#      entity_id: script.livingroommediaoff
+#    - service: group.turn_off
+#      entity_id: group.kitchen_switches
+

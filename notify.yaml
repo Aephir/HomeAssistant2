@@ -26,6 +26,10 @@ notify:
     device_id: !secret joaoapps_device_id
     name: droid
     api_key: !secret join_api_key
+  - name: HTML5 Push notifications
+    platform: html5
+    gcm_api_key: !secret gcm-sender-key
+    gcm_sender_id: !secret gcm-sender-id
 
 ##############
 #    Join    #

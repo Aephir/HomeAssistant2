@@ -8,7 +8,7 @@
 #    Living Room    #
 #####################
 
-  - name: Livingroom normal
+  - name: Living Room Normal
     entities:
         light.dining_one:
             state: on
@@ -41,7 +41,7 @@
             brightness: 190
             color_temp: 375
 
-  - name: Livingroom bright
+  - name: Living Room Bright
     entities:
         light.dining_one:
             state: on
@@ -74,7 +74,7 @@
             brightness: 255
             color_temp: 275
 
-  - name: Livingroom dim
+  - name: Living Room Dim
     entities:
         light.dining_one:
             state: on
@@ -107,7 +107,7 @@
             brightness: 50
             color_temp: 500
 
-  - name: Livingroom off
+  - name: Living Room Off
     entities:
         light.dining_one:
             state: off
@@ -154,6 +154,40 @@
         light.hue_ambiance_lamp_2:
             state: off
             transition: 2
+
+  - name: Living Room Normal Fade
+    entities:
+        light.dining_one:
+            state: on
+            transition: 2
+            brightness: 175
+            color_temp: 400
+        light.dining_two:
+            state: on
+            transition: 2
+            brightness: 175
+            color_temp: 400
+        light.couch_lamp:
+            state: on
+            transition: 2
+            brightness: 150
+            color_temp: 400
+        light.hue_lightstrip_plus_1:
+            state: on
+            transition: 2
+            brightness: 175
+            color_temp: 400
+        light.hue_ambiance_lamp_1:
+            state: on
+            transition: 2
+            brightness: 190
+            color_Temp: 375
+        light.hue_ambiance_lamp_2:
+            state: on
+            transition: 2
+            brightness: 190
+            color_temp: 375
+
 
 #################
 #    Bedroom    #

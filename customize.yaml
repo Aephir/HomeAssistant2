@@ -36,7 +36,9 @@ sensor.yr_symbol:
    friendly_name: Weather
 sensor.yr_temperature:
    friendly_name: Temperature
-script.livingroommediaoff:
+#script.livingroommediaoff:
+#   icon: mdi:power
+script.living_room_media_off:
    icon: mdi:power
 sensor.yr_windSpeed:
    icon: mdi:weather-windy
@@ -82,3 +84,7 @@ sensor.dark_sky_daily_summary:
    friendly_name: Weather Week
 script.mopidy_shut_off:
    icon: mdi:music-off
+script.libreelec_shut_off:
+   icon: mdi:speaker-off
+binary_sensor.aephirhome360:
+   entity_picture: /local/images/aephir_v2.jpg

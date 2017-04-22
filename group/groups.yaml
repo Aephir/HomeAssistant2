@@ -16,7 +16,7 @@
       - group.bedroom_lights
       - media_player.libreelec
       - media_player.ue46es8005
-      - group.media_scripts
+      - switch.living_room_media_master
 
 #####################
 #    INFORMATION    #
@@ -33,52 +33,9 @@
       - sensor.yr_temperature
       - group.weather_display
       - sensor.api_streams
-
-###############
-#    Rooms    #
-###############
-
-#################
-#__Living Room_#
-
-  living_room:
-    name: Living Room
-    icon: mdi:sofa
-    view: yes
-    entities:
-      - group.living_room_lights
-      - media_player.libreelec
-      - media_player.ue46es8005
-      - media_player.mpd
-      - switch.tv_kodi
-      - switch.tv_test
-      - script.livingroommediaoff
-      - group.living_room_scenes
-
-#############
-#__Kitchen__#
-
-  kitchen:
-    icon: mdi:silverware-variant
-    name: Kitchen
-    view: yes
-    entities:
-      - switch.wine_fridge
-      - switch.espresso_machine
-      - switch.kettle
-      - input_Select.ikettle_select
-
-#############
-#__Bedroom__#
-
-  bedroom:
-    name: Bedroom
-    icon: mdi:hotel
-    view: yes
-    entities:
-      - light.bedroom
-      - switch.bedroom_flux
-      - group.bedroom_scenes
+      - sensor.moon
+      - binary_sensor.aephirhome360
+      - binary_sensor.someonehome360
 
 ###############
 #    Media    #
@@ -88,13 +45,18 @@
 #__All Media PLayers__#
 
   all_media:
-    name: Video Players
+    name: Media Players
     icon: mdi:theater
     view: yes
     entities:
       - media_player.libreelec
       - media_player.ue46es8005
       - media_player.mpd
+      - script.mopidy_shut_off
+      - script.libreelec_shut_off
+      - script.living_room_media_off
+      - switch.living_room_media_master
+      - switch.tv_kodi
 
 ###########
 #__Video__#
@@ -191,14 +153,23 @@
     view: no
     control: hidden
     entities:
-#      - switch.fibaro_system_fgwpef_wall_plug_gen5_switch_3_0
       - switch.wine_fridge
       - switch.espresso_machine
       - switch.tv_kodi
       - switch.command_on
       - switch.command_off
       - switch.kettle
-      - switch.tv_test
+      - switch.living_room_media_master
+
+######################
+#__Kitchen Switches__#
+
+  kitchen_switches:
+    name: Kitchen WeMo Switches
+    view: no
+    entities:
+      - switch.wine_fridge
+      - switch.espresso_machine
 
 ###################
 #__Master Switch__#
@@ -209,48 +180,61 @@
     view: yes
     entities:
       - switch.fibaro_system_fgwpef_wall_plug_gen5_switch_3_0
+      - script.living_room_media_off
+      - switch.living_room_media_master
 
 #################
 #    Devices    #
 #################
 
-## All Devices ##
+#################
+#__All Devices__#
 
-#  devices:
-#    name: Devices and People
-#    view: no
-#    entities:
-#      - device_tracker.aephir
+  all_device_trackers:
+    name: All Devices and People
+    view: no
+    entities:
+      - device_tracker.aephir_phone_owntracks
+      - device_tracker.aephir_phone_nmap
+      - device_tracker.macbookaephir
+      - device_tracker.macsund30551
 
 ################
 #    People    #
 ################
 
+  all_people:
+    name: Household
+    view: no
+    entities:
+      - device_tracker.aephir_phone
+      - device_tracker.aephir_phone_nmap
+      - device_tracker.angela_iphone_nmap
+
   aephir:
-    name: Aephir
+    name: Aephir's Phone
     icon: mdi:human-male
     view: yes
     entities:
-      - device_tracker.aephirs7edge
-      - device.aephirs7edge
-      - device_tracker.phone_s7
-      - device_tracker.s7_phone
-      - group.aephir_test
+      - sensor.aephir_phone_battery
+      - device_tracker.aephir_phone
+      - device_tracker.aephir_phone_nmap
+      - device_tracker.macbookaephir
+      - binary_sensor.aephirhome360
+      - binary_sensor.someonehome360
+      - binary_sensor.aephirhomecombined
+      - sensor.aephir_phone_battery_360
+      - device_tracker.walden_cd926e1b047646b986d2f0c0c3e7d530
 
-  aephir_test:
-    name: Aephir Test
-    icon: mdi:human-child
+  angela:
+    name: Angela's Phone
+    icon: mdi:human-female
     view: yes
     entities:
-      - device_tracker.aephirs7edge
-      - battery_status.aephirs7edge
-      - device.aephirs7edge
-      - sensor.battery_aephirs7edge
-      - sensor.aephir_phone_battery
-      - device_tracker.phone_s7
-      - device_tracker.s7_phone
-      - device_tracker.aephir_owntracks_phone
-
+      - device_tracker.angela_phone_360_ha
+      - sensor.angela_phone_battery_360
+      - binray_sensor.angelahome360
+      - device_tracker.angela_bffbdffab6fe4293ae704dd80457d5e0
 
 #################
 #    Weather    #
@@ -314,6 +298,7 @@
   light_scenes:
     name: Scenes
     view: no
+    control: hidden
     entities:
       - script.scene_living_room_bright
       - script.scene_living_room_normal
@@ -330,6 +315,7 @@
   living_room_scenes:
     name: Scenes
     view: no
+    control: hidden
     entities:
       - script.scene_living_room_bright
       - script.scene_living_room_normal
@@ -364,8 +350,10 @@
       - script.ikettle
       - script.ikettleon
       - script.ikettleoff1
-      - script.livingroommediaoff
       - script.ifttt_desktop_computer_off
+      - script.mopidy_shut_off
+      - script.libreelec_shut_off
+      - script.living_room_media_off
       - script.going_to_bed
       - script.going_to_sleep
 #      - shell_command.ikettle100
@@ -397,7 +385,7 @@
     name: Media Scripts
     view: no
     entities:
-      - script.livingroommediaoff
+      - script.living_room_media_off
 
 ######################
 #    Experimental    #
@@ -416,5 +404,24 @@
       - script.going_to_bed
       - script.going_to_sleep
       - switch.desktop_pc
-      - script.mopidy_shut_off
       - switch.livingroom
+      - device_tracker.nmap
+      - group.all_device_trackers
+      - device_tracker.angela_iphone_nmap
+      - binary_sensor.someonehome360
+      - binary_sensor.aephirhome360
+      - switch.living_room_media_master
+      - input_boolean.angelahome360
+      - script.everone_left_turn_off_evrything
+
+#####################
+#    For The Kid    #
+#####################
+
+  kids:
+    name: Media Control
+    icon: mdi:play-circle
+    view: yes
+    entities:
+      - sensor.someonehome
+      - switch.living_room_media_master

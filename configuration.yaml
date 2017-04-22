@@ -74,7 +74,7 @@ joaoapps_join:
 
 zwave:
   usb_path: /dev/ttyACM0
-  config_path: /usr/local/lib/python3.4/dist-packages/libopenzwave-0.3.2-py3.4-linux-armv7l.egg/config/
+  config_path: /srv/homeassistant/lib/python3.4/site-packages/libopenzwave-0.3.3-py3.4-linux-armv7l.egg/config
 wemo:
   static:
     - 192.168.0.6
@@ -90,6 +90,7 @@ frontend:
 history:
 recorder:
   purge_days: 8
+  db_url: mysql://homeassistant:MariaHASSpassword@localhost/homeassistant
 logbook:
 sun:
 tts:
@@ -102,20 +103,21 @@ updater:
 
 ##################
 #__Automation__##
-#automation: !include automation.yaml
+#automation: !include_dir_merge_named automation/
 ###################
 #__Custom Panels__#
 panel_custom: !include panel_custom.yaml
 #############
 #__Devices__#
 switch: !include switches.yaml
-sensor: !include sensors.yaml
+sensor: !include_dir_merge_list sensor/
 media_player: !include media_player.yaml
 ############
 #__Groups__#
-group: !include groups.yaml
+group: !include_dir_merge_named group/
 ###########
 #__Input__#
+input_boolean: !include input_boolean.yaml
 #input_slider: !include input_slider.yaml
 input_select: !include input_select.yaml
 ###########
@@ -133,6 +135,9 @@ scene: !include scenes.yaml
 #############
 #__Scripts__#
 script: !include scripts.yaml
+#############
+#__Sensors__#
+binary_sensor: !include binary_sensor.yaml
 ####################
 #__Shell Commands__#
 shell_command: !include shell_commands.yaml

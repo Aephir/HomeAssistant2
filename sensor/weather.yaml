@@ -1,9 +1,3 @@
-#####################
-#                   #
-#      SENSORS      #
-#                   #
-#####################
-
 #################
 #    Weather    #
 #################
@@ -44,24 +38,3 @@
     - precip_intensity_max
   units: si
   update_interval: 00:30:00
-
-#################
-#    Devices    #
-#################
-
-#- platform: template
-#  sensors:
-#    battery_MYPHONEID:
-#      unit_of_measurement: '%'
-#      value_template: >-
-#          {%- if states.device_tracker.aephirs7edge.attributes.battery %}
-#              {{ states.device_tracker.aephirs7edge.attributes.battery|round }}
-#          {% else %}
-#              Unknown
-#          {%- endif %}
-
-- platform: mqtt
-  state_topic: "owntracks/aephir_owntracks/phone"
-  name: "Aephir Phone Battery"
-  unit_of_measurement: "%"
-  value_template: "{{ value_json.batt }}"

@@ -1,0 +1,32 @@
+#################
+#    Devices    #
+#################
+
+#- platform: template
+#  sensors:
+#    battery_MYPHONEID:
+#      unit_of_measurement: '%'
+#      value_template: >-
+#          {%- if states.device_tracker.aephirs7edge.attributes.battery %}
+#              {{ states.device_tracker.aephirs7edge.attributes.battery|round }}
+#          {% else %}
+#              Unknown
+#          {%- endif %}
+
+- platform: mqtt
+  state_topic: "owntracks/aephir/phone"
+  name: "Aephir Phone Battery"
+  unit_of_measurement: "%"
+  value_template: "{{ value_json.batt }}"
+
+- platform: mqtt
+  state_topic: "owntracks/Walden/#"
+  name: "Aephir Phone Battery 360"
+  unit_of_measurement: "%"
+  value_template: "{{ value_json.batt }}"
+
+- platform: mqtt
+  state_topic: "owntracks/Angela/#"
+  name: "Angela Phone Battery 360"
+  unit_of_measurement: "%"
+  value_template: "{{ value_json.batt }}"
