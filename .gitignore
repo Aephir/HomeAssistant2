@@ -27,3 +27,4 @@ pyozw.sqlite
 html5_push_registrations.conf
 ip_bans.yaml
 /icloud/*
+shell_scripts/life360.sh
