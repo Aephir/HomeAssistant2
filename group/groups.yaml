@@ -34,7 +34,6 @@
       - group.weather_display
       - sensor.api_streams
       - sensor.moon
-      - binary_sensor.aephirhome360
       - binary_sensor.someonehome360
 
 ###############
@@ -411,8 +410,12 @@
       - binary_sensor.someonehome360
       - binary_sensor.aephirhome360
       - switch.living_room_media_master
-      - input_boolean.angelahome360
       - script.everone_left_turn_off_evrything
+      - binary_sensor.aephirhomecombined
+      - binary_sensor.angelahome360
+      - binary_sensor.aephirhome360
+      - binary_sensor.angelahome360boolean
+      - binary_sensor.aephirhome360boolean
 
 #####################
 #    For The Kid    #

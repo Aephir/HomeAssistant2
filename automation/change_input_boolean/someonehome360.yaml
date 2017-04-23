@@ -1,0 +1,15 @@
+alias: "Someone Home 360 direct track"
+trigger:
+  - platform: state
+    entity_id: device_tracker.walden_cd926e1b047646b986d2f0c0c3e7d530
+    from: 'not_home'
+    to: 'home'
+    state: 'home'
+  - platform: state
+    entity_id: device_tracker.angela_bffbdffab6fe4293ae704dd80457d5e0
+    from: 'not_home'
+    to: 'home'
+    state: 'home'
+action:
+  - service: input_boolean.turn_on
+    entity_id: input_boolean.someonehome360

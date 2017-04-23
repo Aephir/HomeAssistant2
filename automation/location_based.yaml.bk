@@ -13,7 +13,7 @@
 ############
 #__Scenes__#
 
-- alias: Aephir Arriving Home
+- alias: "Aephir Arriving Home"
   trigger:
     - platform: state
       entity_id: input_boolean.aephirhome
@@ -29,7 +29,6 @@
     - service: scene.turn_on
       entity_id: scene.living_room_normal_fade
 
-
 #################################
 #    Power Off Home When Out    #
 #################################
@@ -37,9 +36,9 @@
 ##########################
 #__Last One Leaves Home__#
 
-- alias: 'Shutdown Everything When Everyone Leaves 360'
+- alias: "Shutdown Everything When Everyone Leaves 360"
   trigger:
-    - platform
+    - platform: state
       entity_id: input_boolean.someonehome360
       from: 'on'
       to: 'off'
@@ -47,7 +46,7 @@
     - service: script.turn_on
       entity_id: script.everone_left_turn_off_evrything
 
-#- alias: Last One Leaves
+#- alias: "Last One Leaves"
 #  trigger:
 #    - platform: state
 #      entity_id: condition.none_home

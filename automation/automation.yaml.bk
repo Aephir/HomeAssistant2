@@ -10,7 +10,7 @@
 
 ############
 #__Scenes__#
-- alias: Lving Room Scene
+- alias: "Living Room Scene"
   trigger:
     - platform: state
       entity_id: input_select.living_room_scenes
@@ -43,7 +43,7 @@
 #######################
 #__Sunset Automation__#
 
-- alias: Aephir Home Sun Down
+- alias: "Aephir Home Sun Down"
   trigger:
     - platform: sun
       event: sunset
@@ -56,17 +56,17 @@
     service: scene.turn_on
     entity_id: scene.living_room_normal_fade
 
-- alias: Sun Down Aephir Home
+- alias: "Sun Down Aephir Home"
   trigger:
     - platform: state
       entity_id: device_tracker.aephir
       from: 'not_home'
       to: 'home'
       state: 'home'
-    condition:
-      - platform: state
-        entity_id: sun.sun
-        state: 'below_horizon'
+  condition:
+    - platform: state
+      entity_id: sun.sun
+      state: 'below_horizon'
   action:
     service: scene.turn_on
     entity_id: scene.living_room_normal_fade
@@ -74,8 +74,7 @@
 #########################
 #__Update Notification__#
 
-automation:
-  alias: 'Update Available Notifications'
+- alias: "Update Available Notifications"
   trigger:
     platform: state
     entity_id: updater.updater

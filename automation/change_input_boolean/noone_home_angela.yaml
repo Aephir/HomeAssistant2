@@ -1,0 +1,14 @@
+alias: "No One Home 360"
+trigger:
+  - platform: state
+    entity_id: device_tracker.angela_bffbdffab6fe4293ae704dd80457d5e0
+    state: 'off'
+condition:
+  - condition: or
+    conditions:
+      - condition: state
+        entity_id: input_boolean.aephirhome360
+        state: 'on'
+action:
+  - service: input_boolean.turn_off
+    entity_id: input_boolean.someonehome360

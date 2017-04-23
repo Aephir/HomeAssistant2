@@ -1,0 +1,15 @@
+- alias: "Aephir Arriving Home"
+  trigger:
+    - platform: state
+      entity_id: input_boolean.aephirhome
+      from: 'off'
+      to: 'on'
+  condition:
+    condition: sun
+    after: sunset
+    after_offset: "-1:00:00"
+  action:
+    - service: switch.turn_on
+      entity_id: switch.fibaro_system_fgwpef_wall_plug_gen5_switch_3_0
+    - service: scene.turn_on
+      entity_id: scene.living_room_normal_fade

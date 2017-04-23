@@ -1,0 +1,8 @@
+alias: "Aephir Out 360"
+trigger:
+  - platform: state
+    entity_id: device_tracker.walden_cd926e1b047646b986d2f0c0c3e7d530
+    state: 'away'
+action:
+  - service: input_boolean.turn_off
+    entity_id: input_boolean.aephirhome360
