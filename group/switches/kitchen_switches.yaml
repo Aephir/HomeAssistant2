@@ -1,0 +1,6 @@
+kitchen_switches:
+  name: Kitchen WeMo Switches
+  view: no
+  entities:
+    - switch.wine_fridge
+    - switch.espresso_machine

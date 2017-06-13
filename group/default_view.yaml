@@ -1,0 +1,9 @@
+default_view:
+  view: yes
+  entities:
+    - group.switches
+    - group.living_room_lights
+    - group.bedroom_lights
+    - media_player.libreelec
+    - media_player.ue46es8005
+    - switch.living_room_media_master

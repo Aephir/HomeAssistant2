@@ -1,0 +1,12 @@
+switches:
+  name: Switches
+  view: no
+  control: hidden
+  entities:
+    - switch.wine_fridge
+    - switch.espresso_machine
+    - switch.tv_kodi
+    - switch.command_on
+    - switch.command_off
+    - switch.kettle
+    - switch.living_room_media_master

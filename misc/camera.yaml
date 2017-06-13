@@ -1,0 +1,8 @@
+########
+#    Camera mjpeg
+
+- platform: mjpeg
+  mjpeg_url: http://192.168.0.24:8080/
+  name: 3110
+  username: !secret android_ip_cam_user
+  password: !secret android_ip_cam_pass

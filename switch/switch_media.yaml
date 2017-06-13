@@ -1,0 +1,29 @@
+###############
+#    Media    #
+###############
+
+- platform: command_line
+  switches:
+    tv_kodi:
+       command_on: ssh -i /home/homeassistant/connection/privatekey_libreelec root@192.168.$
+       command_off: ssh -i /home/homeassistant/connection/privatekey_libreelec root@192.168$
+       friendly_name: TV
+
+- platform: template
+  switches:
+    living_room_media_master:
+      value_template: "{{ is_state('switch.fibaro_system_fgwpef_wall_plug_gen5_switch_3_0',$
+      turn_on:
+        service: switch.turn_on
+        entity_id: switch.fibaro_system_fgwpef_wall_plug_gen5_switch_3_0
+      turn_off:
+        service: script.turn_on
+        entity_id: script.living_room_media_off
+      friendly_name: Media Center Power
+
+- platform: command_line
+  switches:
+    living_room_media_center_2:
+       command_on: switch.turn_on_fibaro_system_fgwpef_wall_plug_gen5_switch_3_0
+       command_off: script.livingroommediaoff
+       friendly_name: Lving Room Media 2

@@ -15,8 +15,8 @@ homeassistant:
   elevation: !secret elevation
   unit_system: metric
   time_zone: !secret timezone
-  customize: !include customize.yaml
-  customize_glob: !include customize_glob.yaml
+  customize: !include misc/customize.yaml
+  customize_glob: !include misc/customize_glob.yaml
 
 ##############
 #    HTTP    #
@@ -38,43 +38,13 @@ ifttt:
   key: !secret iftttkey
 
 #######################
-#    Notifications    #
-#######################
-
-##############
-##__Notify__##
-notify:
-  - name: pigmail
-    platform: smtp
-    server: smtp.gmail.com
-    port: 587
-    timeout: 15
-    sender: !secret pi_gmail
-    starttls: true
-    username: !secret pi_gmail
-    password: !secret pi_gmail_password
-    recipient: !secret my_gmail
-  - platform: kodi
-    name: libreelecnotify
-    host: 192.168.0.155
-  - platform: joaoapps_join
-    device_id: !secret joaoapps_device_id
-    name: droid
-    api_key: !secret join_api_key
-############
-##__Join__##
-joaoapps_join:
-  - name: android
-    device_id: group.android
-    api_key: !secret join_api_key
-
-#######################
 #    Miscellaneous    #
 #######################
 
 zwave:
   usb_path: /dev/ttyACM0
   config_path: /srv/homeassistant/lib/python3.4/site-packages/libopenzwave-0.3.3-py3.4-linux-armv7l.egg/config
+#  device_config: !include zwave_device_config.yaml
 wemo:
   static:
     - 192.168.0.6
@@ -86,6 +56,7 @@ wemo:
 
 config:
 conversation:
+discovery:
 frontend:
 history:
 recorder:
@@ -101,21 +72,30 @@ updater:
 #    Include    #
 #################
 
-automation: !include_dir_merge_list automation/
+#android_ip_webcam: !include misc/android_ip_webcam.yaml
+automation: !include automation_test.yaml
+#automation: !include_dir_merge_list automation/
 binary_sensor: !include binary_sensor.yaml
-device_tracker: !include device_tracker.yaml
-group: !include_dir_merge_named group/
-input_boolean: !include input_boolean.yaml
-input_select: !include input_select.yaml
-#input_slider: !include input_slider.yaml
-light: !include light.yaml
-logger: !include logger.yaml
-media_player: !include media_player.yaml
-mqtt: !include mqtt.yaml
-panel_custom: !include panel_custom.yaml
-scene: !include_dir_merge_list scenes.yaml
+#camera: !include misc/camera.yaml
+device_tracker: !include misc/device_tracker.yaml
+group: !include group/group.yaml
+#group: !include_dir_merge_named group/
+input_boolean: !include input/input_boolean.yaml
+input_select: !include input/input_select.yaml
+input_slider: !include input/input_slider.yaml
+joaoapps_join: !include misc/joaoapps_join.yaml
+light: !include misc/light.yaml
+logger: !include misc/logger.yaml
+media_player: !include_dir_merge_list media_player/
+mqtt: !include misc/mqtt.yaml
+notify: !include misc/notify.yaml
+panel_custom: !include misc/panel_custom.yaml
+scene: !include_dir_merge_list scene/
 script: !include_dir_merge_named script/
 sensor: !include_dir_merge_list sensor/
 shell_command: !include shell_commands.yaml
-switch: !include switches.yaml
-zone: !include zones.yaml
+switch: !include switch/switch.yaml
+#switch: !include_dir_merge_list switch/
+weblink: !include misc/weblink.yaml
+zone: !include misc/zone.yaml
+#zwave: !include misc/zwave.yaml

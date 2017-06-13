@@ -1,0 +1,9 @@
+angela:
+  name: Angela's Phone
+  icon: mdi:human-female
+  view: yes
+  entities:
+    - device_tracker.angela_phone_360_ha
+    - sensor.angela_phone_battery_360
+    - binray_sensor.angelahome360
+    - device_tracker.angela_bffbdffab6fe4293ae704dd80457d5e0

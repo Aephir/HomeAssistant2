@@ -1,0 +1,8 @@
+all_device_trackers:
+  name: All Devices and People
+  view: no
+  entities:
+    - device_tracker.aephir_phone_owntracks
+    - device_tracker.aephir_phone_nmap
+    - device_tracker.macbookaephir
+    - device_tracker.macsund30551

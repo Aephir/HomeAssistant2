@@ -1,0 +1,12 @@
+#################
+#    Devices    #
+#################
+
+#############
+#__iKettle__#
+- platform: command_line
+  switches:
+    kettle:
+       command_on: echo -e "HELLOKETTLE\nset sys output 0x4\nset sys output 0x80\n" | nc  1$
+       command_off: echo -e "HELLOKETTLE\nset sys output 0x4\nset sys output 0x0\n" | nc  1$
+       friendly_name: iKettle

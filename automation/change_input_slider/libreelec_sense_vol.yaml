@@ -1,0 +1,9 @@
+- alias: libreELEC Sense Volume
+  trigger:
+    platform: state
+    entity_id: media_player.libreelec
+  action:
+    - service: input_slider.select_value
+      data_template:
+        entity_id: input_slider.libreelec_volume
+        value: '{{ states.media_player.libreelec.attributes.volume_level }}'

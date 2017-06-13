@@ -1,8 +1,9 @@
-alias: "Angela Set Someone Home 360"
-trigger:
-  - platform: state
-    entity_id: device_tracker.angela_bffbdffab6fe4293ae704dd80457d5e0
-    state: 'home'
-action:
-  - service: input_boolean.turn_on
-    entity_id: input_boolean.someonehome360
+- alias: "Angela Set Someone Home 360"
+  trigger:
+    - platform: state
+      entity_id: device_tracker.angela_bffbdffab6fe4293ae704dd80457d5e0
+      from: 'not_home'
+      to: 'home'
+  action:
+    - service: input_boolean.turn_on
+      entity_id: input_boolean.someonehome360

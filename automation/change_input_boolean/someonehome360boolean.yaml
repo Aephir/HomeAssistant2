@@ -1,12 +1,13 @@
-alias: "Someone Home 360 boolean"
-trigger:
-  - platform: state
-    entity_id: input_boolean.aephirhome360
-    state: 'on'
-  - platform: state
-    entity_id: input_boolean.angelahome360
-    state: 'on'
-action:
-  - service: input_boolean.turn_on
-    entity_id: input_boolean.someonehome360boolean
+- alias: "Someone Home 360 boolean"
+  trigger:
+    - platform: state
+      entity_id: input_boolean.aephirhome360
+      from: 'off'
+      to: 'on'
+    - platform: state
+      entity_id: input_boolean.angelahome360
+      state: 'on'
+  action:
+    - service: input_boolean.turn_on
+      entity_id: input_boolean.someonehome360boolean
 

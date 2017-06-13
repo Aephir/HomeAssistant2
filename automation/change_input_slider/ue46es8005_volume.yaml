@@ -1,0 +1,10 @@
+- alias: TV Volume 
+  trigger:
+    platform: state
+    entity_id: media_player.ue6es8005
+  action:
+    service: input_slider.select_value
+    data_template:
+      entity_id: input_slider.ue46es8005_volume
+      value: >
+        {{ states.media_player.ue46es8005.attributes.volume_level }}

@@ -1,0 +1,210 @@
+####################
+#                  #
+#      LIGHTS      #
+#                  #
+####################
+
+#####################
+#    Living Room    #
+#####################
+
+  - name: Living Room Normal
+    entities:
+        light.dining_one:
+            state: on
+            transition: 2
+            brightness: 175
+            color_temp: 400
+        light.dining_two:
+            state: on
+            transition: 2
+            brightness: 175
+            color_temp: 400
+        light.couch_lamp:
+            state: on
+            transition: 2
+            brightness: 150
+            color_temp: 400
+        light.hue_lightstrip_plus_1:
+            state: on
+            transition: 2
+            brightness: 175
+            color_temp: 400
+        light.hue_ambiance_lamp_1:
+            state: on
+            transition: 2
+            brightness: 190
+            color_Temp: 375
+        light.hue_ambiance_lamp_2:
+            state: on
+            transition: 2
+            brightness: 190
+            color_temp: 375
+
+  - name: Living Room Bright
+    entities:
+        light.dining_one:
+            state: on
+            transition: 2
+            brightness: 255
+            color_temp: 300
+        light.dining_two:
+            state: on
+            transition: 2
+            brightness: 255
+            color_temp: 300
+        light.couch_lamp:
+            state: on
+            transition: 2
+            brightness: 255
+            color_temp: 300
+        light.hue_lightstrip_plus_1:
+            state: on
+            transition: 2
+            brightness: 255
+            color_temp: 300
+        light.hue_ambiance_lamp_1:
+            state: on
+            transition: 2
+            brightness: 255
+            color_temp: 275
+        light.hue_ambiance_lamp_2:
+            state: on
+            transition: 2
+            brightness: 255
+            color_temp: 275
+
+  - name: Living Room Dim
+    entities:
+        light.dining_one:
+            state: on
+            transition: 2
+            brightness: 30
+            xy_color: [ 0.52, 0.40 ]
+        light.dining_two:
+            state: on
+            transition: 2
+            brightness: 30
+            xy_color: [ 0.52, 0.40 ]
+        light.couch_lamp:
+            state: on
+            transition: 2
+            brightness: 10
+            xy_color: [ 0.56, 0.45 ]
+        light.hue_lightstrip_plus_1:
+            state: on
+            transition: 2
+            brightness: 50
+            xy_color: [ 0.49, 0.40 ]
+        light.hue_ambiance_lamp_1:
+            state: on
+            transition: 2
+            brightness: 50
+            color_temp: 500
+        light.hue_ambiance_lamp_2:
+            state: on
+            transition: 2
+            brightness: 50
+            color_temp: 500
+
+  - name: Living Room Off
+    entities:
+        light.dining_one:
+            state: off
+            transition: 2
+        light.dining_two:
+            state: off
+            transition: 2
+        light.couch_lamp:
+            state: off
+            transition: 2
+        light.hue_lightstrip_plus_1:
+            state: off
+            transition: 2
+        light.hue_ambiance_lamp_1:
+            state: off
+            transition: 2
+        light.hue_ambiance_lamp_2:
+            state: off
+            transition: 2
+
+  - name: Sleepy Living Room
+    entities:
+        light.dining_one:
+            state: on
+            transition: 2
+            brightness: 10
+            xy_color: [ 0.72, 0.26 ]
+        light.dining_two:
+            state: on
+            transition: 2
+            brightness: 10
+            xy_color: [ 0.72, 0.26 ]
+        light.couch_lamp:
+            state: on
+            transition: 2
+            brightness: 10
+            xy_color: [ 0.72, 0.26 ]
+        light.hue_lightstrip_plus_1:
+            state: off
+            transition: 2
+        light.hue_ambiance_lamp_1:
+            state: off
+            transition: 2
+        light.hue_ambiance_lamp_2:
+            state: off
+            transition: 2
+
+  - name: Living Room Normal Fade
+    entities:
+        light.dining_one:
+            state: on
+            transition: 2
+            brightness: 175
+            color_temp: 400
+        light.dining_two:
+            state: on
+            transition: 2
+            brightness: 175
+            color_temp: 400
+        light.couch_lamp:
+            state: on
+            transition: 2
+            brightness: 150
+            color_temp: 400
+        light.hue_lightstrip_plus_1:
+            state: on
+            transition: 2
+            brightness: 175
+            color_temp: 400
+        light.hue_ambiance_lamp_1:
+            state: on
+            transition: 2
+            brightness: 190
+            color_Temp: 375
+        light.hue_ambiance_lamp_2:
+            state: on
+            transition: 2
+            brightness: 190
+            color_temp: 375
+
+#################
+#    Bedroom    #
+#################
+
+  - name: Bedroom dim
+    entities:
+        light.bedroom:
+            state: on
+            transition: 2
+            brightness: 10
+            xy_color: [ 0.52, 0.40 ]
+
+  - name: Sleepy Bedroom
+    entities:
+        light.bedroom:
+            state: on
+            transition: 2
+            brightness: 10
+            xy_color: [ 0.72, 0.26 ]
+

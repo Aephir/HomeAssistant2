@@ -8,3 +8,7 @@ default: warn
 logs:
   homeassistant.components.wemo: debug
   homeassistant.components.media_player: critical
+  homeassistant.components.owntracks: fatal
+  homeassistant.components.device_tracker: error
+#  homeassistant.components.mqtt: notset
+  homeassistant.components.camera.mjpeg: critical

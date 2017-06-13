@@ -1,0 +1,9 @@
+bedroom:
+  name: Bedroom
+  icon: mdi:hotel
+  view: yes
+  entities:
+    - light.bedroom
+    - switch.bedroom_flux
+    - group.bedroom_scenes
+    - switch.desktop_pc

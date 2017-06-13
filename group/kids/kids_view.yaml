@@ -1,0 +1,7 @@
+kids:
+  name: Media Control
+  icon: mdi:play-circle
+  view: yes
+  entities:
+    - sensor.someonehome
+    - switch.living_room_media_master

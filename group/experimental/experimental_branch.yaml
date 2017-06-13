@@ -1,0 +1,32 @@
+experimental:
+  name: Playground
+  icon: mdi:flask
+  view: yes
+  entities:
+    - input_slider.libreelecvolume
+    - input_slider.ue46es8005volume
+    - input_select.living_room_scenes
+    - script.ifttt_desktop_computer_off
+    - script.going_to_bed
+    - script.going_to_sleep
+    - switch.desktop_pc
+    - switch.livingroom
+    - device_tracker.nmap
+    - group.all_device_trackers
+    - device_tracker.angela_iphone_nmap
+    - binary_sensor.someonehome360
+    - binary_sensor.aephirhome360
+    - switch.living_room_media_master
+    - script.everone_left_turn_off_evrything
+    - binary_sensor.aephirhomecombined
+    - binary_sensor.angelahome360
+    - binary_sensor.aephirhome360
+    - binary_sensor.angelahome360boolean
+    - binary_sensor.aephirhome360boolean
+    - sensor.aephir_phone_battery
+    - device_tracker.aephir_phone
+    - device_tracker.aephir_phone_nmap
+    - device_tracker.macbookaephir
+    - binary_sensor.aephirhome360
+    - binary_sensor.someonehome360
+    - binary_sensor.aephirhomecombined

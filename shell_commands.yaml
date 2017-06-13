@@ -24,6 +24,7 @@ ikettleon: /home/homeassistant/.homeassistant/shell_scripts/ikettleon.sh
 #__libreELEC__#
 ssh_to_libreelec: bash /home/homeassistant/.homeassistant/shell_scripts/sshtokodi.sh
 libreelec_off: /home/homeassistant/.homeassistant/shell_scripts/shutdownkodi.sh
+reboot_libreelec: /home/homeassistant/.homeassistant/shell_scripts/rebootkodi.sh
 ########
 #__TV__#
 tvon: /home/homeassistant/.homeassistant/shell_scripts/tvon.sh 
@@ -31,3 +32,5 @@ tvon: /home/homeassistant/.homeassistant/shell_scripts/tvon.sh
 ############
 #__Mopidy__#
 mopidy_off: /home/homeassistant/.homeassistant/shell_scripts/shutdown_mopidy.sh
+reboot_mopidy: /home/homeassistant/.homeassistant/shell_scripts/reboot_mopidy.sh
+

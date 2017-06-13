@@ -1,0 +1,13 @@
+light_scenes:
+  name: Scenes
+  view: no
+  control: hidden
+  entities:
+    - script.scene_living_room_bright
+    - script.scene_living_room_normal
+    - script.scene_living_room_dim
+    - script.scene_living_room_off
+    - script.scene_living_room_off
+    - script.scene_sleepy_bedroom
+    - script.scene_bedroom_dim
+    - script.scene_sleepy_living_room

@@ -1,9 +1,9 @@
-- alias: "Aephir Arriving Home"
+- alias: "aephir_arriving_home"
   trigger:
     - platform: state
-      entity_id: input_boolean.aephirhome
-      from: 'off'
-      to: 'on'
+      entity_id: device_tracker.walden_cd926e1b047646b986d2f0c0c3e7d530
+      from: 'Off'
+      to: 'On'
   condition:
     condition: sun
     after: sunset

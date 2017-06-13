@@ -1,0 +1,7 @@
+video_media:
+  name: Video Players
+  icon: mdi:theater
+  view: no
+  entities:
+    - media_player.libreelec
+    - media_player.ue46es8005

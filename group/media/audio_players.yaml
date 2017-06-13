@@ -1,0 +1,6 @@
+audio_media:
+  name: Music Players
+  icon: mdi:speaker
+  view: no
+  entities:
+    - media_player.mpd

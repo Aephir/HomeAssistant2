@@ -1,8 +1,12 @@
-alias: "Aephir Home 360"
-trigger:
-  - platform: state
-    entity_id: device_tracker.walden_cd926e1b047646b986d2f0c0c3e7d530
-    state: 'home'
-action:
-  - service: input_boolean.turn_on
+- alias: "aephir_home_360"
+  condition:
+    condition: state
     entity_id: input_boolean.aephirhome360
+    state: 'off'
+  trigger:
+    - platform: state
+      entity_id: device_tracker.walden_cd926e1b047646b986d2f0c0c3e7d530
+      state: 'home'
+  action:
+    - service: homeassistant.turn_on
+      entity_id: input_boolean.aephirhome360

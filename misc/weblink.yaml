@@ -1,0 +1,12 @@
+##
+#  WEBLINK
+
+  entities:
+    - name: Router
+      url: http://192.168.0.1
+    - name: Mopidy
+      url: http://192.168.0.145:6680
+    - name: Mopidy Iris
+      url: http://192.168.0.145:6680/iris
+    - name: Mopidy Party
+      url: http://192.168.0.145:6680/party

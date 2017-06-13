@@ -1,24 +1,24 @@
-alias: "Noone Home 360 boolean"
-trigger:
-  - platform: state
-    entity_id: device_tracker.walden_cd926e1b047646b986d2f0c0c3e7d530
-    from: 'home'
-    to: 'not_home'
-    state: 'not_home'
-  - platform: state
-    entity_id: device_tracker.angela_bffbdffab6fe4293ae704dd80457d5e0
-    from: 'home'
-    to: 'not_home'
-    state: 'not_home'
-condition:
-  condition: and
-  conditions:
-    - condition: state
+- alias: "Noone Home 360 boolean"
+  trigger:
+    - platform: state
       entity_id: device_tracker.walden_cd926e1b047646b986d2f0c0c3e7d530
+      from: 'home'
+      to: 'not_home'
       state: 'not_home'
-    - condition: state
+    - platform: state
       entity_id: device_tracker.angela_bffbdffab6fe4293ae704dd80457d5e0
+      from: 'home'
+      to: 'not_home'
       state: 'not_home'
-action:
-  - service: input_boolean.turn_off
-    entity_id: input_boolean.someonehome360
+  condition:
+    condition: and
+    conditions:
+      - condition: state
+        entity_id: device_tracker.walden_cd926e1b047646b986d2f0c0c3e7d530
+        state: 'not_home'
+      - condition: state
+        entity_id: device_tracker.angela_bffbdffab6fe4293ae704dd80457d5e0
+        state: 'not_home'
+  action:
+    - service: input_boolean.turn_off
+      entity_id: input_boolean.someonehome360

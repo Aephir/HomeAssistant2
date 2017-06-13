@@ -1,0 +1,10 @@
+######
+#     Temperature and Humidity
+
+- platform: dht
+  sensor: DHT11
+  name: dht11
+  pin: 18
+  monitored_conditions:
+    - temperature
+    - humidity

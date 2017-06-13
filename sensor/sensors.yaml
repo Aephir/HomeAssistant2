@@ -4,3 +4,6 @@
 #                   #
 #####################
 
+- platform: cert_expiry
+  host: home-assistant.io
+  port: 443

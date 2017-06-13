@@ -1,0 +1,14 @@
+weather_display:
+  name: Weather for Display
+  view: no
+  entities:
+    - sensor.yr_temperature
+    - sensor.dark_sky_summary
+    - sensor.dark_sky_hourly_summary
+    - sensor.dark_sky_daily_summary
+    - sensor.dark_sky_humidity
+    - sensor.dark_sky_wind_speed
+    - sensor.dark_sky_wind_bearing
+    - sensor.dark_sky_precip_intensity
+    - sensor.dark_sky_preci_probability
+

@@ -1,0 +1,10 @@
+ikettle:
+  name: iKettle Control
+  view: no
+  control: hidden
+  entities:
+    - script.ikettleon
+#    - script.ikettle95
+#    - script.ikettle80
+#    - script.ikettle65
+    - script.ikettleoff1

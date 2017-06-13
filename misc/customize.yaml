@@ -85,6 +85,8 @@ sensor.dark_sky_daily_summary:
 script.mopidy_shut_off:
    icon: mdi:music-off
 script.libreelec_shut_off:
-   icon: mdi:speaker-off
+   icon: mdi:filmstrip-off
 binary_sensor.aephirhome360:
    entity_picture: /local/images/aephir_v2.jpg
+switch.living_room_media_master:
+   icon: mdi:power

@@ -1,0 +1,14 @@
+living_room:
+  name: Living Room
+  icon: mdi:sofa
+  view: yes
+  entities:
+    - group.living_room_lights
+    - media_player.libreelec
+    - media_player.ue46es8005
+    - media_player.mpd
+    - switch.tv_kodi
+    - group.living_room_scenes
+    - script.mopidy_shut_off
+    - script.libreelec_shut_off
+    - switch.living_room_media_master
