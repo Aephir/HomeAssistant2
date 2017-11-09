@@ -13,11 +13,11 @@
 #              Unknown
 #          {%- endif %}
 
-- platform: mqtt
-  state_topic: "owntracks/aephir/phone"
-  name: "Aephir Phone Battery"
-  unit_of_measurement: "%"
-  value_template: "{{ value_json.batt }}"
+#- platform: mqtt
+#  state_topic: "owntracks/aephir/phone"
+#  name: "Aephir Phone Battery"
+#  unit_of_measurement: "%"
+#  value_template: "{{ value_json.batt }}"
 
 # If it doesn't work, use topic "owntracks/Walden/#"
 - platform: mqtt
@@ -27,7 +27,13 @@
   value_template: "{{ value_json.batt }}"
 
 - platform: mqtt
-  state_topic: "owntracks/Angela/bffbdffa-b6fe-4293-ae70-4dd80457d5e0"
-  name: "Angela Phone Battery 360"
+  state_topic: "owntracks/KristinaBrody/612a3f1e-8eae-425e-9cc5-14e48649cc46"
+  name: "Kristina Phone Battery 360"
+  unit_of_measurement: "%"
+  value_template: "{{ value_json.batt }}"
+
+- platform: mqtt
+  state_topic: "owntracks/Emilie/aa172623-f9cd-406b-9007-dc08461d2c24"
+  name: "Emilie Phone Battery 360"
   unit_of_measurement: "%"
   value_template: "{{ value_json.batt }}"

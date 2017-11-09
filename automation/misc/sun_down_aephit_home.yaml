@@ -2,9 +2,8 @@
   trigger:
     - platform: state
       entity_id: device_tracker.walden_cd926e1b047646b986d2f0c0c3e7d530
-#      from: 'not_home'
-#      to: 'home'
-      state: 'home'
+      from: 'not_home'
+      to: 'home'
   condition:
       condition: sun
       after: sunset

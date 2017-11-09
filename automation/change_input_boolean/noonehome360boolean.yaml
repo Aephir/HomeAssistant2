@@ -1,12 +1,12 @@
 - alias: "Noone Home 360 boolean"
   trigger:
-    - platform: state        
+    - platform: state
       entity_id: input_boolean.aephirhome360
       from: 'on'
       to: 'off'
       state: 'off'
     - platform: state
-      entity_id: input_boolean.angelahome360
+      entity_id: input_boolean.kristinahome360
       from: 'on'
       to: 'off'
       state: 'off'
@@ -17,7 +17,7 @@
         entity_id: input_boolean.aephirhome360
         state: 'off'
       - condition: state
-        entity_id: input_boolean.angelahome360
+        entity_id: input_boolean.kristinahome360
         state: 'off'
   action:
     - service: input_boolean.turn_off

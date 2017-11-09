@@ -10,6 +10,7 @@
 
 libreelec_volume:
   icon: mdi:volume-high
+#  name: KODI Volume
   name: libreELEC Volume
   initial: 30
   min: 1

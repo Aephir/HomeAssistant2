@@ -15,8 +15,8 @@ homeassistant:
   elevation: !secret elevation
   unit_system: metric
   time_zone: !secret timezone
-  customize: !include misc/customize.yaml
-  customize_glob: !include misc/customize_glob.yaml
+  customize: !include customize.yaml
+  customize_glob: !include customize_glob.yaml
 
 ##############
 #    HTTP    #
@@ -49,6 +49,8 @@ wemo:
   static:
     - 192.168.0.6
     - 192.168.0.11
+ios:
+map:
 
 #################
 #    Enables    #
@@ -56,12 +58,15 @@ wemo:
 
 config:
 conversation:
-discovery:
+#discovery:
 frontend:
+  extra_html_url:
+    - /local/custom_ui/state-card-custom-ui.html
 history:
 recorder:
-  purge_days: 8
-  db_url: mysql://homeassistant:MariaHASSpassword@localhost/homeassistant
+  purge_interval: 2
+  purge_keep_days: 8
+  db_url: !secret mysql_url
 logbook:
 sun:
 tts:
@@ -73,11 +78,12 @@ updater:
 #################
 
 #android_ip_webcam: !include misc/android_ip_webcam.yaml
-automation: !include automation_test.yaml
+automation: !include automation.yaml
 #automation: !include_dir_merge_list automation/
 binary_sensor: !include binary_sensor.yaml
 #camera: !include misc/camera.yaml
 device_tracker: !include misc/device_tracker.yaml
+#frontend: !include frontend.html
 group: !include group/group.yaml
 #group: !include_dir_merge_named group/
 input_boolean: !include input/input_boolean.yaml
@@ -89,7 +95,7 @@ logger: !include misc/logger.yaml
 media_player: !include_dir_merge_list media_player/
 mqtt: !include misc/mqtt.yaml
 notify: !include misc/notify.yaml
-panel_custom: !include misc/panel_custom.yaml
+panel_custom: !include panel_custom.yaml
 scene: !include_dir_merge_list scene/
 script: !include_dir_merge_named script/
 sensor: !include_dir_merge_list sensor/

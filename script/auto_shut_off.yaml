@@ -12,15 +12,12 @@
       - service: script.turn_on
         data:
           entity_id: script.living_room_media_off
-      - service: scene.turn_on
-        data:
-          entity_id: scene.living_room_off
       - service: light.turn_off
         data:
-          entity_id: light.bedroom
-      - service: group.turn_off
+          entity_id: group.all_lights
+      - service: switch.turn_off
         data:
-          entity_id: group.kitchen_switches
+          entity_id: switch.espresso_machine
 
 ################
 #__Night Time__#

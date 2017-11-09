@@ -6,7 +6,7 @@
       to: 'home'
       state: 'home'
     - platform: state
-      entity_id: device_tracker.angela_bffbdffab6fe4293ae704dd80457d5e0
+      entity_id: device_tracker.kristinabrody_612a3f1e8eae425e9cc514e48649cc46
       from: 'not_home'
       to: 'home'
       state: 'home'

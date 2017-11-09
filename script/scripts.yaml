@@ -4,4 +4,100 @@
 #                   #
 #####################
 
+  movie_night:
+    alias: Movie Time
+    sequence:
+      - service: homeassistant.turn_on
+        data:
+          entity_id: scene.movie_night
+      - service: homeassistant.turn_on
+        data:
+          entity_id: switch.living_room_media_master
+      - service: tts.picotts_say
+        entity_id: media_player.living_room
+        data:
+          message: 'Movie night'
 
+
+##
+# Home Modes
+
+  guest_mode_toggle:
+    alias: Guest Mode
+    sequence:
+      - service: input_boolean.toggle
+        data:
+          entity_id: input_boolean.guest_mode
+
+
+  good_night:
+    alias: Good Night
+    sequence:
+      - service: homeassistant.turn_on
+        data:
+          entity_id: scene.all_lights_off
+      - service: switch.turn_off
+        data:
+          entity_id: switch.living_room_media_master
+      - service: switch.turn_off
+        data:
+          entity_id: switch.espresso_machine
+
+##
+# Light toggles
+
+# From: https://community.home-assistant.io/t/toggle-a-hue-go-for-a-specific-color-or-scene/11449/4?u=smart
+
+  toggle_living_room_lights:
+    sequence:
+    - service_template: script.toggle_living_room_lights_{% if is_state('group.downstairs_living_room_lights', 'off') %}on{% else %}off{% endif %}
+
+  toggle_living_room_lights_on:
+    sequence:
+      - service: light.turn_on
+        entity_id: group.downstairs_living_room_lights
+        data:
+          brightness: 240
+#          rgb_color: [ 255, 0, 0]
+          color_temp: 369
+
+  toggle_living_room_lights_off:
+    sequence:
+      - service: light.turn_off
+        entity_id: group.downstairs_living_room_lights
+
+
+  toggle_entrance_lights:
+    sequence:
+    - service_template: script.toggle_entrance_lights_{% if is_state('group.stairway_lights', 'off') %}on{% else %}off{% endif %}
+
+  toggle_entrance_lights_on:
+    sequence:
+      - service: light.turn_on
+        entity_id: group.stairway_lights
+        data:
+          brightness: 240
+#          rgb_color: [ 255, 0, 0]
+          color_temp: 369
+
+  toggle_entrance_lights_off:
+    sequence:
+      - service: light.turn_off
+        entity_id: group.stairway_lights
+
+##
+# Say
+
+  say_welcome_home:
+    sequence:
+      - service: tts.picotts_say
+        entity_id: media_player.speaker_1
+        data:
+          message: 'Welcome Home'
+
+  say_welcome_home2:
+    sequence:
+      - service: tts.picotts_say
+        entity_id: media_player.living_room
+        data:
+          message: 'Home sweet home'

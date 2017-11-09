@@ -11,23 +11,43 @@
   default_view:
     view: yes
     entities:
-      - group.switches
+      - switch.espresso_machine
       - group.living_room_lights
       - group.bedroom_lights
-      - media_player.libreelec
+      - media_player.kodi
       - media_player.ue46es8005
       - switch.living_room_media_master
+
+################
+#    USEFUL    #
+################
+
+  useful:
+    view: yes
+    icon: mdi:account-multiple
+    entities:
+      - switch.espresso_machine
+      - group.living_room_lights
+      - group.bedroom_lights
+      - group.stairway_lights
+      - switch.living_room_media_master
+      - scene.night_light
+      - scene.bedroom_dim
+      - sensor.someonehome
 
 #####################
 #    INFORMATION    #
 #####################
+
+#####################
+#__All Information__#
 
   information:
     name: Information
     icon: mdi:information-variant
     view: yes
     entities:
-      - sensor.fibaro_system_fgwpef_wall_plug_gen5_power_3_4
+      - sensor.fibaro_system_fgwpef_wall_plug_gen5_power
       - sun.sun
       - sensor.yr_symbol
       - sensor.yr_temperature
@@ -35,17 +55,29 @@
       - sensor.api_streams
       - sensor.moon
       - binary_sensor.someonehome360
-      - sensor.dht11_temperature
-      - sensor.dht11_humidity
-      - camera.3110
-      - sensor.3110_battery_level
-      - sensor.3110_battery_temperature
-      - switch.3110_video_recording
+#      - sensor.dht11_temperature
+#      - sensor.dht11_humidity
+      - group.home_information
+#      - camera.3110
+#      - sensor.3110_battery_level
+#      - sensor.3110_battery_temperature
+#      - switch.3110_video_recording
       - weblink.router
       - weblink.mopidy_iris
       - weblink.mopidy_party
       - weblink.mopidy
       - sensor.cert_expiry
+
+######################
+#__Home Information__#
+
+  home_information:
+    name: Information In House
+    icon: mdi:information-variant
+    view: no
+    entities:
+      - sensor.dht11_temperature
+      - sensor.dht11_humidity
 
 ###############
 #    Media    #
@@ -59,16 +91,18 @@
     icon: mdi:theater
     view: yes
     entities:
-      - media_player.libreelec
+      - media_player.kodi
       - media_player.ue46es8005
       - media_player.mpd
       - script.mopidy_shut_off
-      - script.libreelec_shut_off
+      - script.kodi_shut_off
       - script.living_room_media_off
       - switch.living_room_media_master
       - switch.tv_kodi
       - weblink.mopidy_iris
       - weblink.mopidy
+      - script.start_kodi
+      - media_player.living_room
 
 ###########
 #__Video__#
@@ -78,7 +112,7 @@
     icon: mdi:theater
     view: no
     entities:
-      - media_player.libreelec
+      - media_player.kodi
       - media_player.ue46es8005
 
 ###################
@@ -93,6 +127,7 @@
       - weblink.mopidy
       - weblink.mopidy_iris
       - weblink.mopidy_party
+      - media_player.living_room
 
 ################
 #    Lights    #
@@ -107,9 +142,10 @@
     view: yes
     entities:
       - group.living_room_lights
+      - group.downstairs_living_room_lights
       - group.bedroom_lights
-      - group.dining_lights
-      - group.ambiance_lights
+      - group.downstairs_bedroom_lights
+      - group.stairway_lights
       - light.hue_lightstrip_plus_1
       - group.light_scenes
 
@@ -120,12 +156,30 @@
     name: Living Room Lights
     view: no
     entities:
-      - light.dining_one
-      - light.dining_two
       - light.couch_lamp
+      - light.hue_lightstrip_plus_1
       - light.hue_ambiance_lamp_1
       - light.hue_ambiance_lamp_2
+
+############################
+#__Downstairs Living Room Lights__#
+
+  downstairs_living_room_lights:
+    name: Downstairs Living Room Lights
+    view: no
+    entities:
+      - light.couch_lamp
       - light.hue_lightstrip_plus_1
+
+########################
+#__Downstairs Bedroom Lights__#
+
+  downstairs_bedroom_lights:
+    name: downstairs bedroom lights
+    view: no
+    entities:
+      - light.kristinas_bedroom
+      - light.waldens_bedroom
 
 ########################
 #__All Bedroom Lights__#
@@ -134,24 +188,15 @@
     name: Bedroom Lights
     view: no
     entities:
-      - light.bedroom
-
-
-#########################
-#__Dining Table Lights__#
-
-  dining_lights:
-    name: Dining Lights
-    view: no
-    entities:
-      - light.dining_one
-      - light.dining_two
+      - light.bedroom_stairway
+      - light.kristinas_bedroom
+      - light.waldens_bedroom
 
 #####################
-#__Ambiance Lights__#
+#__Stairway Lights__#
 
-  ambiance_lights:
-    name: Ambiance Lights
+  stairway_lights:
+    name: Stairway Lights
     view: no
     entities:
       - light.hue_ambiance_lamp_1
@@ -169,8 +214,8 @@
     view: no
     control: hidden
     entities:
-      - switch.wine_fridge
       - switch.espresso_machine
+      - switch.desktop
       - switch.tv_kodi
       - switch.command_on
       - switch.command_off
@@ -184,8 +229,16 @@
     name: Kitchen WeMo Switches
     view: no
     entities:
-      - switch.wine_fridge
       - switch.espresso_machine
+
+#####################
+#__Office Switches__#
+
+  office_switches:
+    name: Office WeMo Switches
+    view: no
+    entities:
+      - switch.desktop
 
 ###################
 #__Master Switch__#
@@ -195,7 +248,7 @@
     icon: mdi:power
     view: yes
     entities:
-      - switch.fibaro_system_fgwpef_wall_plug_gen5_switch_3_0
+      - switch.fibaro_system_fgwpef_wall_plug_gen5_switch
       - script.living_room_media_off
       - switch.living_room_media_master
 
@@ -220,30 +273,49 @@
 ################
 
   all_people:
-    name: Household
-    view: no
+    name: Family
+    icon: mdi:home
+    view: yes
     entities:
-      - device_tracker.aephir_phone
-      - device_tracker.aephir_phone_nmap
-      - device_tracker.angela_iphone_nmap
+      - device_tracker.walden_cd926e1b047646b986d2f0c0c3e7d530
+      - sensor.aephir_phone_battery_360
+      - device_tracker.kristinabrody_612a3f1e8eae425e9cc514e48649cc46
+      - sensor.kristina_phone_battery_360
+      - device_tracker.emilie_aa172623f9cd406b9007dc08461d2c24
+      - sensor.emilie_phone_battery_360
+
+#  family_tracker:
+#    mame: Family Tracker
+#    icon: mdi:home-heart
+#    view: no
+#    entities:
+#      - device_tracker.walden_cd926e1b047646b986d2f0c0c3e7d530
+#      - device_tracker.kristinabrody_612a3f1e8eae425e9cc514e48649cc46
+#      - device_tracker.emilie_aa172623f9cd406b9007dc08461d2c24
 
   aephir:
     name: Aephir's Phone
     icon: mdi:human-male
-    view: yes
+    view: no
     entities:
       - sensor.aephir_phone_battery_360
       - device_tracker.walden_cd926e1b047646b986d2f0c0c3e7d530
 
-  angela:
-    name: Angela's Phone
+  krstina:
+    name: Kristina's Phone
     icon: mdi:human-female
-    view: yes
+    view: no
     entities:
-      - device_tracker.angela_phone_360_ha
-      - sensor.angela_phone_battery_360
-      - binray_sensor.angelahome360
-      - device_tracker.angela_bffbdffab6fe4293ae704dd80457d5e0
+      - device_tracker.kristinabrody_612a3f1e8eae425e9cc514e48649cc46
+      - sensor.kristina_phone_battery_360
+
+  emilie:
+    name: Emilie's Phone
+    icon: mdi:human-child
+    view: no
+    entities:
+      - device_tracker.emilie_aa172623f9cd406b9007dc08461d2c24
+      - sensor.emilie_phone_battery_360
 
 #################
 #    Weather    #
@@ -361,7 +433,7 @@
       - script.ikettleoff1
       - script.ifttt_desktop_computer_off
       - script.mopidy_shut_off
-      - script.libreelec_shut_off
+      - script.kodi_shut_off
       - script.living_room_media_off
       - script.going_to_bed
       - script.going_to_sleep
@@ -403,7 +475,7 @@
 
   experimental:
     name: Playground
-    icon: mdi:flask
+    icon: mdi:biohazard
     view: yes
     entities:
       - input_slider.libreelec_volume
@@ -415,20 +487,14 @@
       - script.going_to_sleep
       - switch.desktop_pc
       - switch.livingroom
-      - device_tracker.nmap
-      - device_tracker.angela_iphone_nmap
-      - binary_sensor.someonehome360
-      - binary_sensor.aephirhome360
+      - switch.desktop
       - switch.living_room_media_master
       - script.everone_left_turn_off_evrything
       - binary_sensor.aephirhomecombined
-      - binary_sensor.angelahome360
-      - binary_sensor.aephirhome360
-      - binary_sensor.angelahome360boolean
       - binary_sensor.aephirhome360boolean
       - media_player.spotify
       - script.mopidy_reboot
-      - script.libreelec_reboot
+      - script.kodi_reboot
       - sensor.aephir_phone_battery
       - device_tracker.aephir_phone
       - device_tracker.aephir_phone_nmap
@@ -436,18 +502,48 @@
       - binary_sensor.aephirhome360
       - binary_sensor.someonehome360
       - binary_sensor.aephirhomecombined
+      - input_boolean.aephirhome360
+      - input_boolean.someonehome360
+      - input_boolean.kristinahome360
+      - input_boolean.emiliehome360
+      - media_player.living_room
 
-#####################
-#    For The Kid    #
-#####################
+########################
+#    For The Famliy    #
+########################
 
-  kids:
-    name: Media Control
-    icon: mdi:play-circle
+  family_control:
+    name: Family Control
+    icon: mdi:lightbulb-on
     view: yes
     entities:
       - sensor.someonehome
       - switch.living_room_media_master
+      - switch.kettle
+      - group.living_room_lights
+      - group.downstairs_living_room_lights
+      - group.lounge_lights
+      - group.bedroom_lights
+      - group.stairway_lights
+      - light.hue_lightstrip_plus_1
+      - group.light_scenes
+
+######################
+#    For The Kids    #
+######################
+
+  kid_control:
+    name: Kid Control
+    icon: mdi:lightbulb-on-outline
+    view: yes
+    entities:
+      - sensor.someonehome
+      - switch.living_room_media_master
+      - group.living_room_lights
+      - group.downstairs_living_room_lights
+      - group.lounge_lights
+      - group.stairway_lights
+      - light.hue_lightstrip_plus_1
 
 ###############
 #    Rooms    #
@@ -462,13 +558,13 @@
     view: yes
     entities:
       - group.living_room_lights
-      - media_player.libreelec
+      - media_player.kodi
       - media_player.ue46es8005
       - media_player.mpd
       - switch.tv_kodi
       - group.living_room_scenes
       - script.mopidy_shut_off
-      - script.libreelec_shut_off
+      - script.kodi_shut_off
       - switch.living_room_media_master
 
 #############
@@ -479,7 +575,6 @@
     name: Kitchen
     view: yes
     entities:
-      - switch.wine_fridge
       - switch.espresso_machine
       - switch.kettle
       - input_select.ikettle_select

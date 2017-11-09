@@ -4,6 +4,7 @@
 
 ############
 #__Lights__#
+
   scene_living_room_bright:
     alias: Bright Living Room
     sequence:
@@ -52,3 +53,17 @@
       - service: scene.turn_on
         data:
           entity_id: scene.sleepy_living_room
+
+  scene_all_lights_off:
+    alias: Turn off all lights
+    sequence:
+      - service: scene.turn_on
+        data:
+          entity_id: scene.all_lights_off
+
+  scene_night_lights:
+    alias: Keep Night Light on For Kids
+    sequence:
+      - service: scene.turn_on
+        data:
+          entity_id: scene.night_light

@@ -5,6 +5,11 @@
 #                          #
 ############################
 
+
+- platform: mqtt
+  state_topic: dummy/floorplan/sensor
+  name: Floorplan
+
 ###################
 #    Occupancy    #
 ###################
@@ -13,7 +18,7 @@
 #  sensors:
 #    someonehome360:
 #      friendly_name: Is Anyone Home 360
-#      value_template: 
+#      value_template:
 #           {%- if is_state('states.input_boolean.someonehome360.state', 'true') -%}
 #             true
 #           {%- else -%}
@@ -38,7 +43,7 @@
 #      value_template: '{{ states.input_boolean.aephirhome360.state }}'
 #      entity_id: input_boolean.aephirhome360
 #      unit_of_measurement: '{{ states.input_boolean.aephirhome360.state }}'
-#      device_class: occupancy 
+#      device_class: occupancy
 
 - platform: template
   sensors:
@@ -50,16 +55,16 @@
 
 - platform: template
   sensors:
-    angelahome360:
-      friendly_name: Is Angela Home (360)
+    kristinahome360:
+      friendly_name: Is kristina Home (360)
       value_template: >-
-          {%- if is_state("input_boolean.angelahome360", "on") -%}
+          {%- if is_state("input_boolean.kristinahome360", "on") -%}
           On
           {%- else -%}
           Off
           {%- endif %}
       entity_id:
-        - input_boolean.angelahome360
+        - input_boolean.kristinahome360
 
 - platform: template
   sensors:
@@ -76,16 +81,16 @@
 
 - platform: template
   sensors:
-    angelahome360boolean:
-      friendly_name: Is Angela Home 360 Boolean
+    kristinahome360boolean:
+      friendly_name: Is Krisina Home 360 Boolean
       value_template: >-
-          {%- if is_state("input_boolean.angelahome360boolean", "on") -%}
+          {%- if is_state("input_boolean.kristinahome360boolean", "on") -%}
           On
           {%- else -%}
           Off
           {%- endif %}
       entity_id:
-        - input_boolean.angelahome360boolean
+        - input_boolean.kristinahome360boolean
 
 - platform: template
   sensors:
@@ -106,10 +111,9 @@
       friendly_name: Is Anyone Home 360
       value_template: >-
           {%- if is_state("input_boolean.someonehome360", "on") -%}
-          On
+          true
           {%- else -%}
-          Off
+          false
           {%- endif %}
       entity_id:
         - input_boolean.someonehome360
-

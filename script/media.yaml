@@ -10,11 +10,11 @@
           entity_id: script.mopidy_shut_off
       - service: script.turn_on
         data:
-          entity_id: script.libreelec_shut_off
-      - delay: 00:00:30
+          entity_id: script.kodi_shut_off
+      - delay: 00:00:15
       - service: switch.turn_off
         data:
-          entity_id: switch.fibaro_system_fgwpef_wall_plug_gen5_switch_3_0
+          entity_id: switch.fibaro_system_fgwpef_wall_plug_gen5_switch
 
   mopidy_shut_off:
     alias: Shut down Mopidy
@@ -26,22 +26,27 @@
     sequence:
       - service: shell_command.reboot_mopidy
 
-  libreelec_shut_off:
+  kodi_shut_off:
     alias: Shut down libreELEC
     sequence:
-      - service: shell_command.libreelec_off
+      - service: shell_command.kodi_off
 
-  libreelec_reboot:
+  kodi_reboot:
     alias: Reboot libreELEC
     sequence:
       - service: shell_command.reboot_libreelec
+
+  start_kodi:
+    alias: Kodi Media Center
+    sequence:
+      - service: shell_command.run_kodi
 
 #  arrive_area_home:
 #    alias: Start Up Music, Turn Off TV
 #    sequence:
 #      - service: switch.turn_on
 #        data:
-#          entity_id: switch.fibaro_system_fgwpef_wall_plug_gen5_switch_3_0
+#          entity_id: switch.fibaro_system_fgwpef_wall_plug_gen5_switch
 #      - delay: 00:00:30
 #      - service: media_player.turn_off
 #        data:

@@ -7,12 +7,12 @@
 ###############
 #    Media    #
 ###############
-  
+
 - platform: command_line
   switches:
     tv_kodi:
-       command_on: ssh -i /home/homeassistant/connection/privatekey_libreelec root@192.168.0.155 "echo 'on 0' | cec-client -s"
-       command_off: ssh -i /home/homeassistant/connection/privatekey_libreelec root@192.168.0.155 "echo 'standby 0' | cec-client -s"
+       command_on: ssh -p 155 -i /home/homeassistant/connection/privatekey_libreelec pi@192.168.0.155 "echo 'on 0' | cec-client -s"
+       command_off: ssh -p 155 -i /home/homeassistant/connection/privatekey_libreelec pi@192.168.0.155 "echo 'standby 0' | cec-client -s"
        friendly_name: TV
 
 ###############
@@ -22,21 +22,21 @@
 - platform: template
   switches:
     living_room_media_master:
-      value_template: "{{ is_state('switch.fibaro_system_fgwpef_wall_plug_gen5_switch_3_0', 'on') }}"
+      value_template: "{{ is_state('switch.fibaro_system_fgwpef_wall_plug_gen5_switch', 'on') }}"
       turn_on:
         service: switch.turn_on
-        entity_id: switch.fibaro_system_fgwpef_wall_plug_gen5_switch_3_0
+        entity_id: switch.fibaro_system_fgwpef_wall_plug_gen5_switch
       turn_off:
         service: script.turn_on
         entity_id: script.living_room_media_off
       friendly_name: Media Center Power
 
-- platform: command_line
-  switches:
-    living_room_media_center_2:
-       command_on: switch.turn_on_fibaro_system_fgwpef_wall_plug_gen5_switch_3_0
-       command_off: script.livingroommediaoff
-       friendly_name: Lving Room Media 2
+#- platform: command_line
+#  switches:
+#    living_room_media_center_2:
+#       command_on: switch.turn_on_fibaro_system_fgwpef_wall_plug_gen5_switch
+#       command_off: script.livingroommediaoff
+#       friendly_name: Lving Room Media 2
 
 
 ###############

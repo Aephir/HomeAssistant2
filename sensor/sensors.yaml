@@ -7,3 +7,13 @@
 - platform: cert_expiry
   host: home-assistant.io
   port: 443
+
+- platform: time_date
+  display_options:
+    - 'time'
+    - 'date'
+
+- platform: uptime
+  name: Uptime
+  unit_of_measurement: days
+#  unit_of_measurement: hours

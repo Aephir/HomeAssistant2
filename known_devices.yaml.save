@@ -1,0 +1,256 @@
+###########################
+#                         #
+#      KNOWN DEVICES      #
+#                         #
+###########################
+
+################
+#    Walden    #
+################
+
+aephir_phone_nmap:
+  name: Aephir's Phone (nmap)
+  mac: !secret aephirs7edgemac
+  picture: /local/images/aephir_v2.jpg
+  track: yes
+  hide_if_away: no
+
+#aephir_phone:
+#  name: Aephir's Phone (owntracks)
+#  mac:
+#  picture: /local/images/aephir_v2.jpg
+#  track: yes
+#  hide_if_away: no
+
+#aephir_phone_bt:
+#  name: Aephir's Phone (Bluetooth)
+#  mac: !secret aephirs7edgebtmac
+#  picture: /local/images/aephir_v2.jpg
+#  track: yes
+#  hide_if_away: no
+
+macbookaephir:
+  name: Aephir's MacBook
+  mac: !secret aephirsmacbookpromac
+  picture: /local/images/apple.jpg
+  track: yes
+  hide_if_away: no
+
+macsund30551:
+  hide_if_away: false
+  mac: !secret macsund30551
+  name: f45c89974971
+  picture:
+  track: true
+  vendor: Apple, Inc.
+  consider_home: 180
+
+#angela_iphone_nmap:
+#  hide_if_away: false
+#  mac: !secret angelaiphonemac
+#  name: c81ee763a763
+#  picture:
+#  track: true
+#  vendor: Apple, Inc.
+
+galaxys2:
+  hide_if_away: false
+  mac: !secret aephirss2mac
+  name: Galaxy S2
+  picture:
+  track: true
+  vendor: Murata Manufacturing Co., Ltd.
+
+sony_z2:
+  hide_if_away: false
+  mac: !secret aephirssonyz2mac
+  name: Sony Xperia Z2
+  picture:
+  track: true
+  vendor: unknown
+
+walden_cd926e1b047646b986d2f0c0c3e7d530:
+  hide_if_away: false
+  mac:
+  name: Walden 360 tracker
+  picture: /local/images/aephir_v2.jpg
+  track: true
+  vendor:
+
+kristinabrody_612a3f1e8eae425e9cc514e48649cc46:
+  hide_if_away: false
+  icon:
+  mac:
+  name: Kristina 360 tracker
+  picture: /local/images/kristina_v2.jpg
+  track: true
+  vendor:
+
+kristina_work_pc:
+  hide_if_away: false
+  mac: !secret kristina_work_pc_mac
+  name: Kristina Work PC
+  picture:
+  track: true
+  vendor: Intel Corporate
+
+p3110_samsung_tablet:
+  hide_if_away: false
+  mac: !secret samsung_gt_p3110_mac
+  name: P3110 Tablet
+  picture:
+  track: true
+  vendor: Samsung Electronics Co.,Ltd
+
+001a738fd042:
+  hide_if_away: false
+  icon:
+  mac: 00:1A:73:8F:D0:42
+  name: 001a738fd042
+  picture:
+  track: true
+  vendor: Gemtek Technology Co., Ltd.
+
+b827ebb7eaaa:
+  hide_if_away: false
+  icon:
+  mac: B8:27:EB:B7:EA:AA
+  name: b827ebb7eaaa
+  picture:
+  track: true
+  vendor: Raspberry Pi Foundation
+
+b827ebcd8cc4:
+  hide_if_away: false
+  icon:
+  mac: B8:27:EB:CD:8C:C4
+  name: b827ebcd8cc4
+  picture:
+  track: true
+  vendor: Raspberry Pi Foundation
+
+94652d6e3546:
+  hide_if_away: false
+  icon:
+  mac: 94:65:2D:6E:35:46
+  name: 94652d6e3546
+  picture:
+  track: true
+  vendor: OnePlus Technology (Shenzhen) Co., Ltd
+
+4485001c2a5f:
+  hide_if_away: false
+  icon:
+  mac: 44:85:00:1C:2A:5F
+  name: 4485001c2a5f
+  picture:
+  track: true
+  vendor: unknown
+
+803f5d171ea5:
+  hide_if_away: false
+  icon:
+  mac: 80:3F:5D:17:1E:A5
+  name: 803f5d171ea5
+  picture:
+  track: true
+  vendor: unknown
+
+sonos_play_5:
+  hide_if_away: false
+  icon:
+  mac: !secret sonos_play_5
+  name: Sonos
+  picture:
+  track: true
+  vendor: Sonos, Inc.
+
+ikettle:
+  hide_if_away: false
+  icon:
+  mac: !secret ikettle
+  name: iKettle
+  picture:
+  track: true
+  vendor: SHARETRONIC Group LTD
+
+wemo_insight_6:
+  hide_if_away: false
+  icon:
+  mac: !secret wemo_insight_6
+  name: WeMo 6
+  picture:
+  track: true
+  vendor: Belkin International Inc.
+
+wemo_insight_11:
+  hide_if_away: false
+  icon:
+  mac: !secret wemo_insight_11
+  name: WeMo 11
+  picture:
+  track: true
+  vendor: Belkin International Inc.
+
+#kristina_iphone:
+#  hide_if_away: false
+#  icon:
+#  mac: !secret kristina_iphone_mac
+#  name: Kristinas iPhone
+#  picture:
+#  track: true
+#  vendor: unknown
+
+ue46es8005:
+  hide_if_away: false
+  icon:
+  mac: !secret ue46es8005mac
+  name: UE46ES8005
+  picture:
+  track: true
+  vendor: Samsung Electronics Co.,Ltd
+
+kristina_ipad1:
+  hide_if_away: false
+  icon:
+  mac: 64:20:0C:33:4E:A3
+  name: Kristina iPad1
+  picture:
+  track: true
+  vendor: Apple, Inc.
+
+a46706b35b12:
+  hide_if_away: false
+  icon:
+  mac: A4:67:06:B3:5B:12
+  name: a46706b35b12
+  picture:
+  track: true
+  vendor: Apple, Inc.
+
+00367622c0a8:
+  hide_if_away: false
+  icon:
+  mac: 00:36:76:22:C0:A8
+  name: 00367622c0a8
+  picture:
+  track: true
+  vendor: ARRIS Group, Inc.
+
+f8461c30342a:
+  hide_if_away: false
+  icon:
+  mac: F8:46:1C:30:34:2A
+  name: f8461c30342a
+  picture:
+  track: true
+  vendor: Sony Interactive Entertainment Inc.
+
+aephir_phone:
+  hide_if_away: false
+  icon:
+  mac:
+  name: aephir
+  picture:
+  track: true
+  vendor:

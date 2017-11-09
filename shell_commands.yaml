@@ -21,16 +21,22 @@ ikettleon: /home/homeassistant/.homeassistant/shell_scripts/ikettleon.sh
 ########################
 
 ##########
-#__libreELEC__#
+#__KODI__#
+run_kodi: bash /home/homeassistant/.homeassistant/shell_scripts/start_kodi.sh
 ssh_to_libreelec: bash /home/homeassistant/.homeassistant/shell_scripts/sshtokodi.sh
-libreelec_off: /home/homeassistant/.homeassistant/shell_scripts/shutdownkodi.sh
+kodi_off: /home/homeassistant/.homeassistant/shell_scripts/shutdownkodi.sh
 reboot_libreelec: /home/homeassistant/.homeassistant/shell_scripts/rebootkodi.sh
 ########
 #__TV__#
-tvon: /home/homeassistant/.homeassistant/shell_scripts/tvon.sh 
+tvon: /home/homeassistant/.homeassistant/shell_scripts/tvon.sh
 #tvoff: /home/pi/shell_commands/tvoff.sh
 ############
 #__Mopidy__#
 mopidy_off: /home/homeassistant/.homeassistant/shell_scripts/shutdown_mopidy.sh
 reboot_mopidy: /home/homeassistant/.homeassistant/shell_scripts/reboot_mopidy.sh
 
+#######################
+#    HASS Commands    #
+#######################
+
+reboot_hass: bash /home/homeassistant/.homeassistant/shell_scripts/reboot_home_assistant.sh

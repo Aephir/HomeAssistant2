@@ -8,7 +8,7 @@
     - condition: or
       conditions:
         - condition: state
-          entity_id: input_boolean.angelahome360
+          entity_id: input_boolean.kristinahome360
           state: 'on'
   action:
     - service: input_boolean.turn_off

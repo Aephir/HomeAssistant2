@@ -10,7 +10,7 @@
 
 - platform: kodi
   host: 192.168.0.155
-  name: LibreELEC
+  name: Kodi
   username: kodi
   password: !secret libreelecpassword
   turn_off_action: shutdown
@@ -19,4 +19,3 @@
   name: ue46es8005
   host: 192.168.0.3
   mac: !secret ue46es8005mac
-

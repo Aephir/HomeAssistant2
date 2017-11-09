@@ -1,0 +1,9 @@
+service: tts.picotts_say
+data:
+  message: 'May the Force be with you.'
+
+
+service: tts.picotts_say
+data:
+  entity_id: media_player.living_room
+  message: 'May the Force be with you.'
