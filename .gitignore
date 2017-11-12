@@ -3,7 +3,7 @@
 *.csr
 *.crt
 *.key
-www
+www/images
 myCA
 newyaml
 20170414_backup_yaml

@@ -1,0 +1,10 @@
+######################
+#                    #
+#    Conversation    #
+#                    #
+######################
+
+boolean_test:
+    sentence: switch boolean # The phrase it will recognize
+    action:
+        service: input_boolean.toggle

@@ -13,7 +13,7 @@
       - service: homeassistant.turn_on
         data:
           entity_id: switch.living_room_media_master
-      - service: tts.picotts_say
+      - service: tts.goolge_say
         entity_id: media_player.living_room
         data:
           message: 'Movie night'
@@ -97,7 +97,21 @@
 
   say_welcome_home2:
     sequence:
-      - service: tts.picotts_say
+      - service: tts.google_say
         entity_id: media_player.living_room
         data:
           message: 'Home sweet home'
+
+  say_with_love:
+    sequence:
+      - service: tts.google_say
+        entity_id: media_player.living_room
+        data:
+          message: 'I Love you baby'
+
+  say_walden_told_me:
+    sequence:
+      - service: tts.google_say
+        entity_id: media_player.living_room
+        data:
+          message: 'Walden told me to tell you'

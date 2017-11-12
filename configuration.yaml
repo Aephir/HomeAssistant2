@@ -70,7 +70,8 @@ recorder:
 logbook:
 sun:
 tts:
-  platform: picotts
+#  platform: picotts
+  platform: google
 updater:
 
 #################
