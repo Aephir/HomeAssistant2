@@ -29,6 +29,11 @@ http:
   base_url: !secret secret_base_url
   ip_ban_enabled: True
   login_attempts_threshold: 3
+  trusted_networks:
+    - 127.0.0.1
+    - ::1
+    - 192.168.0.0/24
+
 
 ###############
 #    IFTTT    #
@@ -43,7 +48,7 @@ ifttt:
 
 zwave:
   usb_path: /dev/ttyACM0
-  config_path: /srv/homeassistant/lib/python3.4/site-packages/libopenzwave-0.3.3-py3.4-linux-armv7l.egg/config
+#  config_path: /srv/homeassistant/lib/python3.4/site-packages/libopenzwave-0.3.3-py3.4-linux-armv7l.egg/config
 #  device_config: !include zwave_device_config.yaml
 wemo:
   static:
@@ -51,28 +56,41 @@ wemo:
     - 192.168.0.11
 ios:
 map:
+hue:
+  bridges:
+    - host: 192.168.0.10
 
 #################
 #    Enables    #
 #################
 
+#introduction:
 config:
 conversation:
 #discovery:
 frontend:
   extra_html_url:
-    - /local/custom_ui/state-card-custom-ui.html
+    - https://raw.githubusercontent.com/andrey-git/home-assistant-custom-ui/master/state-card-custom-ui.html
+  extra_html_url_es5:
+    - https://raw.githubusercontent.com/andrey-git/home-assistant-custom-ui/master/state-card-custom-ui-es5.html
+#  extra_html_url:
+#    - /local/custom_ui/state-card-custom-ui.html
+#  extra_html_url_es5:
+#    - /local/custom_ui/state-card-custom-ui-es5.html
+#customizer:
+#  custom_ui: local
 history:
 recorder:
   purge_interval: 2
   purge_keep_days: 8
-  db_url: !secret mysql_url
+#  db_url: !secret mysql_url
 logbook:
 sun:
 tts:
 #  platform: picotts
   platform: google
 updater:
+cloud:
 
 #################
 #    Include    #
@@ -82,7 +100,7 @@ updater:
 automation: !include automation.yaml
 #automation: !include_dir_merge_list automation/
 binary_sensor: !include binary_sensor.yaml
-#camera: !include misc/camera.yaml
+camera: !include misc/camera.yaml
 device_tracker: !include misc/device_tracker.yaml
 #frontend: !include frontend.html
 group: !include group/group.yaml

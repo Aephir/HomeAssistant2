@@ -183,9 +183,11 @@
     light.hue_ambiance_lamp_1:
       state: on
       transition: 2
+      brightness: 250
     light.hue_ambiance_lamp_2:
       state: on
       transition: 2
+      brightness: 250
 
 - name: Movie Night
   entities:

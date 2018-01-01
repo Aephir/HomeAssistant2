@@ -16,15 +16,15 @@
           text_template: '${entity.state ? Math.ceil(entity.state) + " W": "undefined"}'
           class_template: 'return "static-temp";'
 
-        - name: dht11_temperature
+        - name: dht22_temperature
           entities:
-            - sensor.dht11_temperature
+            - sensor.dht22_temperature
           text_template: '${entity.state ? Math.ceil(entity.state) + " °C": "undefined"}'
           class_template: 'return "static-temp";'
 
-        - name: dht11_humidity
+        - name: dht22_humidity
           entities:
-            - sensor.dht11_humidity
+            - sensor.dht22_humidity
           text_template: '${entity.state ? Math.ceil(entity.state) + " %": "undefined"}'
           class_template: 'return "static-temp";'
 

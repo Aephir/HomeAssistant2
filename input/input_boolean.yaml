@@ -16,9 +16,9 @@ someonehome360:
   name: Someone Home 360
   icon: mdi:home-map-marker
 
-someonehome360boolean:
-  name: Someone Home 360 Boolean
-  icon: mdi:home-map-marker
+#someonehome360boolean:
+#  name: Someone Home 360 Boolean
+#  icon: mdi:home-map-marker
 
 aephirhome360:
   name: Aephir Home (L360)

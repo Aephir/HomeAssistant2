@@ -17,3 +17,45 @@
   name: Uptime
   unit_of_measurement: days
 #  unit_of_measurement: hours
+
+#- platform: template
+#  sensors:
+#    sensor_espresso:
+#      value_template: '{{ states.switch.espresso_machine.attributes["today_energy_kwh"] }}'
+#      unit_of_measurement: 'W'
+
+#- platform: template
+#  sensors:
+#    sensor_espresso:
+#      value_template: '{{ states.switch.espresso_machine.attributes["current_power_w"] | float * 1000000 | round(2) }}'
+#      unit_of_measurement: 'W'
+
+- platform: template
+  sensors:
+    sensor_espresso:
+      value_template: '{{ states.switch.espresso_machine.attributes.current_power_w }}'
+      unit_of_measurement: 'W'
+
+#- platform: template
+#  sensors:
+#    sensor_espresso:
+#      value_template: '{{ states.switch.espresso_machine.attributes["current_power_w"] | round(-1) }}'
+#      unit_of_measurement: 'W'
+
+- platform: template
+  sensors:
+    sensor_desktop:
+      value_template: '{{ states.switch.desktop.attributes["today_energy_kwh"] }}'
+      unit_of_measurement: 'W'
+
+#- platform: template
+#  sensors:
+#    espresso_w:
+#      value_template: '{{ states.switch.espresso_machine.attributes["current_power_w"] | float * 1000000 | round(2) }}'
+#      unit_of_measurement: 'W'
+
+#- platform: template
+#  sensors:
+#    espresso_kwh:
+#      value_template: '{{ tates.switch.espresso_machine.attributes["today_energy_kwh"] | float * 1000 | round(2) }}'
+#      unit_of_measurement: 'kWh'

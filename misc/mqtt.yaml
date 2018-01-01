@@ -15,8 +15,6 @@ broker: 127.0.0.1
 port: 1883
 #port: 8883
 client_id: homeassistant_mqtt
-#username: homeassistant
-#password: homeassistantMQTTmos
 username: !secret mosqiotto_user
 password: !secret mosqiotto_pass
 protocol: 3.1

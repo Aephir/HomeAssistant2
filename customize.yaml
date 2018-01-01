@@ -7,15 +7,26 @@
 binary_sensor.floorplan:
   custom_ui_state_card: state-card-floorplan
   config: !include floorplan.yaml
-switch.fibaro_system_fgwpef_wall_plug_gen5_switch_3_0:
+switch.fibaro_system_fgwpef_wall_plug_gen5_switch:
   friendly_name: Z-Wave Switch 1
+  custom_ui_state_card: state-card-custom-ui
+  confirm_controls_show_lock: true
+  extra_badge:
+    attribute: power_consumption
+    unit: W
+#  extra_data_template: ${attributes.power_consumption !== 0 ? (attributes.power_consumption + 'W') : null}
 switch.desktop:
   friendly_name: Desktop Computer
   entity_picture: /local/images/pc2.jpg
   confirm_controls_show_lock: true
+  extra_badge:
+    entity_id: sensor.sensor_desktop
 switch.espresso_machine:
   friendly_name: Espresso Machine
   entity_picture: /local/images/silvia.jpg
+  extra_badge:
+    entity_id: sensor.sensor_espresso
+#    unit: W
 #  custom_ui_state_card: custom_cover
 #  extra_badge:
 #    entity_id: sensor.power_espresso
@@ -96,3 +107,7 @@ binary_sensor.aephirhome360:
   entity_picture: /local/images/aephir_v2.jpg
 switch.living_room_media_master:
   icon: mdi:power
+  custom_ui_state_card: state-card-custom-ui
+  confirm_controls_show_lock: true
+  extra_badge:
+    entity_id: sensor.fibaro_system_fgwpef_wall_plug_gen5_power
