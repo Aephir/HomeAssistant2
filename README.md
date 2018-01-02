@@ -64,4 +64,7 @@ Frontend using "custom UI".
 
 **Planned future misc.**
 * Integrate various [Tasker](http://tasker.dinglisch.net/) automations. Have tasker send info to home assistant, then have home assistant do the work.
+<<<<<<< HEAD
 
+=======
+>>>>>>> 1de7f0c994d7449c7e04e78a0f9db3e4b820b831
