@@ -21,6 +21,16 @@
     max_gps_accuracy: 50
 
 ##############
+#    Ping    #
+##############
+
+  - platform: ping
+    hosts:
+      aephir_ping: 192.168.0.5
+      kristina_ping: 192.168.0.18
+
+
+##############
 #    NMAP    #
 ##############
 

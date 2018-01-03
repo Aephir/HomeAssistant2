@@ -18,11 +18,12 @@
   host: 192.168.0.155
 
 - platform: joaoapps_join
-  device_id: !secret joaoapps_device_id
-  name: droid
+  device_id: !secret joaoapps_s7e_device_id
+  name: S7Edge
   api_key: !secret join_api_key
 
 - platform: html5
   name: HTML5 Push notifications
   gcm_api_key: !secret gcm-sender-key
   gcm_sender_id: !secret gcm-sender-id
+

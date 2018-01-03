@@ -129,12 +129,12 @@
   entities:
     light.couch_lamp:
       state: on
-      transition: 2
+      transition: 10
       brightness: 150
       color_temp: 400
     light.hue_lightstrip_plus_1:
       state: on
-      transition: 2
+      transition: 10
       brightness: 175
       color_temp: 400
 
@@ -142,12 +142,12 @@
   entities:
     light.hue_ambiance_lamp_1:
       state: on
-      transition: 2
+      transition: 10
       brightness: 190
       color_Temp: 375
     light.hue_ambiance_lamp_2:
       state: on
-      transition: 2
+      transition: 10
       brightness: 190
       color_temp: 375
 

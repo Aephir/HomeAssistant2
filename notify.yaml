@@ -32,3 +32,12 @@
   gcm_api_key: !secret gcm-sender-key
   gcm_sender_id: !secret gcm-sender-id
 
+#####################################
+#    Save Scene Generator Output    #
+#####################################
+
+- name: scene_generator
+  platform: file
+  filename: generated_scene.yaml
+  timestamp: false
+

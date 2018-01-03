@@ -303,7 +303,7 @@
       - sensor.aephir_phone_battery_360
       - device_tracker.walden_cd926e1b047646b986d2f0c0c3e7d530
 
-  krstina:
+  kristina:
     name: Kristina's Phone
     icon: mdi:human-female
     view: no
@@ -497,9 +497,6 @@
       - media_player.spotify
       - script.mopidy_reboot
       - script.kodi_reboot
-      - sensor.aephir_phone_battery
-      - device_tracker.aephir_phone
-      - device_tracker.aephir_phone_nmap
       - device_tracker.macbookaephir
       - binary_sensor.aephirhome360
       - binary_sensor.someonehome360
@@ -510,6 +507,8 @@
       - input_boolean.emiliehome360
       - media_player.living_room
       - camera.wyze
+      - device_tracker.aephir_ping
+      - device_tracker.kristina_ping
 
 ########################
 #    For The Famliy    #

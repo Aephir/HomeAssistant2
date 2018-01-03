@@ -200,6 +200,15 @@
 #    service: homeassistant.turn_off
 #    entity_id: input_boolean.someonehome360
 
+- alias: "Update The Meta Tracker"
+  trigger:
+    platform: state
+    entity_id: device_tracker.ios, device_tracker.owntracks, device_tracker.ping
+  action:
+    service: python_script.meta_device_tracker
+    data_template:
+      entity_id: '{{trigger.entity_id}}'
+
 #- alias: 'will_it_rain'
 #  trigger:
 #    - platform: state
@@ -283,3 +292,4 @@
   action:
     service: light.turn_off
     entity_id: light.hue_ambiance_lamp_2
+
