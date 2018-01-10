@@ -19,9 +19,9 @@
 #  unit_of_measurement: "%"
 #  value_template: "{{ value_json.batt }}"
 
-# If it doesn't work, use topic "owntracks/Walden/#"
 - platform: mqtt
   state_topic: "owntracks/Walden/cd926e1b-0476-46b9-86d2-f0c0c3e7d530"
+#  state_topic: !secret aephir_life360_bat_id
   name: "Aephir Phone Battery 360"
   unit_of_measurement: "%"
   value_template: "{{ value_json.batt }}"

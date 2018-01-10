@@ -105,7 +105,7 @@
     service: homeassistant.turn_off
     entity_id: input_boolean.emiliehome360
 
-- alias: Someone Arrives Home
+- alias: Someone Arrives Home Boolean
   trigger:
     platform: state
     entity_id:
@@ -283,13 +283,16 @@
       - condition: state
         entity_id: light.bedroom_stairway
         state: 'off'
-      - condition: state
-        entity_id: light.hue_ambiance_lamp_1
-        state: 'off'
-      - condition: state
-        entity_id: light.hue_ambiance_lamp_2
-        state: 'on'
   action:
     service: light.turn_off
-    entity_id: light.hue_ambiance_lamp_2
+    entity_id: group.stairway_lights
 
+#- alias: "Notify Certificate Expiry"
+#  trigger:
+#    - platform: state
+#      entity_id: sensor.ssl_certificate_expiry
+#      value_template: '{{ states(state.sensor.ssl_certificate_expiry) < 25 }}'
+#  action:
+#    service: joaoapps_join.android_send_sms
+#    data:
+#      message: {"number":"004524494408", "message":"Your Home Assistant SSL certificates will expire in 25 days. Please run the certbot ASAP!","title":"Home Assistant Certificates","data":{"icon":"https://goo.gl/xeetdy"}}

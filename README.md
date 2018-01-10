@@ -1,5 +1,5 @@
 # HomeAssistant2
-My second version of homeassistant.
+My second version of homeassistant. There is still much unfinished, and many loose ends.
 
 Home assistant configuration files and more. This home assistant is running on a Raspberry Pi 3 using a 32 GB SD card, Raspbian Stretch Lite, installed in a python3.6.4 virtual environment. I drew quite a bit of inspiration from [COOSTAN](https://github.com/CCOSTAN/Home-AssistantConfig), so look there if any of this is interesting. If I give my endorsement or negative comments to anything, they are things I like/dislike. I have no affiliation to any of them or their potential competitors, and my positive or negative comments are based exclusively on my personal preference.
 
@@ -14,8 +14,8 @@ Home assistant configuration files and more. This home assistant is running on a
 * [Home Assistant](https://home-assistant.io/) for all my home control and automation needs.
 
 **Useful scripts set up with crontab**
-* [rsync](https://packages.debian.org/stretch/rsync) script run in crontab for keeing a partial backup on SD card. Not entire image, it's much fater, and takes up less space.
-* [Life360](https://www.life360.com/) for device tracking. I've found that owntracks just doesn't cut it (too slow/irregular update of location, so can't use it to automate based on entering/exiting areas), and so far Life360 is the best device tracker I've found. I am using the script provided by [Brazen1445](https://community.home-assistant.io/t/life-360-support/1690/15). The version I use is povided in this repository.
+* [rsync](https://packages.debian.org/stretch/rsync) script run in crontab for keeping a partial backup on SD card. Not entire image, it's much faster, and takes up less space.
+* [Life360](https://www.life360.com/) for device tracking. I've found that owntracks just doesn't cut it (too slow/irregular update of location, so can't use it to automate based on entering/exiting areas), and so far Life360 is the best device tracker I've found. I am using the script provided by [Brazen1445](https://community.home-assistant.io/t/life-360-support/1690/15). The version I use is provided in this repository.
 * script to send email with new IP when IP changes.
 
 **Hardware**

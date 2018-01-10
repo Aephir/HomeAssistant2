@@ -167,18 +167,20 @@
 
 #        - name: Sensors
 #          entities:
-#             -  sensor.dark_sky_temperature
+#             -  sensor.aephir_phone_battery_360
 #          #text_template: '${entity.state ? entity.state : "unknown"}'
-#          # An example of rounding up a number, i.e. a temperature of 90.1 becomes 91
+#          # An example of rounding up a number, i.e. a battery percentage of 90.1 becomes 91
 #          text_template: '${entity.state ? Math.ceil(entity.state) : "undefined"}'
 #          class_template: '
-#            var temp = parseFloat(entity.state.replace("°", ""));
-#            if (temp < 10)
-#              return "temp-low";
-#            else if (temp < 30)
-#              return "temp-medium";
+##            var batt = parseFloat(entity.state.replace("%", ""));
+#            if (batt < 5)
+#              return "batt-critical";
+#            else if (batt < 15)
+#              return "batt-low";
+#            else if (batt < 60)
+#              return "batt-medium";
 #            else
-#              return "temp-high";
+#              return "batt-ok";
 #            '
 
         - name: Lights

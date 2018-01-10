@@ -8,7 +8,7 @@ mqtt_host="127.0.0.1"
 mqtt_port="1883"
 mqtt_user="homeassistant"
 mqtt_pass="homeassistantMQTTmos"
-timeout=300
+timeout=120
 
 
 function bearer {

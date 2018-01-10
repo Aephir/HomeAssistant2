@@ -8,16 +8,16 @@
 #    Default View    #
 ######################
 
-  default_view:
-    view: yes
-    entities:
-      - switch.espresso_machine
-      - group.living_room_lights
-      - group.bedroom_lights
-      - switch.living_room_media_master
-      - light.couch_lamp
-      - input_boolean.guest_mode
-      - scene.night_light
+#  default_view:
+#    view: yes
+#    entities:
+#      - switch.espresso_machine
+#      - group.living_room_lights
+#      - group.bedroom_lights
+#      - switch.living_room_media_master
+#      - light.couch_lamp
+#      - input_boolean.guest_mode
+#      - scene.night_light
 
 ################
 #    USEFUL    #
@@ -49,14 +49,8 @@
     icon: mdi:information-variant
     view: yes
     entities:
-      - sensor.fibaro_system_fgwpef_wall_plug_gen5_power
-      - sun.sun
-      - sensor.yr_symbol
-      - sensor.yr_temperature
       - group.weather_display
       - sensor.api_streams
-      - sensor.moon
-      - binary_sensor.someonehome360
 #      - sensor.dht22_temperature
 #      - sensor.dht22_humidity
       - group.home_information
@@ -68,18 +62,36 @@
       - weblink.mopidy_iris
       - weblink.mopidy_party
       - weblink.mopidy
-      - sensor.cert_expiry
+      - group.all_people_battery_badges
+      - group.system_information
+
+
+########################
+#__System Information__#
+
+  system_information:
+    name: System Information
+    view: no
+    entities:
+      - sensor.cpu_used
+      - sensor.disk_used
+      - sensor.ram_used
+      - sensor.uptime
+      - sensor.ssl_certificate_expiry
+      - sensor.connected_clients
 
 ######################
 #__Home Information__#
 
   home_information:
-    name: Information In House
+    name: Home Information
     icon: mdi:information-variant
     view: no
     entities:
       - sensor.dht22_temperature
       - sensor.dht22_humidity
+      - sensor.fibaro_system_fgwpef_wall_plug_gen5_power
+      - binary_sensor.someonehome360
 
 ###############
 #    Media    #
@@ -285,6 +297,29 @@
       - sensor.kristina_phone_battery_360
       - device_tracker.emilie_aa172623f9cd406b9007dc08461d2c24
       - sensor.emilie_phone_battery_360
+      - group.people_presence_input_boolean
+
+  people_presence_input_boolean:
+    name: Input Boolean Presence
+    view: no
+    control: hidden
+    entities:
+      - input_boolean.aephirhome360
+      - input_boolean.someonehome360
+      - input_boolean.kristinahome360
+      - input_boolean.emiliehome360
+
+  all_people_battery_badges:
+    name: Family
+    icon: mdi:home
+    view: no
+    entities:
+      - device_tracker.walden_cd926e1b047646b986d2f0c0c3e7d530
+      - device_tracker.kristinabrody_612a3f1e8eae425e9cc514e48649cc46
+      - device_tracker.emilie_aa172623f9cd406b9007dc08461d2c24
+      - sensor.kristina_phone_battery_360
+      - sensor.aephir_phone_battery_360
+      - sensor.emilie_phone_battery_360
 
 #  family_tracker:
 #    mame: Family Tracker
@@ -358,18 +393,21 @@
 #####################
 #__Weather Display__#
   weather_display:
-    name: Weather for Display
+    name: Weather Information
     view: no
     entities:
       - sensor.yr_temperature
       - sensor.dark_sky_summary
       - sensor.dark_sky_hourly_summary
-      - sensor.dark_sky_daily_summary
       - sensor.dark_sky_humidity
       - sensor.dark_sky_wind_speed
       - sensor.dark_sky_wind_bearing
       - sensor.dark_sky_precip_intensity
       - sensor.dark_sky_preci_probability
+      - sensor.moon
+      - sun.sun
+      - sensor.yr_symbol
+      - sensor.yr_temperature
 
 ################
 #    Scenes    #
@@ -417,12 +455,86 @@
       - script.scene_sleepy_bedroom
       - script.scene_bedroom_dim
 
+#####################
+#    Automations    #
+#####################
+
+#####################
+#__All Automations__#
+
+########################
+#__Toggle Automations__#
+
+  toggle_automations:
+    name: Automations
+    icon: mdi:autorenew
+    view: yes
+    entities:
+      - group.last_leave_automations
+      - group.first_home_automations
+      - group.sunset_automations
+      - group.sunrise_automations
+      - group.everyone_left_automations
+
+###############################
+#__Last to Leave Automations__#
+
+  last_leave_automations:
+    name: Last to Leave Automations
+    view: no
+    entities:
+      - automation.aephir_leaves_last
+      - automation.kristina_leaves_last
+#      - automation.emilie_leaves_last
+
+#################################
+#__First to Arrive Automations__#
+
+  first_home_automations:
+    name: First to Arrive Automations
+    icon: mdi:autorenew
+    view: no
+    entities:
+      - automation.someone_arrives_home
+      - automation.someone_arrives_home_boolean
+      - automation.aephir_home_360
+
+########################
+#__Sunset Automations__#
+
+  sunset_automations:
+    name: Sunset Automations
+    icon: mdi:autorenew
+    view: no
+    entities:
+      - automation.sunset_with_someone_home
+
+#########################
+#__Sunrise Automations__#
+
+  sunrise_automations:
+    name: Sunrise Automations
+    icon: mdi:autorenew
+    view: no
+    entities:
+      - automation.sunrise_night_light_off
+
+###############################
+#__Everyone Left Automations__#
+
+  everyone_left_automations:
+    name: Everyone Left Turn Off Automations
+    icon: mdi:autorenew
+    view: no
+    entities:
+      - automation.everyone_left
+
 #################
 #    Scripts    #
 #################
 
 #################
-#__All SCripts__#
+#__All Scripts__#
 
   scripts:
     name: Scripts

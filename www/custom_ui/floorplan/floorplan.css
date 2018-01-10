@@ -322,3 +322,29 @@ svg, svg * {
   fill: #FFFA00 !important;
   fill-opacity: 0.25 !important;
 }
+
+/* Temperature sensor */
+
+
+.batt-critical {
+  fill: #ff0004 !important;
+  fill-opacity: 1 !important;
+}
+
+
+.batt-low {
+  fill: #ff9900 !important;
+  fill-opacity: 1 !important;
+}
+
+
+.batt-medium {
+  fill: #fff200 !important;
+  fill-opacity: 1 !important;
+}
+
+
+.batt-ok {
+  fill: #00ff00 !important;
+  fill-opacity: 1 !important;
+}
