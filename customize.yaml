@@ -111,3 +111,13 @@ switch.living_room_media_master:
   confirm_controls_show_lock: true
   extra_badge:
     entity_id: sensor.fibaro_system_fgwpef_wall_plug_gen5_power
+# Example to make homekit available.
+#switch.example:
+#  homebridge_visible: true
+#  homebridge_name: My awesome switch
+light.*:
+  homebridge_visible: true
+  homebridge_name: Lys
+switch.espresso_machine:
+  homebridge_visible: true
+  homebridge_name: Espresso Maskine
