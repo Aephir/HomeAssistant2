@@ -12,3 +12,6 @@ logs:
   homeassistant.components.device_tracker: error
 #  homeassistant.components.mqtt: notset
   homeassistant.components.camera.mjpeg: critical
+  homeassistant.components.mysensors: debug
+  mysensors: debug
+  homeassistant.components.sensor: critical

@@ -10,7 +10,7 @@
 - platform: systemmonitor
   resources:
     - type: disk_use_percent
-#      arg: /home
+      arg: /
     - type: processor_use
     - type: memory_use_percent
 
@@ -26,7 +26,7 @@
 - platform: template
   sensors:
     sensor_espresso:
-      value_template: '{{ states.switch.espresso_machine.attributes.current_power_w }}'
+      value_template: '{{ states.switch.espresso_machine.attributes.current_power_w | round(0) }}'
       unit_of_measurement: 'W'
 
 - platform: template

@@ -40,6 +40,8 @@ light.*:
     attribute: power_consumption
     unit: W
     blacklist_states: 0
+  homebridge_visible: true
+  homebridge_name: Lys
 
 switch.*:
   custom_ui_state_card: state-card-custom-ui

@@ -50,7 +50,7 @@
     aephirhomecombined:
       friendly_name: Is Aephir Home (3x)
       value_template: "{{ states.input_boolean.aephirhome.state == 'on' }}"
-      entity_id: input_boolean.aephirhome
+#      entity_id: input_boolean.aephirhome
       device_class: occupancy
 
 - platform: template
@@ -63,8 +63,8 @@
           {%- else -%}
           Off
           {%- endif %}
-      entity_id:
-        - input_boolean.kristinahome360
+#      entity_id:
+#        - input_boolean.kristinahome360
 
 - platform: template
   sensors:
@@ -76,8 +76,8 @@
           {%- else -%}
           Off
           {%- endif %}
-      entity_id:
-        - input_boolean.aephirhome360
+#      entity_id:
+#        - input_boolean.aephirhome360
 
 - platform: template
   sensors:
@@ -89,8 +89,8 @@
           {%- else -%}
           Off
           {%- endif %}
-      entity_id:
-        - input_boolean.kristinahome360boolean
+#      entity_id:
+#        - input_boolean.kristinahome360boolean
 
 - platform: template
   sensors:
@@ -102,8 +102,8 @@
           {%- else -%}
           Off
           {%- endif %}
-      entity_id:
-        - input_boolean.aephirhome360boolean
+#      entity_id:
+#        - input_boolean.aephirhome360boolean
 
 - platform: template
   sensors:
@@ -115,5 +115,5 @@
           {%- else -%}
           false
           {%- endif %}
-      entity_id:
-        - input_boolean.someonehome360
+#      entity_id:
+#        - input_boolean.someonehome360

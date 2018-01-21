@@ -15,7 +15,7 @@
    version="1.1"
    id="svg1797"
    inkscape:version="0.92.2 5c3e80d, 2017-08-06"
-   sodipodi:docname="Ben Websters Vej 122 floor plan_real_scale_11.svg">
+   sodipodi:docname="floorplan.svg">
   <sodipodi:namedview
      id="base"
      pagecolor="#ffffff"
@@ -24,10 +24,10 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="0.5"
-     inkscape:cx="915.41565"
+     inkscape:cx="787.41565"
      inkscape:cy="483.57803"
      inkscape:document-units="px"
-     inkscape:current-layer="layer15"
+     inkscape:current-layer="layer5"
      showgrid="false"
      units="px"
      inkscape:window-width="1440"
@@ -1690,6 +1690,50 @@
          font-weight="bold"
          id="text10162">from the Noun Project</text>
     </g>
+    <g
+       id="g1406"
+       transform="matrix(0,0.68487105,-0.80573065,0,388.15403,210.12763)"
+       clip-path="url(#clipPath10183)"
+       style="display:inline;opacity:0.92000002;fill:#d5d7d6;fill-opacity:0.86829277">
+      <g
+         id="g1400"
+         style="fill:#d5d7d6;fill-opacity:0.86829277;fill-rule:evenodd;stroke:none;stroke-width:1">
+        <g
+           id="g1398"
+           transform="translate(-723,-1410)"
+           style="fill:#d5d7d6;fill-opacity:0.86829277">
+          <g
+             id="g1396"
+             transform="translate(723,1410)"
+             style="fill:#d5d7d6;fill-opacity:0.86829277">
+            <path
+               id="path1392"
+               d="m 44.5693,16 c 0.667,-2.247 0.542,-4.813 -0.393,-7.092 l -0.135,-0.309 c -0.115,-0.261 -0.335,-0.461 -0.606,-0.549 -4.21,-1.376 -8.659,-1.376 -12.871,0 -0.271,0.088 -0.492,0.289 -0.606,0.551 l -0.13,0.299 c -0.961,2.142 -1.089,4.669 -0.38,7.1 h -3.879 c 0.667,-2.247 0.542,-4.813 -0.393,-7.092 l -0.135,-0.309 c -0.115,-0.261 -0.335,-0.461 -0.606,-0.549 -4.21,-1.376 -8.659,-1.376 -12.871,0 -0.271,0.088 -0.492,0.289 -0.606,0.551 l -0.13,0.299 c -0.961,2.142 -1.089,4.669 -0.38,7.1 H 8.0003 V 6 h 38 v 10 z m -32.022,0 c -0.744,-2.067 -0.725,-4.343 0.062,-6.183 3.534,-1.064 7.241,-1.067 10.777,-10e-4 0.787,2.011 0.814,4.288 0.078,6.184 z m 19,0 c -0.744,-2.067 -0.725,-4.343 0.062,-6.183 3.535,-1.064 7.242,-1.067 10.777,-10e-4 0.787,2.011 0.814,4.288 0.078,6.184 z M 4.0003,3 c 0,-0.552 0.448,-1 1,-1 h 44 c 0.551,0 1,0.448 1,1 v 13 h -2 V 6 c 0,-1.103 -0.898,-2 -2,-2 h -38 c -1.103,0 -2,0.897 -2,2 v 10 h -2 z m 48,13.185 V 3 c 0,-1.654 -1.346,-3 -3,-3 h -44 c -1.655,0 -3,1.346 -3,3 v 13.185 c -1.161,0.414 -2,1.513 -2,2.815 v 5 h 54 v -5 c 0,-1.302 -0.839,-2.401 -2,-2.815 z"
+               inkscape:connector-curvature="0"
+               style="fill:#d5d7d6;fill-opacity:0.86829277" />
+            <path
+               id="path1394"
+               d="m 0,57 c 0,1.654 1.346,3 3,3 h 48 c 1.654,0 3,-1.346 3,-3 V 26 H 0 Z"
+               inkscape:connector-curvature="0"
+               style="fill:#d5d7d6;fill-opacity:0.86829277" />
+          </g>
+        </g>
+      </g>
+      <text
+         id="text1402"
+         font-weight="bold"
+         font-size="5px"
+         y="75"
+         x="0"
+         style="font-weight:bold;font-size:5px;font-family:'Helvetica Neue', Helvetica, Arial-Unicode, Arial, Sans-serif;fill:#d5d7d6;fill-opacity:0.86829277">Created by Ben Davis</text>
+      <text
+         id="text1404"
+         font-weight="bold"
+         font-size="5px"
+         y="80"
+         x="0"
+         style="font-weight:bold;font-size:5px;font-family:'Helvetica Neue', Helvetica, Arial-Unicode, Arial, Sans-serif;fill:#d5d7d6;fill-opacity:0.86829277">from the Noun Project</text>
+    </g>
   </g>
   <g
      transform="translate(-22065.177,-8992.0405)"
@@ -2241,16 +2285,16 @@
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:6.25052023px;line-height:1.25;font-family:'.Lucida Grande UI';-inkscape-font-specification:'.Lucida Grande UI, Medium';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;display:inline;opacity:1;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.00625052"
-       x="22405.641"
-       y="9210.3457"
+       x="22416.754"
+       y="9256.3828"
        id="text1509"><tspan
          sodipodi:role="line"
-         x="22405.641"
-         y="9210.3457"
+         x="22416.754"
+         y="9256.3828"
          id="tspan1507"
          style="stroke-width:0.00625052"><tspan
-           x="22405.641"
-           y="9210.3457"
+           x="22416.754"
+           y="9256.3828"
            id="tspan1505"
            style="stroke-width:0.00625052">KIDS ROOM</tspan></tspan></text>
     <text
@@ -2287,6 +2331,26 @@
        d="m 22261.221,9151.8057 a 1.7991668,1.7991668 0 0 1 1.802,1.7989 1.7991668,1.7991668 0 0 1 -1.802,1.7993 1.7991668,1.7991668 0 0 1 -1.799,-1.7993 1.7991668,1.7991668 0 0 1 1.799,-1.7989 m -1.347,4.4978 h 2.697 a 1.7991668,1.7991668 0 0 1 1.798,1.7993 v 4.9477 h -1.346 v 6.7466 h -3.601 v -6.7466 h -1.35 v -4.9477 a 1.7991668,1.7991668 0 0 1 1.802,-1.7993 m 9.446,-4.4978 a 1.7991668,1.7991668 0 0 1 1.798,1.7989 1.7991668,1.7991668 0 0 1 -1.798,1.7993 1.7991668,1.7991668 0 0 1 -1.802,-1.7993 1.7991668,1.7991668 0 0 1 1.802,-1.7989 m -1.35,17.9914 v -5.3975 h -2.7 l 2.329,-6.8279 c 0.238,-0.7374 0.911,-1.2682 1.721,-1.2682 0.809,0 1.492,0.5308 1.717,1.2682 l 2.329,6.8279 h -2.697 v 5.3975 z"
        inkscape:connector-curvature="0"
        style="fill:#feffff;fill-opacity:1;stroke-width:0.8995834" />
+    <path
+       style="fill:#3c9dff;fill-opacity:1;stroke-width:0.5291667"
+       inkscape:connector-curvature="0"
+       d="m 22218.944,9132.9898 h 3.175 v 4.234 h 2.561 l -4.149,4.148 -4.149,-4.148 h 2.562 z"
+       id="path1477" />
+    <path
+       id="path1479"
+       d="m 22370.818,9167.6613 h 3.175 v 4.234 h 2.561 l -4.149,4.148 -4.149,-4.148 h 2.562 z"
+       inkscape:connector-curvature="0"
+       style="fill:#3c9dff;fill-opacity:1;stroke-width:0.5291667" />
+    <path
+       style="fill:#3c9dff;fill-opacity:1;stroke-width:0.5291667"
+       inkscape:connector-curvature="0"
+       d="m 22179.251,9223.2385 h -3.175 v -4.234 h -2.561 l 4.149,-4.148 4.149,4.148 h -2.562 z"
+       id="path1481" />
+    <path
+       id="path1483"
+       d="m 22352.085,9206.2189 h -3.175 v -4.234 h -2.561 l 4.149,-4.148 4.149,4.148 h -2.562 z"
+       inkscape:connector-curvature="0"
+       style="fill:#3c9dff;fill-opacity:1;stroke-width:0.5291667" />
   </g>
   <g
      inkscape:label="Layer 6 - Buttons"

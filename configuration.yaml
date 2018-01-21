@@ -108,12 +108,13 @@ group: !include group/group.yaml
 #group: !include_dir_merge_named group/
 input_boolean: !include input/input_boolean.yaml
 input_select: !include input/input_select.yaml
-input_slider: !include input/input_slider.yaml
+input_number: !include input/input_number.yaml
 joaoapps_join: !include misc/joaoapps_join.yaml
 light: !include misc/light.yaml
 logger: !include misc/logger.yaml
 media_player: !include_dir_merge_list media_player/
 mqtt: !include misc/mqtt.yaml
+mysensors: !include mysensors.yaml
 notify: !include misc/notify.yaml
 panel_custom: !include panel_custom.yaml
 scene: !include_dir_merge_list scene/

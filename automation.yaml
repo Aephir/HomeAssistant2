@@ -1,3 +1,16 @@
+#########################
+#                       #
+#      AUTOMATIONS      #
+#                       #
+#########################
+
+##################
+#    Location    #
+##################
+
+#############
+#__Notfiy__#
+
 
 - alias: "Kristina Leave Work"
   trigger:
@@ -20,6 +33,9 @@
 #    service: notify.joaoapps_join
 #    data:
 #      message: "Kristina left work"
+
+###################
+#__Input_Boolean__#
 
 - alias: "aephir_home_360"
   trigger:
@@ -111,6 +127,7 @@
     entity_id:
       - input_boolean.aephirhome360
       - input_boolean.kristinahome360
+      - input_boolean.guest_mode
 #      - input_boolean.emiliehome360
     from: 'off'
     to: 'on'
@@ -180,25 +197,49 @@
     service: homeassistant.turn_off
     entity_id: input_boolean.someonehome360
 
-#- alias: Emilie leaves last
-#  trigger:
-#    platform: state
-#    entity_id:
-#      - input_boolean.emiliehome360
-#    from: 'on'
-#    to: 'off'
-#  condition:
-#    condition: and
-#    conditions:
-#      - condition: state
-#        entity_id: input_boolean.aephirhome360
-#        state: 'off'
-#      - condition: state
-#        entity_id: input_boolean.kristinahome360
-#        state: 'off'
-#  action:
-#    service: homeassistant.turn_off
-#    entity_id: input_boolean.someonehome360
+- alias: Emilie leaves last
+  initial_state: 'off'
+  trigger:
+    platform: state
+    entity_id:
+      - input_boolean.emiliehome360
+    from: 'on'
+    to: 'off'
+  condition:
+    condition: and
+    conditions:
+      - condition: state
+        entity_id: input_boolean.aephirhome360
+        state: 'off'
+      - condition: state
+        entity_id: input_boolean.kristinahome360
+        state: 'off'
+  action:
+    service: homeassistant.turn_off
+    entity_id: input_boolean.someonehome360
+
+- alias: Guest leaves last
+  trigger:
+    platform: state
+    entity_id:
+      - input_boolean.guest_mode
+    from: 'on'
+    to: 'off'
+  condition:
+    condition: and
+    conditions:
+      - condition: state
+        entity_id: input_boolean.aephirhome360
+        state: 'off'
+      - condition: state
+        entity_id: input_boolean.kristinahome360
+        state: 'off'
+  action:
+    service: homeassistant.turn_off
+    entity_id: input_boolean.someonehome360
+
+##################
+#__Meta Tracker__#
 
 - alias: "Update The Meta Tracker"
   trigger:
@@ -209,19 +250,8 @@
     data_template:
       entity_id: '{{trigger.entity_id}}'
 
-#- alias: 'will_it_rain'
-#  trigger:
-#    - platform: state
-#      entity_id: sensor.darkskyXXXXXXXXXXXXXXXXXXXXXXXXx
-#  action:
-#      data_template:
-#      topic: "bed/rgb1/rgb/set"
-#      payload: >
-#      {% if is_state("sensor.openw_forecast", "Clear") %} {"color": { 0, 0, 255}}
-#      {%-elif is_state("sensor.openw_forecast", "Clouds") %} {"color": { 0, 255, 0}}
-#      {%-elif is_state("sensor.openw_forecast", "Rain") %} {"color": {255, 0, 0}}
-#      {%-elif is_state("sensor.openw_forecast", "Snow") %} {"color": {"0, 255, 255}}
-#      {% endif %}
+########################################
+#__Location Based Lights and Switches__#
 
 - alias: "Sunset with someone home"
   trigger:
@@ -256,21 +286,25 @@
       entity_id: input_boolean.someonehome360
       from: 'on'
       to: 'off'
-  condition:
-    condition: state
-    entity_id: input_boolean.guest_mode
-    state: 'off'
+#  condition:
+#    condition: state
+#    entity_id: input_boolean.guest_mode
+#    state: 'off'
   action:
     service: script.turn_on
     entity_id: script.everyone_left_turn_off_everything
 
 - alias: "Sunrise, Night Light Off"
   trigger:
-    - platform: numeric_state
-      entity_id: sun.sun
-      value_template: "{{ state.attributes.elevation }}"
-    # Can be a positive or negative number
-      above: 4.5
+    - platform: sun
+      event: sunrise
+#      offset: '+01:00:00'
+#  trigger:
+#    - platform: numeric_state
+#      entity_id: sun.sun
+#      value_template: "{{ state.attributes.elevation }}"
+#    # Can be a positive or negative number
+#      above: 4.5
   condition:
     condition: and
     conditions:
@@ -287,6 +321,35 @@
     service: light.turn_off
     entity_id: group.stairway_lights
 
+
+#################
+#    Weather    #
+#################
+
+########################
+#__Light Notification__#
+
+#- alias: 'will_it_rain'
+#  trigger:
+#    - platform: state
+#      entity_id: sensor.darkskyXXXXXXXXXXXXXXXXXXXXXXXXx
+#  action:
+#      data_template:
+#      topic: "bed/rgb1/rgb/set"
+#      payload: >
+#      {% if is_state("sensor.openw_forecast", "Clear") %} {"color": { 0, 0, 255}}
+#      {%-elif is_state("sensor.openw_forecast", "Clouds") %} {"color": { 0, 255, 0}}
+#      {%-elif is_state("sensor.openw_forecast", "Rain") %} {"color": {255, 0, 0}}
+#      {%-elif is_state("sensor.openw_forecast", "Snow") %} {"color": {"0, 255, 255}}
+#      {% endif %}
+
+#######################
+#    Notifications    #
+#######################
+
+##################
+#__Certificates__#
+
 #- alias: "Notify Certificate Expiry"
 #  trigger:
 #    - platform: state
@@ -296,3 +359,20 @@
 #    service: joaoapps_join.android_send_sms
 #    data:
 #      message: {"number":"004524494408", "message":"Your Home Assistant SSL certificates will expire in 25 days. Please run the certbot ASAP!","title":"Home Assistant Certificates","data":{"icon":"https://goo.gl/xeetdy"}}
+
+######################
+#    Input Select    #
+######################
+
+#############
+#__iKettle__#
+
+- alias: Set iKettle Tempereature
+  trigger:
+    platform: state
+    entity_id: input_select.ikettle_select
+  action:
+    service: script.turn_on
+    data:
+      entity_id: script.ikettle_test
+      temp: YOURTEMP

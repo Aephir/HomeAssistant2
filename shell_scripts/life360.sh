@@ -1,14 +1,14 @@
 #!/bin/bash
 
 #Set variables
-username360="waldenb@gmail.com"
-password360="weby270683"
+username360=“your@email.com”
+password360=“yourpassword”
 mosquitto_pub="/usr/bin/mosquitto_pub"
 mqtt_host="127.0.0.1"
 mqtt_port="1883"
-mqtt_user="homeassistant"
-mqtt_pass="homeassistantMQTTmos"
-timeout=120
+mqtt_user=“yourMQTTuser”
+mqtt_pass=“yourMQTTpassword”
+timeout=180
 
 
 function bearer {

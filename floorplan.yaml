@@ -151,28 +151,58 @@
           entities:
             - sensor.aephir_phone_battery_360
           text_template: '${entity.state ? Math.ceil(entity.state) + "%": "undefined"}'
-          class_template: 'return "static-temp";'
+          class_template: '
+            var batt = parseFloat(entity.state);
+            if (batt < 5)
+              return "batt-critical";
+            else if (batt < 15)
+              return "batt-low";
+            else if (batt < 60)
+              return "batt-medium";
+            else
+              return "batt-ok";
+            '
 
-        - name: emile_360_battery
+        - name: emilie_360_battery
           entities:
             - sensor.emilie_phone_battery_360
           text_template: '${entity.state ? Math.ceil(entity.state) + "%": "undefined"}'
-          class_template: 'return "static-temp";'
+          class_template: '
+            var batt = parseFloat(entity.state);
+            if (batt < 5)
+              return "batt-critical";
+            else if (batt < 15)
+              return "batt-low";
+            else if (batt < 60)
+              return "batt-medium";
+            else
+              return "batt-ok";
+            '
 
         - name: kristina_360_battery
           entities:
             - sensor.kristina_phone_battery_360
           text_template: '${entity.state ? Math.ceil(entity.state) + "%": "undefined"}'
-          class_template: 'return "static-temp";'
+          class_template: '
+            var batt = parseFloat(entity.state);
+            if (batt < 5)
+              return "batt-critical";
+            else if (batt < 15)
+              return "batt-low";
+            else if (batt < 60)
+              return "batt-medium";
+            else
+              return "batt-ok";
+            '
 
 #        - name: Sensors
 #          entities:
 #             -  sensor.aephir_phone_battery_360
-#          #text_template: '${entity.state ? entity.state : "unknown"}'
+#          text_template: '${entity.state ? entity.state : "unknown"}'
 #          # An example of rounding up a number, i.e. a battery percentage of 90.1 becomes 91
-#          text_template: '${entity.state ? Math.ceil(entity.state) : "undefined"}'
+#          #text_template: '${entity.state ? Math.ceil(entity.state) : "undefined"}'
 #          class_template: '
-##            var batt = parseFloat(entity.state.replace("%", ""));
+#            var batt = parseFloat(entity.state);
 #            if (batt < 5)
 #              return "batt-critical";
 #            else if (batt < 15)

@@ -8,16 +8,18 @@
 #    Default View    #
 ######################
 
-#  default_view:
-#    view: yes
-#    entities:
-#      - switch.espresso_machine
-#      - group.living_room_lights
-#      - group.bedroom_lights
-#      - switch.living_room_media_master
-#      - light.couch_lamp
-#      - input_boolean.guest_mode
-#      - scene.night_light
+  default_view:
+    view: yes
+    entities:
+      - switch.espresso_machine
+      - group.living_room_lights
+      - group.bedroom_lights
+      - group.stairway_lights
+      - switch.living_room_media_master
+      - scene.night_light
+      - scene.bedroom_dim
+      - sensor.someonehome
+      - input_boolean.guest_mode
 
 ################
 #    USEFUL    #
@@ -592,10 +594,10 @@
     icon: mdi:biohazard
     view: yes
     entities:
-      - input_slider.libreelec_volume
-      - input_slider.ue46es8005_volume
-      - input_slider.mopidy_volume
-      - input_select.living_room_scenes
+      - input_number.libreelec_volume
+      - input_number.ue46es8005_volume
+      - input_number.mopidy_volume
+      - input_number.living_room_scenes
       - script.ifttt_desktop_computer_off
       - script.going_to_bed
       - script.going_to_sleep

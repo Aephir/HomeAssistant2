@@ -26,6 +26,8 @@ switch.espresso_machine:
   entity_picture: /local/images/silvia.jpg
   extra_badge:
     entity_id: sensor.sensor_espresso
+  homebridge_visible: true
+  homebridge_name: Espresso Maskine
 #    unit: W
 #  custom_ui_state_card: custom_cover
 #  extra_badge:
@@ -115,9 +117,3 @@ switch.living_room_media_master:
 #switch.example:
 #  homebridge_visible: true
 #  homebridge_name: My awesome switch
-light.*:
-  homebridge_visible: true
-  homebridge_name: Lys
-switch.espresso_machine:
-  homebridge_visible: true
-  homebridge_name: Espresso Maskine
