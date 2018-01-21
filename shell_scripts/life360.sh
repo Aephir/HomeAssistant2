@@ -1,13 +1,13 @@
 #!/bin/bash
 
 #Set variables
-username360=“your@email.com”
-password360=“yourpassword”
+username360="waldenb@gmail.com"
+password360="weby270683"
 mosquitto_pub="/usr/bin/mosquitto_pub"
 mqtt_host="127.0.0.1"
 mqtt_port="1883"
-mqtt_user=“yourMQTTuser”
-mqtt_pass=“yourMQTTpassword”
+mqtt_user="homeassistant"
+mqtt_pass="homeassistantMQTTmos"
 timeout=180
 
 

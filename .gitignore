@@ -28,5 +28,6 @@ html5_push_registrations.conf
 ip_bans.yaml
 /icloud/*
 shell_scripts/life360.sh
+/home/homeassistant/.homeassistant/shell_scripts/life360.sh
 *.bk
 *pass.sh
