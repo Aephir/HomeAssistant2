@@ -31,3 +31,4 @@ shell_scripts/life360.sh
 /home/homeassistant/.homeassistant/shell_scripts/life360.sh
 *.bk
 *pass.sh
+life360.*
