@@ -47,3 +47,4 @@ matrix_off: /home/homeassistant/.homeassistant/shell_scripts/shutdown_matrix.sh
 #######################
 
 reboot_hass: bash /home/homeassistant/.homeassistant/shell_scripts/reboot_home_assistant.sh
+renew_ssl: bash /home/homeassistant/.homeassistant/shell_scripts/update_certificates.sh

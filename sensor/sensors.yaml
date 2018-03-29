@@ -22,8 +22,9 @@
 - platform: command_line
   name: SSL cert expiry
   unit_of_measurement: days
-  scan_interval: 86400
-  command: "ssl-cert-check -b -c /etc/letsencrypt/live/hassbian-three.duckdns.org/cert.pem | awk '{ print $NF }' "
+#  scan_interval: 86400
+  scan_interval: 10
+  command: "ssl-cert-check -b -c /etc/letsencrypt/live/hassbian-three.duckdns.org/cert.pem | awk '{ print $NF }'"
 
 ###################
 #__Power Sensors__#
