@@ -1,0 +1,69 @@
+light.bedroom_stairway:
+  platform: hue
+  unique_id: 00:17:88:01:00:dc:ec:c7-0b
+light.hue_ambiance_lamp_2:
+  platform: hue
+  unique_id: 00:17:88:01:10:2e:9a:e0-0b
+light.waldens_bedroom:
+  platform: hue
+  unique_id: 00:17:88:01:00:de:fa:b7-0b
+light.hue_ambiance_lamp_1:
+  platform: hue
+  unique_id: 00:17:88:01:10:25:ce:b7-0b
+light.hue_lightstrip_plus_1:
+  platform: hue
+  unique_id: 00:17:88:01:01:1d:aa:31-0b
+light.couch_lamp:
+  platform: hue
+  unique_id: 00:17:88:01:00:f6:5e:55-0b
+light.kristinas_bedroom:
+  platform: hue
+  unique_id: 00:17:88:01:00:dd:07:ec-0b
+media_player.living_room:
+  platform: sonos
+  unique_id: RINCON_000E5880939001400
+sensor.iphone_battery_level:
+  platform: ios
+  unique_id: level_Kristinas iPhone
+sensor.iphone_battery_state:
+  platform: ios
+  unique_id: state_Kristinas iPhone
+sensor.iphone_battery_state_2:
+  platform: ios
+  unique_id: state_Kristinas_iPhone
+sensor.iphone_battery_level_2:
+  platform: ios
+  unique_id: level_Kristinas_iPhone
+switch.espresso_machine:
+  platform: wemo
+  unique_id: 221511K1200E09
+switch.fibaro_system_fgwpef_wall_plug_gen5_switch:
+  platform: zwave
+  unique_id: 3-72057594093060096
+sensor.fibaro_system_fgwpef_wall_plug_gen5_power:
+  platform: zwave
+  unique_id: 3-72057594093256770
+sensor.fibaro_system_fgwpef_wall_plug_gen5_energy:
+  platform: zwave
+  unique_id: 3-72057594093273090
+sensor.fibaro_system_fgwpef_wall_plug_gen5_power_2:
+  platform: zwave
+  unique_id: 3-72057594093273218
+sensor.fibaro_system_fgwpef_wall_plug_gen5_exporting:
+  platform: zwave
+  unique_id: 3-72057594093273600
+sensor.fibaro_system_fgwpef_wall_plug_gen5_alarm_type:
+  platform: zwave
+  unique_id: 3-72057594094305281
+sensor.fibaro_system_fgwpef_wall_plug_gen5_alarm_level:
+  platform: zwave
+  unique_id: 3-72057594094305297
+sensor.fibaro_system_fgwpef_wall_plug_gen5_sourcenodeid:
+  platform: zwave
+  unique_id: 3-72057594094305313
+sensor.fibaro_system_fgwpef_wall_plug_gen5_power_management:
+  platform: zwave
+  unique_id: 3-72057594094305457
+switch.desktop:
+  platform: wemo
+  unique_id: 221519K12002C7

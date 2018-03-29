@@ -7,3 +7,28 @@
 - platform: hue
   host: 192.168.0.10
   allow_unreachable: true
+
+##########################
+#                        #
+#      LIGHT GROUPS      #
+#                        #
+##########################
+
+- platform: group
+  name: Living Room Lights
+  entities:
+    - light.hue_lightstrip_plus_1
+    - light.couch_lamp
+
+- platform: group
+  name: Bedroom Lights
+  entities:
+    - light.bedroom_stairway
+    - light.kristinas_bedroom
+    - light.waldens_bedroom
+
+- platform: group
+  name: Stairway Lights
+  entities:
+    - light.hue_ambiance_lamp_1
+    - light.hue_ambiance_lamp_2

@@ -27,3 +27,7 @@
   gcm_api_key: !secret gcm-sender-key
   gcm_sender_id: !secret gcm-sender-id
 
+- name: telegram
+  platform: telegram
+  api_key: !secret telegram_key
+  chat_id: !secret telegram_chatID_Aephir

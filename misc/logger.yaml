@@ -4,10 +4,21 @@
 #                  #
 ####################
 
+# Severity, ranked:
+# critical
+# fatal
+# error
+# warning
+# warn
+# info
+# debug
+# notset
+
 default: warn
 logs:
   homeassistant.components.wemo: debug
   homeassistant.components.media_player: critical
+  homeassistant.components.media_player.ue46es8005: critical
   homeassistant.components.owntracks: fatal
   homeassistant.components.device_tracker: error
 #  homeassistant.components.mqtt: notset

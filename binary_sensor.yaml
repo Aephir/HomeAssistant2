@@ -14,6 +14,31 @@
 #    Occupancy    #
 ###################
 
+- platform: bayesian
+  prior: 0.1
+  probability_threshold: 0.9
+  name: 'Baysian Aephir Home'
+  observations:
+    - entity_id: 'device_tracker.walden_cd926e1b047646b986d2f0c0c3e7d530'
+      prob_given_true: 0.6
+      prob_given_false: 0.2
+      platform: 'state'
+      to_state: 'home'
+    - entity_id: 'device_tracker.aephir_ping'
+      prob_given_true: 0.9
+      prob_given_false: 0.1
+      platform: 'state'
+      to_state: 'home'
+
+
+#- platform: mqtt
+#  state_topic: "wallpanel/mywallpanel/sensor/motion"
+#  name: "Motion"
+#  payload_on: '{"value":true}'
+#  payload_off: '{"value":false}'
+#  device_class: motion
+
+
 #- platform: template
 #  sensors:
 #    someonehome360:
@@ -63,8 +88,6 @@
           {%- else -%}
           Off
           {%- endif %}
-#      entity_id:
-#        - input_boolean.kristinahome360
 
 - platform: template
   sensors:
@@ -76,8 +99,6 @@
           {%- else -%}
           Off
           {%- endif %}
-#      entity_id:
-#        - input_boolean.aephirhome360
 
 - platform: template
   sensors:
@@ -89,8 +110,6 @@
           {%- else -%}
           Off
           {%- endif %}
-#      entity_id:
-#        - input_boolean.kristinahome360boolean
 
 - platform: template
   sensors:
@@ -102,8 +121,6 @@
           {%- else -%}
           Off
           {%- endif %}
-#      entity_id:
-#        - input_boolean.aephirhome360boolean
 
 - platform: template
   sensors:
@@ -115,5 +132,3 @@
           {%- else -%}
           false
           {%- endif %}
-#      entity_id:
-#        - input_boolean.someonehome360

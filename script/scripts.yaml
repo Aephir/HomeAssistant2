@@ -18,6 +18,18 @@
         data:
           message: 'Movie night'
 
+  all_but_bedroom_off:
+    alias: All Lights Off Except Bedroom
+    sequence:
+      - service: homeassistant.turn_on
+        data:
+          entity_id: scene.all_but_bedroom_off
+      - service: switch.turn_off
+        data:
+          entity_id: switch.living_room_media_master
+      - service: switch.turn_off
+        data:
+          entity_id: switch.espresso_machine
 
 ##
 # Home Modes
@@ -28,7 +40,6 @@
       - service: input_boolean.toggle
         data:
           entity_id: input_boolean.guest_mode
-
 
   good_night:
     alias: Good Night
@@ -84,6 +95,24 @@
     sequence:
       - service: light.turn_off
         entity_id: group.stairway_lights
+
+  toggle_bedroom_lights:
+    sequence:
+    - service_template: script.toggle_bedroom_lights_{% if is_state('group.bedroom_lights', 'off') %}on{% else %}off{% endif %}
+
+  toggle_bedroom_lights_on:
+    sequence:
+      - service: light.turn_on
+        entity_id: group.bedroom_lights
+        data:
+          brightness: 180
+#          rgb_color: [ 255, 0, 0]
+          color_temp: 369
+
+  toggle_bedroom_lights_off:
+    sequence:
+      - service: light.turn_off
+        entity_id: group.bedroom_lights
 
 ##
 # Say

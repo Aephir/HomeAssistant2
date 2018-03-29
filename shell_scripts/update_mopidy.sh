@@ -1,0 +1,3 @@
+#!/bin/bash
+
+ssh -p 145 -i /home/homeassistant/connection/privatekey_libreelec pi@192.168.0.145 "sudo apt-get update && sudo apt-get upgrade -y && sudo pip install --upgrade Mopidy-Iris"

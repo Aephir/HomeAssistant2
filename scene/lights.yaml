@@ -32,6 +32,24 @@
       state: off
       transition: 2
 
+- name: all_but_bedroom_off
+  entities:
+    light.couch_lamp:
+      state: off
+      transition: 2
+    light.hue_lightstrip_plus_1:
+      state: off
+      transition: 2
+    light.hue_ambiance_lamp_1:
+      state: off
+      transition: 2
+    light.hue_ambiance_lamp_2:
+      state: off
+      transition: 2
+    light.bedroom_stairway:
+      state: off
+      transition: 2
+
 #####################
 #    Living Room    #
 #####################
@@ -129,12 +147,12 @@
   entities:
     light.couch_lamp:
       state: on
-      transition: 10
+      transition: 120
       brightness: 150
       color_temp: 400
     light.hue_lightstrip_plus_1:
       state: on
-      transition: 10
+      transition: 120
       brightness: 175
       color_temp: 400
 

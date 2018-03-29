@@ -134,6 +134,21 @@ svg, svg * {
   fill: #FFFF01 !important;
 }
 
+
+/* TV */
+
+
+.tv-off {
+  fill: #505050 !important;
+  stroke: #505050 !important;
+}
+
+.tv-on {
+  fill: #FFFF3C !important;
+  stroke: #FFFF3C !important;
+}
+
+
 /* Media */
 
 
@@ -227,7 +242,7 @@ svg, svg * {
 
 /* Temperature sensor */
 
-
+/*
 .temp-very-low-background {
   fill: #d9edf7 !important;
   fill-opacity: 1 !important;
@@ -250,7 +265,7 @@ svg, svg * {
   fill: #f2dede !important;
   fill-opacity: 1 !important;
 }
-
+*/
 
 /* Media player */
 
@@ -323,6 +338,20 @@ svg, svg * {
   fill-opacity: 0.25 !important;
 }
 
+/* SONOS */
+
+
+.sonos-off {
+  fill: #42373C !important;
+  fill-opacity: 0 !important;
+}
+
+.sonos-pause {
+  fill: #420091 !important;
+  fill-opacity: 0.25 !important;
+}
+
+
 /* Battery sensor */
 
 
@@ -346,5 +375,57 @@ svg, svg * {
 
 .batt-ok {
   fill: #00ff00 !important;
+  fill-opacity: 1 !important;
+}
+
+/* Outdoor Temperature */
+
+
+.temp-very-low {
+  fill: #00a1ff !important;
+  fill-opacity: 1 !important;
+}
+
+
+.temp-low {
+  fill: #00ddff !important;
+  fill-opacity: 1 !important;
+}
+
+
+.temp-good {
+  fill: #00c609 !important;
+  fill-opacity: 1 !important;
+}
+
+
+.temp-high {
+  fill: #ff4c00 !important;
+  fill-opacity: 1 !important;
+}
+
+/* Intdoor Temperature */
+
+
+.temp-in-very-low {
+  fill: #00a1ff !important;
+  fill-opacity: 1 !important;
+}
+
+
+.temp-in-low {
+  fill: #00ddff !important;
+  fill-opacity: 1 !important;
+}
+
+
+.temp-in-good {
+  fill: #00c609 !important;
+  fill-opacity: 1 !important;
+}
+
+
+.temp-in-high {
+  fill: #ff4c00 !important;
   fill-opacity: 1 !important;
 }

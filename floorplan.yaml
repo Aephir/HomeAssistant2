@@ -4,9 +4,9 @@
 
       # These options are optional
       warnings:                  # enable warnings (to find out why things might ot be working correctly)
-      # pan_zoom:                  # enable experimental panning / zooming
+#      pan_zoom:                  # enable experimental panning / zooming
       hide_app_toolbar:          # hide the application toolbar (when used as a custom panel)
-      # date_format: DD-MMM-YYYY   # Date format to use in hover-over text
+      date_format: YYYY-MM-DD   # Date format to use in hover-over text
 
       groups:
 
@@ -20,7 +20,18 @@
           entities:
             - sensor.dht22_temperature
           text_template: '${entity.state ? Math.ceil(entity.state) + " °C": "undefined"}'
-          class_template: 'return "static-temp";'
+#          class_template: 'return "static-temp";'
+          class_template: '
+            var temp = parseFloat(entity.state);
+            if (temp < 15)
+              return "temp-in-very-low";
+            else if (temp < 19)
+              return "temp-in-low";
+            else if (temp < 21)
+              return "temp-in-good";
+            else
+              return "temp-in-high";
+            '
 
         - name: dht22_humidity
           entities:
@@ -32,19 +43,52 @@
           entities:
             - sensor.dark_sky_temperature
           text_template: '${entity.state ? Math.ceil(entity.state) + " °C": "undefined"}'
-          class_template: 'return "static-temp";'
+          class_template: '
+            var temp = parseFloat(entity.state);
+            if (temp < 0)
+              return "temp-very-low";
+            else if (temp < 15)
+              return "temp-low";
+            else if (temp < 25)
+              return "temp-good";
+            else
+              return "temp-high";
+            '
 
         - name: dark_sky_high_temperature
           entities:
             - sensor.dark_sky_daily_high_temperature
           text_template: '${entity.state ? Math.ceil(entity.state) + " °C": "undefined"}'
-          class_template: 'return "static-temp";'
+#          class_template: 'return "static-temp";'
+          class_template: '
+            var temp = parseFloat(entity.state);
+            if (temp < 0)
+              return "temp-very-low";
+            else if (temp < 15)
+              return "temp-low";
+            else if (temp < 25)
+              return "temp-good";
+            else
+              return "temp-high";
+            '
+
 
         - name: dark_sky_low_temperature
           entities:
             - sensor.dark_sky_daily_low_temperature
           text_template: '${entity.state ? Math.ceil(entity.state) + " °C": "undefined"}'
-          class_template: 'return "static-temp";'
+#          class_template: 'return "static-temp";'
+          class_template: '
+            var temp = parseFloat(entity.state);
+            if (temp < 0)
+              return "temp-very-low";
+            else if (temp < 15)
+              return "temp-low";
+            else if (temp < 25)
+              return "temp-good";
+            else
+              return "temp-high";
+            '
 
         - name: dark_sky_precip_intensity
           entities:
@@ -195,6 +239,7 @@
               return "batt-ok";
             '
 
+
 #        - name: Sensors
 #          entities:
 #             -  sensor.aephir_phone_battery_360
@@ -222,6 +267,9 @@
              - light.hue_lightstrip_plus_1
              - light.kristinas_bedroom
              - light.waldens_bedroom
+             - light.living_room_lights
+             - light.bedroom_lights
+             - light.stairway_lights
           states:
             - state: 'on'
               class: 'light-on'
@@ -231,29 +279,17 @@
 #            domain: light
             service: toggle
 
-        - name: Toggle Living Room Lights
+        - name: TV
           entities:
-             - script.toggle_living_room_lights
+             - media_player.ue46es8005
           states:
             - state: 'on'
-              class: 'light-group-on'
+              class: 'tv-on'
             - state: 'off'
-              class: 'light-group-off'
+              class: 'tv-off'
           action:
-            domain: script
-            service: toggle_living_room_lights
-
-        - name: Toggle Entrance Lights
-          entities:
-             - script.toggle_entrance_lights
-          states:
-            - state: 'on'
-              class: 'light-group-on'
-            - state: 'off'
-              class: 'light-group-off'
-          action:
-            domain: script
-            service: toggle_entrance_lights
+#            domain: media_player
+            service: toggle
 
         - name: Espresso
           entities:
@@ -309,6 +345,13 @@
             domain: script
             service: scene_all_lights_off
 
+        - name: Bedtime
+          entities:
+             - script.all_but_bedroom_off
+          action:
+            domain: script
+            service: all_but_bedroom_off
+
         - name: movie_night
           entities:
              - script.movie_night
@@ -328,6 +371,13 @@
 #            - state: 'off'
 #              class: 'generic-button-off'
 
+        - name: welcome_home_lights
+          entities:
+             - script.scene_welcome_home_lights
+          action:
+            domain: script
+            service: scene_welcome_home_lights
+
         - name: guest_mode
           entities:
              - input_boolean.guest_mode
@@ -342,7 +392,6 @@
               class: 'generic-button-on'
             - state: 'off'
               class: 'generic-button-off'
-
 
         - name: good_night
           entities:
@@ -363,6 +412,17 @@
           text_template: '${entity.state ? entity.state : "undefined"}'
           class_template: 'return "static-text-date";'
 
+        - name: SONOS
+          entities:
+             - media_player.living_room
+          states:
+            - state: 'playing'
+              class: 'sonos-on'
+            - state: 'paused'
+              class: 'sonos-pause'
+          action:
+            domain: media_player
+            service: media_play_pause
 
 #        - name: NVR
 #          entities:
@@ -411,9 +471,10 @@
 #            - camera.driveway
 #            - camera.front_door
 #            - camera.backyard
-#          states:
+#          states: ## Have either "states" or "camera_image_template"??
 #            - state: 'idle'
 #              class: 'camera-idle'
+#          camera_image_template: '${entity.attributes.entity_picture}'
 
 #        - name: thermostat_temp
 #          entities:

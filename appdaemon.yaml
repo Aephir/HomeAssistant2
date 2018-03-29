@@ -1,0 +1,33 @@
+secrets: /home/homeassistant/.homeassistant/secrets.yaml
+log:
+  accessfile: /mnt/hassdata/appdaemon/access.log
+  errorfile: /mnt/hassdata/appdaemon/error.log
+  logfile: /mnt/hassdata/appdaemon/appdaemon.log
+  log_generations: 3
+  log_size: 1000000
+appdaemon:
+  logfile: STDOUT
+  errorfile: STDERR
+  threads: 10
+  api_port: 5000
+  app_dir: /home/homeassistant/.homeassistant/appdaemon/apps
+  api_key: !secret appdaemon_api_key
+#  api_ssl_certificate: !secret letsencrypt_cert # full path to cert.pem file used for duckdns
+#  api_ssl_key: !secret letsencrypt_prikey # full path to prikey.pem file used for duckdns
+  plugins:
+    HASS:
+      type: hass
+#      ha_url: secret_base_url # https:// duckdns IP
+      ha_url: http://192.168.0.160:8123
+      ha_key: !secret api_password
+#      cert_path: !secret letsencrypt_cert # full path to cert.pem file used for duckdns
+#      cert_verify: True
+      namespace: default
+hadashboard:
+  dashboard_dir: /home/homeassistant/.homeassistant/appdaemon/dashboards/
+#  dash_url: secret hadash_url # https:// duckdns IP : port
+  dash_url: http://192.168.0.160:5050
+#  dash_ssl_certificate: !secret letsencrypt_fullchain # location of live let'sencrypt fullchain.pem file
+#  dash_ssl_key: !secret letsencrypt_prikey # location of live let'sencrypt privkey.pem file
+#  dash_password: !secret dash_password
+#  dash_compile_on_start: 1

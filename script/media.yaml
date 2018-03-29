@@ -11,10 +11,19 @@
       - service: script.turn_on
         data:
           entity_id: script.kodi_shut_off
+      - service: script.turn_on
+        data:
+          entity_id: script.matrix_shut_off
       - delay: 00:00:15
       - service: switch.turn_off
         data:
           entity_id: switch.fibaro_system_fgwpef_wall_plug_gen5_switch
+
+  matrix_shut_off:
+    alias: Shut down MATRIX voice
+    sequence:
+      - service: shell_command.matrix_off
+
 
   mopidy_shut_off:
     alias: Shut down Mopidy
@@ -25,6 +34,11 @@
     alias: Reboot Mopidy
     sequence:
       - service: shell_command.reboot_mopidy
+
+  mopidy_upgrade:
+    alias: Upgrade Mopidy
+    sequence:
+      - service: shell_command.upgrade_mopidy
 
   kodi_shut_off:
     alias: Shut down libreELEC

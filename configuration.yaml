@@ -24,16 +24,15 @@ homeassistant:
 
 http:
   api_password: !secret api_password
-  ssl_certificate: !secret my_ssl_certificate
-  ssl_key: !secret my_ssl_key
-  base_url: !secret secret_base_url
+#  ssl_certificate: !secret my_ssl_certificate
+#  ssl_key: !secret my_ssl_key
+#  base_url: !secret secret_base_url
   ip_ban_enabled: True
   login_attempts_threshold: 3
   trusted_networks:
     - 127.0.0.1
     - ::1
     - 192.168.0.0/24
-
 
 ###############
 #    IFTTT    #
@@ -52,13 +51,22 @@ zwave:
 #  device_config: !include zwave_device_config.yaml
 wemo:
   static:
-    - 192.168.0.6
-    - 192.168.0.11
-ios:
+    - 192.168.0.6 # Espresso WeMo
+    - 192.168.0.11 # Desktop WeMo
+#ios:
+homekit:
+  pincode: !secret homekit_pincode
 map:
 hue:
   bridges:
     - host: 192.168.0.10
+shopping_list:
+
+telegram_bot:
+- platform: polling
+  api_key: !secret telegram_key
+  allowed_chat_ids:
+    - !secret telegram_chatID_Aephir
 
 #################
 #    Enables    #

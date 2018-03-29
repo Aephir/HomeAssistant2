@@ -1,0 +1,51 @@
+##
+## Main arguments, all optional
+##
+title: Simple Control
+widget_dimensions: [120, 120]
+widget_margins: [5, 5]
+columns: 8
+
+clock:
+    widget_type: clock
+    time_format: 24hr
+    date_format_country: "dk"
+    date_format_options:
+      weekday: "short"
+      day: "numeric"
+      month: "numeric"
+
+living_room_lights:
+    title: Lys i stuen
+    widget_style: "font-size: 150%;"
+    widget_type: light
+    use_hass_icon: 1
+    entity: light.living_room_lights
+
+stairway_lights:
+    title: Lys på trapperne
+    widget_style: "font-size: 150%;"
+    widget_type: light
+    use_hass_icon: 1
+    entity: light.stairway_lights
+
+bedroom_lights:
+    title: Lys i soveværelset
+    widget_style: "font-size: 150%;"
+    widget_type: light
+    use_hass_icon: 1
+    entity: light.bedroom_lights
+
+guest_mode:
+    title: Gæster i huset
+    widget_style: "font-size: 150%;"
+    widget_type: switch
+    icon_on: mdi-home-account
+    icon_off: mdi-home
+    entity: input_boolean.guest_mode
+
+layout:
+    - device_tracker.walden_cd926e1b047646b986d2f0c0c3e7d530, device_tracker.kristinabrody_612a3f1e8eae425e9cc514e48649cc46, device_tracker.emilie_aa172623f9cd406b9007dc08461d2c24, clock(2x1), switch.espresso_machine, switch.living_room_media_master
+    - light.hue_lightstrip_plus_1(1x1), light.couch_lamp(1x1), light.hue_ambiance_lamp_1(1x1), light.hue_ambiance_lamp_2(1x1), light.kristinas_bedroom(1x1), light.waldens_bedroom(1x1), light.bedroom_stairway(1x1)
+    - living_room_lights(2x2), stairway_lights(2x2), bedroom_lights(2x2), guest_mode(1x2)
+    -

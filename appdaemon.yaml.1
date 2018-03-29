@@ -1,0 +1,10 @@
+secrets: /home/homeassistant/.homeassistant/secrets.yaml
+
+appdaemon:
+  threads: 10
+  plugins:
+    HASS:
+      type: hass
+#      ha_url: https://hassbian-three.duckdns.org
+      ha_url: http://192.168.0.160:8123
+      ha_key: !secret api_password

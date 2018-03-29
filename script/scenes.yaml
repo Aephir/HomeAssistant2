@@ -5,6 +5,13 @@
 ############
 #__Lights__#
 
+  scene_welcome_home_lights:
+    alias: Welcome Home Lights
+    sequence:
+      - service: scene.turn_on
+        data:
+          entity_id: scene.welcome_home
+
   scene_living_room_bright:
     alias: Bright Living Room
     sequence:

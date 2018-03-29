@@ -11,117 +11,134 @@
 #############
 #__Notfiy__#
 
-
-- alias: "Kristina Leave Work"
+- alias: "Kristina Leave Work" # Message through Join if Kristina leaves work - doesn't work...
   trigger:
     platform: state
     from: 'work_kristina'
     to: 'away'
     entity_id: device_tracker.kristinabrody_612a3f1e8eae425e9cc514e48649cc46
   action:
-    service: notify.joaoapps_join
+    service: notify.telegram
     data:
       message: "Kristina left work"
-
-#- alias: "Kristina Leave Work"
-#  trigger:
-#    - platform: state
-#      entity_id: device_tracker.kristinabrody_612a3f1e8eae425e9cc514e48649cc46
-#      zone: zone.work_kristina
-#      event: leave
-#  action:
-#    service: notify.joaoapps_join
-#    data:
-#      message: "Kristina left work"
 
 ###################
 #__Input_Boolean__#
 
-- alias: "aephir_home_360"
+- alias: "aephir_home_360" # Turns on the "aephirhome360" input_boolean if Aephir arrives home
   trigger:
     - platform: state
       entity_id: device_tracker.walden_cd926e1b047646b986d2f0c0c3e7d530
       from: 'not_home'
       to: 'home'
-  condition:
-    - condition: state
-      entity_id: input_boolean.aephirhome360
-      state: 'off'
+#  condition:
+#    - condition: state
+#      entity_id: input_boolean.aephirhome360
+#      state: 'off'
   action:
     service: homeassistant.turn_on
     entity_id: input_boolean.aephirhome360
 
-- alias: "aephir_not_home_360"
+
+#- alias: "aephir_home_360"
+#  trigger:
+#    - platform: state
+#      entity_id: device_tracker.walden_cd926e1b047646b986d2f0c0c3e7d530
+#      from: 'not_home'
+#      to: 'home'
+##  condition:
+##    - condition: state
+##      entity_id: input_boolean.aephirhome360
+##      state: 'off'
+#  action:
+#    service: homeassistant.turn_on
+#    entity_id: input_boolean.aephirhome360
+
+- alias: "aephir_not_home_360" # Turns off the "aephirhome360" input_boolean if Aephir leaves home
   trigger:
     - platform: state
       entity_id: device_tracker.walden_cd926e1b047646b986d2f0c0c3e7d530
       from: 'home'
       to: 'not_home'
-  condition:
-    - condition: state
-      entity_id: input_boolean.aephirhome360
-      state: 'on'
+#  condition:
+#    - condition: state
+#      entity_id: input_boolean.aephirhome360
+#      state: 'on'
   action:
     service: homeassistant.turn_off
     entity_id: input_boolean.aephirhome360
 
-- alias: "kristina_home_360"
+#- alias: "aephir_not_home_360"
+#  trigger:
+#    - platform: state
+#      entity_id: device_tracker.walden_cd926e1b047646b986d2f0c0c3e7d530
+#      from: 'home'
+#      to: 'not_home'
+##  condition:
+##    - condition: state
+##      entity_id: input_boolean.aephirhome360
+##      state: 'on'
+#  action:
+#    service: homeassistant.turn_off
+#    entity_id: input_boolean.aephirhome360
+
+- alias: "kristina_home_360" # Turns on the "kristinahome360" input_boolean if Kristina arrives home
   trigger:
     - platform: state
       entity_id: device_tracker.kristinabrody_612a3f1e8eae425e9cc514e48649cc46
       from: 'not_home'
       to: 'home'
-  condition:
-    - condition: state
-      entity_id: input_boolean.kristinahome360
-      state: 'off'
+#  condition:
+#    - condition: state
+#      entity_id: input_boolean.kristinahome360
+#      state: 'off'
   action:
     service: homeassistant.turn_on
     entity_id: input_boolean.kristinahome360
 
-- alias: "kristina_not_home_360"
+- alias: "kristina_not_home_360" # Turns off the "kristinahome360" input_boolean if Kristina leaves home
   trigger:
     - platform: state
       entity_id: device_tracker.kristinabrody_612a3f1e8eae425e9cc514e48649cc46
       from: 'home'
       to: 'not_home'
-  condition:
-    - condition: state
-      entity_id: input_boolean.kristinahome360
-      state: 'on'
+#  condition:
+#    - condition: state
+#      entity_id: input_boolean.kristinahome360
+#      state: 'on'
   action:
     service: homeassistant.turn_off
     entity_id: input_boolean.kristinahome360
 
-- alias: "emilie_home_360"
+- alias: "emilie_home_360" # Turns on the "emiliehome360" input_boolean if Emilie arrives home
   trigger:
     - platform: state
       entity_id: device_tracker.emilie_aa172623f9cd406b9007dc08461d2c24
       from: 'not_home'
       to: 'home'
-  condition:
-    - condition: state
-      entity_id: input_boolean.emiliehome360
-      state: 'off'
+#  condition:
+#    - condition: state
+#      entity_id: input_boolean.emiliehome360
+#      state: 'off'
   action:
     service: homeassistant.turn_on
     entity_id: input_boolean.emiliehome360
 
-- alias: "emilie_not_home_360"
+- alias: "emilie_not_home_360" # Turns off the "emiliehome360" input_boolean if Emilie leaves home
   trigger:
     - platform: state
       entity_id: device_tracker.emilie_aa172623f9cd406b9007dc08461d2c24
       from: 'home'
       to: 'not_home'
-  condition:
-    - condition: state
-      entity_id: input_boolean.emiliehome360
-      state: 'on'
+#  condition:
+#    - condition: state
+#      entity_id: input_boolean.emiliehome360
+#      state: 'on'
   action:
     service: homeassistant.turn_off
     entity_id: input_boolean.emiliehome360
 
-- alias: Someone Arrives Home Boolean
+- alias: Someone Arrives Home Boolean # Turns on the "someonehome360" input_boolean if someone arrives home, or guest mode is activated
   trigger:
     platform: state
     entity_id:
@@ -131,10 +148,10 @@
 #      - input_boolean.emiliehome360
     from: 'off'
     to: 'on'
-  condition:
-    condition: state
-    entity_id: input_boolean.someonehome360
-    state: 'off'
+#  condition:
+#    condition: state
+#    entity_id: input_boolean.someonehome360
+#    state: 'off'
 #  condition:
 #    condition: or
 #    conditions:
@@ -151,7 +168,7 @@
     service: homeassistant.turn_on
     entity_id: input_boolean.someonehome360
 
-- alias: Aephir leaves last
+- alias: Aephir leaves last # Turns of the "someonehome360" input_boolean if Aephir is last to leave
   trigger:
     platform: state
     entity_id:
@@ -174,7 +191,7 @@
     service: homeassistant.turn_off
     entity_id: input_boolean.someonehome360
 
-- alias: Kristina leaves last
+- alias: Kristina leaves last # Turns of the "someonehome360" input_boolean if Kristina is last to leave
   trigger:
     platform: state
     entity_id:
@@ -197,28 +214,28 @@
     service: homeassistant.turn_off
     entity_id: input_boolean.someonehome360
 
-- alias: Emilie leaves last
-  initial_state: 'off'
-  trigger:
-    platform: state
-    entity_id:
-      - input_boolean.emiliehome360
-    from: 'on'
-    to: 'off'
-  condition:
-    condition: and
-    conditions:
-      - condition: state
-        entity_id: input_boolean.aephirhome360
-        state: 'off'
-      - condition: state
-        entity_id: input_boolean.kristinahome360
-        state: 'off'
-  action:
-    service: homeassistant.turn_off
-    entity_id: input_boolean.someonehome360
+#- alias: Emilie leaves last # Turns of the "someonehome360" input_boolean if Emilie is last to leave
+#  initial_state: 'off'
+#  trigger:
+#    platform: state
+#    entity_id:
+#      - input_boolean.emiliehome360
+#    from: 'on'
+#    to: 'off'
+#  condition:
+#    condition: and
+#    conditions:
+#      - condition: state
+#        entity_id: input_boolean.aephirhome360
+#        state: 'off'
+#      - condition: state
+#        entity_id: input_boolean.kristinahome360
+#        state: 'off'
+#  action:
+#    service: homeassistant.turn_off
+#    entity_id: input_boolean.someonehome360
 
-- alias: Guest leaves last
+- alias: Guest leaves last # Turns of the "someonehome360" input_boolean if guest mode is deactiveatd and no one is home
   trigger:
     platform: state
     entity_id:
@@ -241,7 +258,7 @@
 ##################
 #__Meta Tracker__#
 
-- alias: "Update The Meta Tracker"
+- alias: "Update The Meta Tracker" # Should be a tracker that integrates several device trackers. Not sure if works.
   trigger:
     platform: state
     entity_id: device_tracker.ios, device_tracker.owntracks, device_tracker.ping
@@ -253,7 +270,7 @@
 ########################################
 #__Location Based Lights and Switches__#
 
-- alias: "Sunset with someone home"
+- alias: "Sunset with someone home" # Fades on living room lights 1h before senset if someone is home
   trigger:
     - platform: sun
       event: sunset
@@ -266,7 +283,7 @@
     service: scene.turn_on
     entity_id: scene.living_room_normal_fade
 
-- alias: "Someone arrives home"
+- alias: "Someone arrives home" # Turns on welcome lights when first person arrives home within 1h before sunset
   trigger:
     - platform: state
       entity_id: input_boolean.someonehome360
@@ -280,7 +297,7 @@
     service: scene.turn_on
     entity_id: scene.welcome_home
 
-- alias: "Everyone left"
+- alias: "Everyone left" # Switches of everyting when last person leaves home
   trigger:
     - platform: state
       entity_id: input_boolean.someonehome360
@@ -294,7 +311,7 @@
     service: script.turn_on
     entity_id: script.everyone_left_turn_off_everything
 
-- alias: "Sunrise, Night Light Off"
+- alias: "Sunrise, Night Light Off" # Turns of the night light at sunrise, if left on for the kids
   trigger:
     - platform: sun
       event: sunrise
@@ -321,6 +338,17 @@
     service: light.turn_off
     entity_id: group.stairway_lights
 
+- alias: "Kids Morning Turn On Media" # Turns on media switch if kids are home, so they can wathc TV
+  trigger:
+    - platform: time
+      at: 06:30:00
+  condition:
+    condition: state
+    entity_id: input_boolean.emiliehome360
+    state: 'on'
+  action:
+    service: switch.turn_on
+    entity_id: switch.living_room_media_master
 
 #################
 #    Weather    #
