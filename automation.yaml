@@ -11,16 +11,57 @@
 #############
 #__Notfiy__#
 
-- alias: "Kristina Leave Work" # Message through Join if Kristina leaves work - doesn't work...
+#- alias: "Kristina Leave Work" # Message through Join if Kristina leaves work - doesn't work...
+#  trigger:
+#    platform: state
+#    from: 'Work Kristina'
+#    to: 'not_home'
+#    entity_id: device_tracker.kristinabrody_612a3f1e8eae425e9cc514e48649cc46
+#  action:
+#    service: notify.telegram
+#    data:
+#      message: "Kristina left work"
+
+- alias: "Kristina Leave Home" # Message through Join if Kristina leaves work - doesn't work...
   trigger:
     platform: state
-    from: 'work_kristina'
-    to: 'away'
+    from: 'home'
+    to: 'not_home'
     entity_id: device_tracker.kristinabrody_612a3f1e8eae425e9cc514e48649cc46
   action:
     service: notify.telegram
     data:
-      message: "Kristina left work"
+      message: "Kristina left home"
+
+- alias: "Kristina Arrives Home" # Message through Join if Kristina leaves work - doesn't work...
+  trigger:
+    platform: state
+    from: 'not_home'
+    to: 'home'
+    entity_id: device_tracker.kristinabrody_612a3f1e8eae425e9cc514e48649cc46
+  action:
+    service: notify.telegram
+    data:
+      message: "Kristina is home"
+
+- alias: Notify iOS app test
+  trigger:
+    platform: state
+    from: 'home'
+    to: 'not_home'
+    entity_id: device_tracker.kristinabrody_612a3f1e8eae425e9cc514e48649cc46
+  action:
+    service: notify.ios_kristinas_iphone
+    data:
+      message: "You left home... Walden Loves you!"
+#      data:
+#        push:
+#          badge: 5
+#          sound: <SOUND FILE HERE>
+#          category: "alarm" # Needs to match the top level identifier you used in the ios configuration
+#        action_data: # Anything passed in action_data will get echoed back to Home Assistant.
+#          entity_id: light.test
+#          my_custom_data: foo_bar
 
 ###################
 #__Input_Boolean__#
@@ -416,3 +457,15 @@
     below: 14
   action:
     service: shell_command.renew_ssl
+
+#######################
+#    Homekit Start    #
+#######################
+
+- alias: 'Start HomeKit'
+  trigger:
+    - platform: homeassistant
+      event: start
+  action:
+    - delay: 00:02  # Waits 2 minutes
+    - service: homekit.start

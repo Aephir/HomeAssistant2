@@ -31,6 +31,16 @@
     light.bedroom_stairway:
       state: off
       transition: 2
+    light.color_temperature_light_1:
+      state: off
+      transition: 2
+    light.color_temperature_light_1_2:
+      state: off
+      transition: 2
+    light.color_temperature_light_1_3:
+      state: off
+      transition: 2
+
 
 - name: all_but_bedroom_off
   entities:
@@ -47,6 +57,15 @@
       state: off
       transition: 2
     light.bedroom_stairway:
+      state: off
+      transition: 2
+    light.color_temperature_light_1:
+      state: off
+      transition: 2
+    light.color_temperature_light_1_2:
+      state: off
+      transition: 2
+    light.color_temperature_light_1_3:
       state: off
       transition: 2
 
@@ -104,10 +123,7 @@
 
 - name: Lounge Off
   entities:
-    light.hue_ambiance_lamp_1:
-      state: off
-      transition: 2
-    light.hue_ambiance_lamp_2:
+    light.color_temperature_light_1:
       state: off
       transition: 2
 
@@ -142,6 +158,16 @@
     light.hue_ambiance_lamp_2:
       state: off
       transition: 2
+    light.color_temperature_light_1:
+      state: off
+      transition: 2
+    light.color_temperature_light_1_2:
+      state: off
+      transition: 2
+    light.color_temperature_light_1_3:
+      state: off
+      transition: 2
+
 
 - name: Living Room Normal Fade
   entities:
@@ -158,23 +184,18 @@
 
 - name: Lounge Normal Fade
   entities:
-    light.hue_ambiance_lamp_1:
+    light.color_temperature_light_1:
       state: on
       transition: 10
       brightness: 190
       color_Temp: 375
-    light.hue_ambiance_lamp_2:
-      state: on
-      transition: 10
-      brightness: 190
-      color_temp: 375
 
 - name: Night light
   entities:
     light.hue_ambiance_lamp_2:
       state: on
       transition: 2
-      brightness: 10
+      brightness: 40
       color_temp: 375
     light.hue_ambiance_lamp_1:
       state: off
@@ -184,6 +205,15 @@
       transition: 2
     light.hue_lightstrip_plus_1:
       state: off
+      transition: 2
+    light.color_temperature_light_1:
+      state: on
+      transition: 2
+    light.color_temperature_light_1_2:
+      state: on
+      transition: 2
+    light.color_temperature_light_1_3:
+      state: on
       transition: 2
 
 - name: Welcome Home
@@ -206,6 +236,14 @@
       state: on
       transition: 2
       brightness: 250
+    light.color_temperature_light_1_2:
+      state: on
+      transition: 2
+      brightness: 250
+    light.color_temperature_light_1_3:
+      state: on
+      transition: 2
+      brightness: 250
 
 - name: Movie Night
   entities:
@@ -220,6 +258,12 @@
       state: off
       transition: 2
     light.hue_ambiance_lamp_2:
+      state: off
+      transition: 2
+    light.color_temperature_light_1_2:
+      state: off
+      transition: 2
+    light.color_temperature_light_1_3:
       state: off
       transition: 2
 

@@ -2,8 +2,8 @@
 #    Notify    #
 ################
 
-- name: pigmail
-  platform: smtp
+- platform: smtp
+  name: pigmail
   server: smtp.gmail.com
   port: 587
   timeout: 15
@@ -27,7 +27,16 @@
   gcm_api_key: !secret gcm-sender-key
   gcm_sender_id: !secret gcm-sender-id
 
-- name: telegram
-  platform: telegram
+- platform: telegram
+  name: home_aephir_bot
   api_key: !secret telegram_key
   chat_id: !secret telegram_chatID_Aephir
+
+- platform: ios
+  name: iOS
+
+- platform: group
+  name: Home Adult Group
+  services:
+    - service: ios_kristinas_iphone
+    - service: home_aephir_bot

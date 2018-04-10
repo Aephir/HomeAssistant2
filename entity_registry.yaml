@@ -1,69 +1,112 @@
 light.bedroom_stairway:
+  name:
   platform: hue
   unique_id: 00:17:88:01:00:dc:ec:c7-0b
 light.hue_ambiance_lamp_2:
+  name:
   platform: hue
   unique_id: 00:17:88:01:10:2e:9a:e0-0b
 light.waldens_bedroom:
+  name:
   platform: hue
   unique_id: 00:17:88:01:00:de:fa:b7-0b
 light.hue_ambiance_lamp_1:
+  name:
   platform: hue
   unique_id: 00:17:88:01:10:25:ce:b7-0b
 light.hue_lightstrip_plus_1:
+  name:
   platform: hue
   unique_id: 00:17:88:01:01:1d:aa:31-0b
 light.couch_lamp:
+  name:
   platform: hue
   unique_id: 00:17:88:01:00:f6:5e:55-0b
 light.kristinas_bedroom:
+  name:
   platform: hue
   unique_id: 00:17:88:01:00:dd:07:ec-0b
 media_player.living_room:
+  name:
   platform: sonos
   unique_id: RINCON_000E5880939001400
 sensor.iphone_battery_level:
+  name:
   platform: ios
   unique_id: level_Kristinas iPhone
 sensor.iphone_battery_state:
+  name:
   platform: ios
   unique_id: state_Kristinas iPhone
 sensor.iphone_battery_state_2:
+  name:
   platform: ios
   unique_id: state_Kristinas_iPhone
 sensor.iphone_battery_level_2:
+  name:
   platform: ios
   unique_id: level_Kristinas_iPhone
 switch.espresso_machine:
+  name:
   platform: wemo
   unique_id: 221511K1200E09
 switch.fibaro_system_fgwpef_wall_plug_gen5_switch:
+  name:
   platform: zwave
   unique_id: 3-72057594093060096
 sensor.fibaro_system_fgwpef_wall_plug_gen5_power:
+  name:
   platform: zwave
   unique_id: 3-72057594093256770
 sensor.fibaro_system_fgwpef_wall_plug_gen5_energy:
+  name:
   platform: zwave
   unique_id: 3-72057594093273090
 sensor.fibaro_system_fgwpef_wall_plug_gen5_power_2:
+  name:
   platform: zwave
   unique_id: 3-72057594093273218
 sensor.fibaro_system_fgwpef_wall_plug_gen5_exporting:
+  name:
   platform: zwave
   unique_id: 3-72057594093273600
 sensor.fibaro_system_fgwpef_wall_plug_gen5_alarm_type:
+  name:
   platform: zwave
   unique_id: 3-72057594094305281
 sensor.fibaro_system_fgwpef_wall_plug_gen5_alarm_level:
+  name:
   platform: zwave
   unique_id: 3-72057594094305297
 sensor.fibaro_system_fgwpef_wall_plug_gen5_sourcenodeid:
+  name:
   platform: zwave
   unique_id: 3-72057594094305313
 sensor.fibaro_system_fgwpef_wall_plug_gen5_power_management:
+  name:
   platform: zwave
   unique_id: 3-72057594094305457
 switch.desktop:
+  name:
   platform: wemo
   unique_id: 221519K12002C7
+sensor.kristinas_ipad_battery_state:
+  name:
+  platform: ios
+  unique_id: state_kristinas_ipad
+sensor.kristinas_ipad_battery_level:
+  name:
+  platform: ios
+  unique_id: level_kristinas_ipad
+light.color_temperature_light_1:
+  name:
+  platform: hue
+  unique_id: 90:fd:9f:ff:fe:6c:97:b0-01
+light.color_temperature_light_1_2:
+  name:
+  platform: hue
+  unique_id: 90:fd:9f:ff:fe:81:d3:55-01
+light.color_temperature_light_1_3:
+  name:
+  platform: hue
+  unique_id: 90:fd:9f:ff:fe:89:56:be-01

@@ -32,3 +32,10 @@
   entities:
     - light.hue_ambiance_lamp_1
     - light.hue_ambiance_lamp_2
+    - light.color_temperature_light_1_2
+    - light.color_temperature_light_1_3
+
+- platform: group
+  name: Lounge Lights
+  entities:
+    - light.color_temperature_light_1

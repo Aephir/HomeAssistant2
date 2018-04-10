@@ -25,8 +25,8 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="0.68352243"
-     inkscape:cx="574.79543"
-     inkscape:cy="624.24776"
+     inkscape:cx="978.58613"
+     inkscape:cy="448.68659"
      inkscape:document-units="px"
      inkscape:current-layer="layer4"
      showgrid="false"
@@ -3175,6 +3175,27 @@
        cy="9086.7803"
        r="0.91999191"
        inkscape:label="#circle1430" />
+    <circle
+       style="display:inline;opacity:1;fill:#ffff3c;fill-opacity:1;stroke:#ffff3c;stroke-width:1.95828176;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.63529412"
+       id="light.color_temperature_light_1_3"
+       cx="22202.166"
+       cy="9157.7207"
+       r="0.91999191"
+       inkscape:label="#circle1430" />
+    <circle
+       inkscape:label="#circle1430"
+       r="0.91999191"
+       cy="9179.2041"
+       cx="22202.166"
+       id="light.color_temperature_light_1_2"
+       style="display:inline;opacity:1;fill:#ffff3c;fill-opacity:1;stroke:#ffff3c;stroke-width:1.95828176;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.63529412" />
+    <circle
+       inkscape:label="#circle1430"
+       r="3.0764263"
+       cy="9104.0352"
+       cx="22444.182"
+       id="light.color_temperature_light_1"
+       style="opacity:1;fill:#ffff3c;fill-opacity:1;stroke:#ffff3c;stroke-width:6.5484376;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.63529412" />
   </g>
   <g
      transform="translate(-22065.177,-8992.0405)"

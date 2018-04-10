@@ -1,0 +1,17 @@
+#################
+#               #
+#      iOS      #
+#               #
+#################
+
+push:
+  categories:
+    - name: Notifications
+      identifier: 'notifications'
+      actions:
+        - identifier: 'GENERAL_NOTIFICATIONS'
+          title: 'General Notifications'
+          activationMode: 'background'
+          authenticationRequired: no
+          destructive: no
+          behavior: 'default'

@@ -26,3 +26,4 @@ logs:
   homeassistant.components.mysensors: debug
   mysensors: debug
   homeassistant.components.sensor: critical
+  homeassistant.components.homekit: debug

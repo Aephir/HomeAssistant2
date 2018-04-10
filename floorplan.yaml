@@ -267,6 +267,9 @@
              - light.hue_lightstrip_plus_1
              - light.kristinas_bedroom
              - light.waldens_bedroom
+             - light.color_temperature_light_1
+             - light.color_temperature_light_1_2
+             - light.color_temperature_light_1_3
              - light.living_room_lights
              - light.bedroom_lights
              - light.stairway_lights

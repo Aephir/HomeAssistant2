@@ -53,9 +53,16 @@ wemo:
   static:
     - 192.168.0.6 # Espresso WeMo
     - 192.168.0.11 # Desktop WeMo
-#ios:
+
 homekit:
   pincode: !secret homekit_pincode
+  auto_start: False
+  filter:
+    exclude_domains:
+      - script
+      - sensor
+      - input_boolean
+
 map:
 hue:
   bridges:
@@ -97,6 +104,8 @@ sun:
 tts:
 #  platform: picotts
   platform: google
+  cache: true
+  cache_dir: /mnt/hassdata/tts/cache
 updater:
 cloud:
 python_script:
@@ -117,6 +126,7 @@ group: !include group/group.yaml
 input_boolean: !include input/input_boolean.yaml
 input_select: !include input/input_select.yaml
 input_number: !include input/input_number.yaml
+ios: !include misc/ios.yaml
 joaoapps_join: !include misc/joaoapps_join.yaml
 light: !include misc/light.yaml
 logger: !include misc/logger.yaml

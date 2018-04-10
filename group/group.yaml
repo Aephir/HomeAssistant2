@@ -178,6 +178,9 @@
       - light.hue_lightstrip_plus_1
       - light.hue_ambiance_lamp_1
       - light.hue_ambiance_lamp_2
+      - light.color_temperature_light_1
+      - light.color_temperature_light_1_2
+      - light.color_temperature_light_1_3
 
 ############################
 #__Downstairs Living Room Lights__#
@@ -219,6 +222,8 @@
     entities:
       - light.hue_ambiance_lamp_1
       - light.hue_ambiance_lamp_2
+      - light.color_temperature_light_1_2
+      - light.color_temperature_light_1_3
 
 ##################
 #    SWITCHES    #
