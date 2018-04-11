@@ -83,15 +83,6 @@ telegram_bot:
 config:
 conversation:
 #discovery:
-frontend:
-#  extra_html_url:
-#    - https://raw.githubusercontent.com/andrey-git/home-assistant-custom-ui/master/state-card-custom-ui.html
-#  extra_html_url_es5:
-#    - https://raw.githubusercontent.com/andrey-git/home-assistant-custom-ui/master/state-card-custom-ui-es5.html
-  extra_html_url:
-    - /local/custom_ui/state-card-custom-ui.html
-  extra_html_url_es5:
-    - /local/custom_ui/state-card-custom-ui-es5.html
 #customizer:
 #  custom_ui: local
 history:
@@ -121,6 +112,7 @@ binary_sensor: !include binary_sensor.yaml
 camera: !include misc/camera.yaml
 device_tracker: !include misc/device_tracker.yaml
 #frontend: !include frontend.html
+frontend: !include misc/frontend.yaml
 group: !include group/group.yaml
 #group: !include_dir_merge_named group/
 input_boolean: !include input/input_boolean.yaml

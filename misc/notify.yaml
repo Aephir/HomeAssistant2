@@ -40,3 +40,4 @@
   services:
     - service: ios_kristinas_iphone
     - service: home_aephir_bot
+#    - service: html5_push_notifications
