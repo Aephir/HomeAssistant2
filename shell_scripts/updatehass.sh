@@ -8,7 +8,7 @@ echo "stopping home assistant"
 sudo systemctl stop home-assistant@homeassistant.service
 
 # Become user 'hass'
-echo "Become user homeassistantn"
+echo "Become user homeassistant"
 sudo su -s /bin/bash homeassistant <<'EOF'
 # Activate the virtualenv
 echo "activate the virtual environment"

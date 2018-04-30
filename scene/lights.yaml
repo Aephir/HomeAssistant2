@@ -207,13 +207,13 @@
       state: off
       transition: 2
     light.color_temperature_light_1:
-      state: on
+      state: off
       transition: 2
     light.color_temperature_light_1_2:
-      state: on
+      state: off
       transition: 2
     light.color_temperature_light_1_3:
-      state: on
+      state: off
       transition: 2
 
 - name: Welcome Home

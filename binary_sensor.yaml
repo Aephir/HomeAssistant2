@@ -6,10 +6,6 @@
 ############################
 
 
-- platform: mqtt
-  state_topic: dummy/floorplan/sensor
-  name: Floorplan
-
 ###################
 #    Occupancy    #
 ###################
@@ -132,3 +128,19 @@
           {%- else -%}
           false
           {%- endif %}
+
+###################
+#    Floorplan    #
+###################
+
+- platform: mqtt
+  state_topic: dummy/floorplan/sensor
+  name: Floorplan
+
+#- platform: mqtt
+#  state_topic: floorplan/floorplan
+#  name: Floorplan
+
+#- platform: mqtt
+#  state_topic: floorplan/floorplan_2
+#  name: Floorplan_2

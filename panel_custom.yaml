@@ -13,3 +13,15 @@
     sidebar_icon: mdi:home
     url_path: floorplan
     config: !include floorplan.yaml
+
+#  - name: floorplan
+#    sidebar_title: Floorplan
+#    sidebar_icon: mdi:home
+#    url_path: floorplan
+#    config: !include www/custom_ui/floorplan/floorplan.yaml
+
+#  - name: floorplan_2
+#    sidebar_title: Floorplan_2
+#    sidebar_icon: mdi:home
+#    url_path: floorplan
+#    config: !include www/custom_ui/floorplan/floorplan_2.yaml
