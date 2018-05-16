@@ -112,44 +112,49 @@ svg, svg * {
   fill: #6FAECE !important;
 }
 
-
 /* Light */
 
 
 .light-off {
   fill: #1E1610 !important;
+  stroke-width: 0px !important;
 }
 
 .light-on {
   fill: #FFFF3C !important;
+  stroke-width: 20px !important;
 }
 
 .light-group-off {
-  fill: #FFFFFF !important;
+  fill: #1E1610 !important;
+  stroke-width: 0px !important;
 }
 
-.light-on {
-  fill: #FFFF01 !important;
+.light-group-on {
+  fill: #FFFF3C !important;
+  stroke-width: 30px !important;
 }
 
-/* Test light glow */
-/*
-.light-on .glow {
+.light-small-off {
+  fill: #1E1610 !important;
+  stroke-width: 0px !important;
+}
+
+.light-small-on {
+  fill: #FFFF3C !important;
+  stroke-width: 15px !important;
+}
+
+/* light glow */
+
+
+.light-glow-on {
   visibility: visible;
 }
 
-.light-on .inner {
-  fill: #FFFF00 !important;
-}
-
-.light-off .glow {
+.light-glow-off {
   visibility: hidden;
 }
-
-.light-off .inner {
-  fill: #808080 !important;
-}
-*/
 
 
 /* TV */
@@ -451,4 +456,16 @@ svg, svg * {
 
 .layer-hidden {
   display: none !important;
+}
+
+/* Halo */
+
+.halo-off {
+  fill: #464646 !important;
+  fill-opacity: 1 !important;
+}
+
+.halo-on {
+  fill: #ffff3C !important;
+  fill-opacity: 1 !important;
 }

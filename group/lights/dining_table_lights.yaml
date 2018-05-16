@@ -1,6 +1,0 @@
-dining_lights:
-  name: Dining Lights
-  view: no
-  entities:
-    - light.dining_one
-    - light.dining_two

@@ -1,8 +1,0 @@
-aephir:
-  name: Aephir's Phone
-  icon: mdi:human-male
-  view: yes
-  entities:
-    - device_tracker.macbookaephir
-    - sensor.aephir_phone_battery_360
-    - device_tracker.walden_cd926e1b047646b986d2f0c0c3e7d530

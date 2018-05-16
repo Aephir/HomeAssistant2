@@ -1,9 +1,0 @@
-- alias: "Shutdown Everything When Everyone Leaves 360"
-  trigger:
-    - platform: state
-      entity_id: input_boolean.someonehome360
-      from: 'on'
-      to: 'off'
-  action:
-    - service: script.turn_on
-      entity_id: script.everone_left_turn_off_evrything

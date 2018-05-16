@@ -1,9 +1,0 @@
-kitchen:
-  icon: mdi:silverware-variant
-  name: Kitchen
-  view: yes
-  entities:
-    - switch.wine_fridge
-    - switch.espresso_machine
-    - switch.kettle
-    - input_select.ikettle_select

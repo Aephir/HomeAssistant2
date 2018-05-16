@@ -15,8 +15,8 @@ homeassistant:
   elevation: !secret elevation
   unit_system: metric
   time_zone: !secret timezone
-  customize: !include customize.yaml
-  customize_glob: !include customize_glob.yaml
+  customize: !include config_files/customize.yaml
+  customize_glob: !include config_files/customize_glob.yaml
 
 ##############
 #    HTTP    #
@@ -98,7 +98,7 @@ tts:
   cache: true
   cache_dir: /mnt/hassdata/tts/cache
 updater:
-cloud:
+
 python_script:
 
 #################
@@ -106,33 +106,36 @@ python_script:
 #################
 
 #android_ip_webcam: !include misc/android_ip_webcam.yaml
-automation: !include automation.yaml
+automation: !include config_files/automation.yaml
 #automation: !include_dir_merge_list automation/
-binary_sensor: !include binary_sensor.yaml
-camera: !include misc/camera.yaml
-device_tracker: !include misc/device_tracker.yaml
+binary_sensor: !include config_files/binary_sensor.yaml
+camera: !include config_files/camera.yaml
+cloud: !include config_files/cloud.yaml
+device_tracker: !include config_files/device_tracker.yaml
 #frontend: !include frontend.html
-frontend: !include misc/frontend.yaml
-group: !include group/group.yaml
+frontend: !include config_files/frontend.yaml
+#google_assistant: !include config_files/google_assistant.yaml
+group: !include config_files/group.yaml
 #group: !include_dir_merge_named group/
-input_boolean: !include input/input_boolean.yaml
-input_select: !include input/input_select.yaml
-input_number: !include input/input_number.yaml
-ios: !include misc/ios.yaml
-joaoapps_join: !include misc/joaoapps_join.yaml
-light: !include misc/light.yaml
-logger: !include misc/logger.yaml
-media_player: !include_dir_merge_list media_player/
-mqtt: !include misc/mqtt.yaml
-mysensors: !include mysensors.yaml
-notify: !include misc/notify.yaml
-panel_custom: !include panel_custom.yaml
-scene: !include_dir_merge_list scene/
-script: !include_dir_merge_named script/
-sensor: !include_dir_merge_list sensor/
-shell_command: !include shell_commands.yaml
-switch: !include switch/switch.yaml
+input_boolean: !include config_files/input_boolean.yaml
+input_select: !include config_files/input_select.yaml
+input_number: !include config_files/input_number.yaml
+ios: !include config_files/ios.yaml
+joaoapps_join: !include config_files/joaoapps_join.yaml
+light: !include config_files/light.yaml
+logger: !include config_files/logger.yaml
+media_player: !include_dir_merge_list config_files/media_player/
+mqtt: !include config_files/mqtt.yaml
+mysensors: !include config_files/mysensors.yaml
+notify: !include config_files/notify.yaml
+panel_custom: !include config_files/panel_custom.yaml
+scene: !include_dir_merge_list config_files/scene/
+script: !include_dir_merge_named config_files/script/
+sensor: !include_dir_merge_list config_files/sensor/
+shell_command: !include config_files/shell_commands.yaml
+#snips: !include config_files/snips.yaml
+switch: !include config_files/switch/switch.yaml
 #switch: !include_dir_merge_list switch/
-weblink: !include misc/weblink.yaml
-zone: !include misc/zone.yaml
-#zwave: !include misc/zwave.yaml
+weblink: !include config_files/weblink.yaml
+zone: !include config_files/zone.yaml
+#zwave: !include config_files/zwave.yaml

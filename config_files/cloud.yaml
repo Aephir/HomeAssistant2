@@ -1,0 +1,43 @@
+###############
+#             #
+#    CLOUD    #
+#             #
+###############
+
+
+google_actions:
+  filter:
+    include_domains:
+      - switch
+      - light
+    exclude_domains:
+      - group
+      - input_boolean
+    exclude_entities:
+      - switch.fibaro_system_fgwpef_wall_plug_gen5_switch
+      - switch.bedroom_flux
+      - light.bedroom_lights
+      - light.bedroom
+      - light.living_room_lights
+      - light.living_room
+      - light.stairway_lights
+      - light.lounge_lights
+      - light.hallway
+    include_entities:
+      - input_boolean.guest_mode
+      - switch.kettle
+  entity_config:
+    light.couch_lamp:
+      name: sofa light
+      aliases:
+       - sofa lamp
+       - couch light
+       - couch lamp
+       - sofa light
+#      room: living room
+    switch.kettle:
+      name: iKettle
+      aliases:
+        - kettle
+        - ikettle
+        - water boiler

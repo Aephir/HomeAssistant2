@@ -1,7 +1,0 @@
-all_people:
-  name: Household
-  view: no
-  entities:
-    - device_tracker.aephir_phone
-    - device_tracker.aephir_phone_nmap
-    - device_tracker.angela_iphone_nmap

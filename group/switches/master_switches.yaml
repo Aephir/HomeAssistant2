@@ -1,8 +1,0 @@
-master_switch:
-  name: Master Switches
-  icon: mdi:power
-  view: yes
-  entities:
-    - switch.fibaro_system_fgwpef_wall_plug_gen5_switch_3_0
-    - script.living_room_media_off
-    - switch.living_room_media_master

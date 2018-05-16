@@ -1,6 +1,0 @@
-bedroom_scenes:
-  name: Scenes
-  view: no
-  entities:
-    - script.scene_sleepy_bedroom
-    - script.scene_bedroom_dim

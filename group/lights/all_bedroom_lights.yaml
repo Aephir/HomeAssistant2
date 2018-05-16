@@ -1,5 +1,0 @@
-bedroom_lights:
-  name: Bedroom Lights
-  view: no
-  entities:
-    - light.bedroom

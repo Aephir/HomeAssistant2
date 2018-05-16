@@ -1,0 +1,124 @@
+###########################
+#                         #
+#      CUSTOMIZATION      #
+#                         #
+###########################
+
+binary_sensor.floorplan:
+  custom_ui_state_card: state-card-floorplan
+  config: !include floorplan.yaml
+switch.fibaro_system_fgwpef_wall_plug_gen5_switch:
+  friendly_name: Z-Wave Switch 1
+  custom_ui_state_card: state-card-custom-ui
+  confirm_controls_show_lock: true
+  extra_badge:
+    attribute: power_consumption
+    unit: W
+#  extra_data_template: ${attributes.power_consumption !== 0 ? (attributes.power_consumption + 'W') : null}
+switch.desktop:
+  friendly_name: Desktop Computer
+  entity_picture: /local/images/pc2.jpg
+  confirm_controls_show_lock: true
+  extra_badge:
+    entity_id: sensor.sensor_desktop
+switch.espresso_machine:
+  friendly_name: Espresso Machine
+  entity_picture: /local/images/silvia.jpg
+  extra_badge:
+    entity_id: sensor.sensor_espresso
+  homebridge_visible: true
+  homebridge_name: Espresso Maskine
+#    unit: W
+#  custom_ui_state_card: custom_cover
+#  extra_badge:
+#    entity_id: sensor.power_espresso
+#    attribute: power_consumption
+#    unit: W
+#    blacklist_states: 0
+media_player.libreelec:
+  icon: info
+media_player.ue46es8005:
+  friendly_name: Lving Room TV
+light.hue_lightstrip_plus_1:
+  friendly_name: Lighstrip
+light.hue_ambiance_lamp_1:
+  friendly_name: Ambiance1
+light.hue_ambiance_lamp_2:
+  friendly_name: Ambiance2
+light.bedroom_stairway:
+  friendly_name: Main bedroom
+switch.tv_kodi:
+  entity_picture: /local/images/ue46es8005_3.jpg
+switch.kettle:
+  friendly_name: iKettle
+  entity_picture: /local/images/ikettle.jpg
+sensor.fibaro_system_fgwpef_wall_plug_gen5_power:
+  friendly_name: Media Power
+sensor.yr_symbol:
+  friendly_name: Weather
+sensor.yr_temperature:
+  friendly_name: Temperature
+#script.livingroommediaoff:
+#  icon: mdi:power
+script.living_room_media_off:
+  icon: mdi:power
+sensor.yr_windSpeed:
+  icon: mdi:weather-windy
+sensor.yr_windDirection:
+  icon: mdi:compass
+sensor.yr_precipitation:
+  icon: mdi:weather-pouring
+sensor.yr_cloudiness:
+  icon: mdi:weather-cloudy
+script.scene_living_room_bright:
+  icon: mdi:lightbulb-outline
+script.scene_living_room_normal:
+  icon: mdi:lightbulb-outline
+script.scene_living_room_dim:
+  icon: mdi:lightbulb-outline
+script.scene_bedroom_dim:
+  icon: mdi:lightbulb-outline
+script.scene_living_room_off:
+  icon: mdi:lightbulb
+script.scene_sleepy_bedroom:
+  icon: mdi:lightbulb-outline
+script.scene_sleepy_living_room:
+  icon: mdi:lightbulb-outline
+script.going_to_bed:
+  icon: mdi:hotel
+script.going_to_sleep:
+  icon: mdi:sleep
+script.ifttt_desktop_computer_off:
+  icon: mdi:power
+sensor.dark_sky_humidity:
+  friendly_name: Humidity
+sensor.dark_sky_wind_bearing:
+  friendly_name: Wind Bearing
+sensor.dark_sky_wind_speed:
+  friendly_name: Wind Speed
+sensor.dark_sky_precip_intensity:
+  friendly_name: Precipitation
+sensor.dark_sky_summary:
+  friendly_name: Weather
+sensor.dark_sky_hourly_summary:
+  friendly_name: Weather Today
+sensor.dark_sky_daily_summary:
+  friendly_name: Weather Week
+script.mopidy_shut_off:
+  icon: mdi:music-off
+script.libreelec_shut_off:
+  icon: mdi:filmstrip-off
+binary_sensor.aephirhome360:
+  entity_picture: /local/images/aephir_v2.jpg
+switch.living_room_media_master:
+  icon: mdi:power
+  custom_ui_state_card: state-card-custom-ui
+  confirm_controls_show_lock: true
+  extra_badge:
+    entity_id: sensor.fibaro_system_fgwpef_wall_plug_gen5_power
+# Example to make homekit available.
+#switch.example:
+#  homebridge_visible: true
+#  homebridge_name: My awesome switch
+device_tracker.google_maps_110730659630480268471:
+  friendly_name: Walden

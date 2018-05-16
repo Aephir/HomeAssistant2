@@ -1,6 +1,0 @@
-ambiance_lights:
-  name: Ambiance Lights
-  view: no
-  entities:
-    - light.hue_ambiance_lamp_1
-    - light.hue_ambiance_lamp_2

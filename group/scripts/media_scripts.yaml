@@ -1,5 +1,0 @@
-media_scripts:
-  name: Media Scripts
-  view: no
-  entities:
-    - script.living_room_media_off

@@ -1,9 +1,0 @@
-- alias: libreELEC Adjust Volume
-  trigger:
-    platform: state
-    entity_id: input_slider.librelec_volume
-  action:
-    - service: media_player.volume_set
-      data_template:
-        entity_id: media_player.libreelec
-        volume_level: '{{ trigger.to_state.state }}'

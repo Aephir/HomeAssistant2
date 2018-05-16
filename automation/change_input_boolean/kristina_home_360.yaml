@@ -1,9 +1,0 @@
-- alias: "Kristina Home 360"
-  trigger:
-    - platform: state
-      entity_id: device_tracker.kristinabrody_612a3f1e8eae425e9cc514e48649cc46
-      from: 'not_home'
-      to: 'home'
-  action:
-    - service: input_boolean.turn_on
-      entity_id: input_boolean.kristinahome360
