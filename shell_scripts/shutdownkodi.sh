@@ -1,3 +1,5 @@
 #!/bin/bash
 
-ssh -p 155 -i /home/homeassistant/connection/privatekey_libreelec pi@192.168.0.155 "sudo shutdown -h now"
+# OBS! For new HASS, remember to try connecting using the homeassistant user through terminal, so you can accept connections
+
+ssh -i /home/homeassistant/connection/privatekey_libreelec root@192.168.0.155 "shutdown -h now"

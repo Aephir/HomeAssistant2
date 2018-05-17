@@ -4,7 +4,6 @@
 #             #
 ###############
 
-
 google_actions:
   filter:
     include_domains:
@@ -26,6 +25,7 @@ google_actions:
     include_entities:
       - input_boolean.guest_mode
       - switch.kettle
+#      - switch.tv_kodi
   entity_config:
     light.couch_lamp:
       name: sofa light

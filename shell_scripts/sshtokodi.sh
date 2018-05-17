@@ -1,3 +1,3 @@
 #!/bin/bash
 
-ssh -p 155 -i /home/homeassistant/connection/privatekey_libreelec pi@192.168.0.155
+ssh -i /home/homeassistant/connection/privatekey_libreelec root@192.168.0.155

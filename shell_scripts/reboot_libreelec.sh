@@ -1,3 +1,3 @@
 #!/bin/bash
 
-ssh -p 155 -i /home/homeassistant/connection/privatekey_libreelec pi@192.168.0.155 "sudo reboot"
+ssh -i /home/homeassistant/connection/privatekey_libreelec reboot@192.168.0.155 "reboot"

@@ -11,9 +11,11 @@
 - platform: command_line
   switches:
     tv_kodi:
-       command_on: ssh -p 155 -i /home/homeassistant/connection/privatekey_libreelec pi@192.168.0.155 "echo 'on 0' | cec-client -s"
-       command_off: ssh -p 155 -i /home/homeassistant/connection/privatekey_libreelec pi@192.168.0.155 "echo 'standby 0' | cec-client -s"
-       friendly_name: TV
+      value_template: "{{ is_state('switch.fibaro_system_fgwpef_wall_plug_gen5_switch', 'on') }}"
+      command_on: ssh -i /home/homeassistant/connection/privatekey_libreelec root@192.168.0.155 "echo 'on 0' | cec-client -s"
+      command_off: ssh -i /home/homeassistant/connection/privatekey_libreelec root@192.168.0.155 "echo 'standby 0' | cec-client -s"
+      friendly_name: TV
+# OBS! For new HASS, remember to try connecting using the homeassistant user through terminal, so you can accept connections
 
 ###############
 #    Plugs    #
