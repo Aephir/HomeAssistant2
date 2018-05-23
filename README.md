@@ -47,8 +47,8 @@ pretty neat, I'll likely get a few more.
 * [Floorplan](https://github.com/pkozul/ha-floorplan), a great project by pkozul to visualize your home with interactive gadgets.
 * [Custom UI](https://github.com/andrey-git/home-assistant-custom-ui) from Andrey, another great project to customize your home assistant frontend.
 
-![Screenshot Floorplan](https://github.com/Aephir/Images/blob/master/floorplan_20180503.png)
-Floorplan - Large lightbulbs control room lighting while the smaller black or yellow circles control individual bulbs.
+![Screenshot Floorplan](https://github.com/Aephir/Images/blob/master/floorplan_20180523.png)
+Floorplan - Large lightbulbs control room lighting while the smaller black or yellow circles control individual bulbs. Info on the left side (and a bit spread out between), toggles/scripts/scenes on the right side
 
 ![Screenshot Custom_UI](https://github.com/Aephir/Images/blob/master/frontend_20180503.png)
 Frontend using "custom UI".
