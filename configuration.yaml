@@ -47,6 +47,7 @@ ifttt:
 
 zwave:
   usb_path: /dev/ttyACM0
+  network_key: !secret secure_z_wave_key
 #  config_path: /srv/homeassistant/lib/python3.4/site-packages/libopenzwave-0.3.3-py3.4-linux-armv7l.egg/config
 #  device_config: !include zwave_device_config.yaml
 wemo:
@@ -68,6 +69,7 @@ hue:
   bridges:
     - host: 192.168.0.10
 shopping_list:
+dialogflow:
 
 telegram_bot:
 - platform: polling
@@ -120,6 +122,7 @@ group: !include config_files/group.yaml
 input_boolean: !include config_files/input_boolean.yaml
 input_select: !include config_files/input_select.yaml
 input_number: !include config_files/input_number.yaml
+intent_script: !include config_files/intent_script.yaml
 ios: !include config_files/ios.yaml
 joaoapps_join: !include config_files/joaoapps_join.yaml
 light: !include config_files/light.yaml
@@ -129,6 +132,7 @@ mqtt: !include config_files/mqtt.yaml
 mysensors: !include config_files/mysensors.yaml
 notify: !include config_files/notify.yaml
 panel_custom: !include config_files/panel_custom.yaml
+plant: !include config_files/plant.yaml
 scene: !include_dir_merge_list config_files/scene/
 script: !include_dir_merge_named config_files/script/
 sensor: !include_dir_merge_list config_files/sensor/
@@ -139,3 +143,4 @@ switch: !include config_files/switch/switch.yaml
 weblink: !include config_files/weblink.yaml
 zone: !include config_files/zone.yaml
 #zwave: !include config_files/zwave.yaml
+xiaomi_aqara: !include config_files/xiaomi_aqara.yaml

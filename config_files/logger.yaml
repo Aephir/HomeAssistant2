@@ -14,16 +14,16 @@
 # debug
 # notset
 
-default: warn
+default: error
 logs:
-  homeassistant.components.wemo: debug
+#  homeassistant.components.wemo: debug
   homeassistant.components.media_player: critical
   homeassistant.components.media_player.ue46es8005: critical
   homeassistant.components.owntracks: fatal
   homeassistant.components.device_tracker: error
 #  homeassistant.components.mqtt: notset
   homeassistant.components.camera.mjpeg: critical
-  homeassistant.components.mysensors: debug
-  mysensors: debug
+#  homeassistant.components.mysensors: debug
+#  mysensors: debug
   homeassistant.components.sensor: critical
-  homeassistant.components.homekit: debug
+#  homeassistant.components.homekit: debug

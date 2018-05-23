@@ -15,6 +15,8 @@ switch.fibaro_system_fgwpef_wall_plug_gen5_switch:
     attribute: power_consumption
     unit: W
 #  extra_data_template: ${attributes.power_consumption !== 0 ? (attributes.power_consumption + 'W') : null}
+switch.switch:
+  friendly_name: switch_z_new
 switch.desktop:
   friendly_name: Desktop Computer
   entity_picture: /local/images/pc2.jpg
@@ -122,3 +124,35 @@ switch.living_room_media_master:
 #  homebridge_name: My awesome switch
 device_tracker.google_maps_110730659630480268471:
   friendly_name: Walden
+sensor.illumination_7811dcb8d944:
+  friendly_name: Xiaomi Gateway Illumination
+light.gateway_light_7811dcb8d944:
+  friendly_name: Xiaomi Gateway Light
+binary_sensor.motion_sensor_158d0001e62ee2:
+  friendly_name: Xiaomi Motion Sensor
+sensor.illumination_158d0001e62ee2:
+  friendly_name: Xiaomi Motion Illumination
+sensor.humidity_158d00022c66ff:
+  friendly_name: Bathroom Humidity
+sensor.pressure_158d00022c66ff:
+  friendly_name: Bathroom Pressure
+sensor.temperature_158d00022c66ff:
+  friendly_name: Bathroom Temperature
+binary_sensor.door_window_sensor_158d000234dc7b:
+  friendly_name: Xiaomi Door
+  device_class: door
+binary_sensor.sensor:
+  friendly_name: Front Door
+  device_class: door # see here for all classes (https://github.com/home-assistant/home-assistant-polymer/blob/27d343b4888a0678d8cb828b05a3ac47e29424f1/src/util/hass-util.html#L216); home assistant docs are outdated
+  # value_template: >-
+  #   {% if is_state('binary_sensor.sensor', 'on') %}
+  #     Open
+  #   {% else %}
+  #     Closed
+  #   {% endif %}
+  # icon_template: >-
+  #   {% if is_state('binary_sensor.door_back_sensor', 'on') %}
+  #     mdi:door-open
+  #   {% else %}
+  #     mdi:door-closed
+  #   {% endif %}

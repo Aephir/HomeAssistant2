@@ -34,9 +34,43 @@
               return "temp-in-high";
             '
 
-        - name: dht22_humidity
+        - name: dht22_temperature
           entities:
-            - sensor.dht22_humidity
+            - sensor.dht22_temperature
+          text_template: '${entity.state ? Math.ceil(entity.state) + " °C": "undefined"}'
+#          class_template: 'return "static-temp";'
+          class_template: '
+            var temp = parseFloat(entity.state);
+            if (temp < 15)
+              return "temp-in-very-low";
+            else if (temp < 19)
+              return "temp-in-low";
+            else if (temp < 21)
+              return "temp-in-good";
+            else
+              return "temp-in-high";
+            '
+
+        - name: xiaomi_bathroom_temperature
+          entities:
+            - sensor.temperature_158d00022c66ff
+          text_template: '${entity.state ? Math.ceil(entity.state) + " °C": "undefined"}'
+#          class_template: 'return "static-temp";'
+          class_template: '
+            var temp = parseFloat(entity.state);
+            if (temp < 15)
+              return "temp-in-very-low";
+            else if (temp < 19)
+              return "temp-in-low";
+            else if (temp < 21)
+              return "temp-in-good";
+            else
+              return "temp-in-high";
+            '
+
+        - name: xiaomi_bathroom_humidity
+          entities:
+            - sensor.humidity_158d00022c66ff
           text_template: '${entity.state ? Math.ceil(entity.state) + " %": "undefined"}'
           class_template: 'return "static-temp";'
 
@@ -352,7 +386,7 @@
 
         - name: Desktop
           entities:
-             - switch.desktop
+             - switch.switch
           states:
             - state: 'on'
               class: 'desktop-on'
@@ -470,6 +504,41 @@
           action:
             domain: media_player
             service: media_play_pause
+
+        - name: Door Sensors
+          entities:
+             - binary_sensor.sensor
+             - binary_sensor.door_window_sensor_158d000234dc7b
+          states:
+            - state: 'on'
+              class: 'door-open'
+            - state: 'off'
+              class: 'door-closed'
+
+        - name: Plant Sensors
+          entities:
+             - plant.basil
+          # states:
+          #   - state: 'on'
+          #     class: 'door-open'
+          #   - state: 'off'
+          #     class: 'door-closed'
+
+        - name: plant_light
+          entities:
+             - sensor.plant_sensor_light_intensity
+          text_template: '${entity.state ? Math.ceil(entity.state) + "lx": "undefined"}'
+          # class_template: '
+          #   var batt = parseFloat(entity.state);
+          #   if (batt < 5)
+          #     return "batt-critical";
+          #   else if (batt < 15)
+          #     return "batt-low";
+          #   else if (batt < 60)
+          #     return "batt-medium";
+          #   else
+          #     return "batt-ok";
+          #   '
 
 #        - name: NVR
 #          entities:

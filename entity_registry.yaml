@@ -118,3 +118,95 @@ zwave.fibaro_system_fgwpef_wall_plug_gen5:
   name:
   platform: zwave
   unique_id: node-3
+switch.switch:
+  name:
+  platform: zwave
+  unique_id: 4-72057594109837312
+sensor.alarm_type:
+  name:
+  platform: zwave
+  unique_id: 4-72057594111082497
+sensor.alarm_level:
+  name:
+  platform: zwave
+  unique_id: 4-72057594111082513
+sensor.unknown:
+  name:
+  platform: zwave
+  unique_id: 4-72057594110050306
+zwave.neo_coolcam_power_plug_12a:
+  name:
+  platform: zwave
+  unique_id: node-4
+sensor.neo_coolcam_power_plug_12a_sourcenodeid:
+  name:
+  platform: zwave
+  unique_id: 4-72057594111082529
+sensor.neo_coolcam_power_plug_12a_power_management:
+  name:
+  platform: zwave
+  unique_id: 4-72057594111082673
+sensor.neo_coolcam_power_plug_12a_previous_reading:
+  name:
+  platform: zwave
+  unique_id: 4-72057594110050322
+sensor.neo_coolcam_power_plug_12a_interval:
+  name:
+  platform: zwave
+  unique_id: 4-72057594110050339
+sensor.alarm_type_2:
+  name:
+  platform: zwave
+  unique_id: 5-72057594127859713
+sensor.alarm_level_2:
+  name:
+  platform: zwave
+  unique_id: 5-72057594127859729
+binary_sensor.sensor:
+  name:
+  platform: zwave
+  unique_id: 5-72057594126794752
+sensor.neo_coolcam_doorwindow_detector_sourcenodeid:
+  name:
+  platform: zwave
+  unique_id: 5-72057594127859745
+sensor.neo_coolcam_doorwindow_detector_access_control:
+  name:
+  platform: zwave
+  unique_id: 5-72057594127859857
+zwave.neo_coolcam_doorwindow_detector:
+  name:
+  platform: zwave
+  unique_id: node-5
+binary_sensor.motion_sensor_158d0001e62ee2:
+  name:
+  platform: xiaomi_aqara
+  unique_id: status158d0001e62ee2
+sensor.illumination_158d0001e62ee2:
+  name:
+  platform: xiaomi_aqara
+  unique_id: lux158d0001e62ee2
+sensor.temperature_158d00022c66ff:
+  name:
+  platform: xiaomi_aqara
+  unique_id: temperature158d00022c66ff
+sensor.humidity_158d00022c66ff:
+  name:
+  platform: xiaomi_aqara
+  unique_id: humidity158d00022c66ff
+sensor.pressure_158d00022c66ff:
+  name:
+  platform: xiaomi_aqara
+  unique_id: pressure158d00022c66ff
+sensor.illumination_7811dcb8d944:
+  name:
+  platform: xiaomi_aqara
+  unique_id: illumination7811dcb8d944
+light.gateway_light_7811dcb8d944:
+  name:
+  platform: xiaomi_aqara
+  unique_id: rgb7811dcb8d944
+binary_sensor.door_window_sensor_158d000234dc7b:
+  name:
+  platform: xiaomi_aqara
+  unique_id: status158d000234dc7b

@@ -27,7 +27,7 @@
 ################
 
   useful:
-    view: yes
+    view: no
     icon: mdi:account-multiple
     entities:
       - switch.espresso_machine
@@ -52,11 +52,14 @@
     icon: mdi:information-variant
     view: yes
     entities:
-      - group.weather_display
+      # - group.weather_display
       - sensor.api_streams
 #      - sensor.dht22_temperature
 #      - sensor.dht22_humidity
       - group.home_information
+      - group.dining_room_information
+      - group.tv_room_information
+      - group.bathroom_information
 #      - camera.3110
 #      - sensor.3110_battery_level
 #      - sensor.3110_battery_temperature
@@ -68,6 +71,9 @@
       - group.all_people_battery_badges
       - group.system_information
       - updater.updater
+      - group.battery_levels
+      - group.door
+#      - group.window
 
 ########################
 #__System Information__#
@@ -92,10 +98,57 @@
     icon: mdi:information-variant
     view: no
     entities:
-      - sensor.dht22_temperature
-      - sensor.dht22_humidity
       - sensor.fibaro_system_fgwpef_wall_plug_gen5_power
       - binary_sensor.someonehome360
+#      - group.dining_room_information
+#      - group.tv_room_information
+#      - group.bathroom_information
+
+  dining_room_information:
+    name: Dining Room Information
+    view: no
+    entities:
+      - sensor.illumination_7811dcb8d944
+      - sensor.illumination_158d0001e62ee2
+      - binary_sensor.motion_sensor_158d0001e62ee2
+
+  tv_room_information:
+    name: TV Room Information
+    view: no
+    entities:
+      - sensor.dht22_temperature
+      - sensor.dht22_humidity
+
+  bathroom_information:
+    name: Bathroom Information
+    view: no
+    entities:
+      - sensor.temperature_158d00022c66ff
+      - sensor.humidity_158d00022c66ff
+      - sensor.pressure_158d00022c66ff
+
+#######################
+#__Doors and Windows__#
+
+  door:
+    name: Door Status
+    icon: mdi:door
+    view: no
+    entities:
+      - binary_sensor.sensor
+      - binary_sensor.door_window_sensor_158d000234dc7b
+
+###################
+#__Batter_Levels__#
+
+  battery_levels:
+    name: Battery levels
+    icon: mdi:battery
+    view: no
+    entities:
+      - sensor.x_door_1_bat
+      - sensor.x_motion_1_bat
+      - sensor.x_temphum_1_bat
 
 ###############
 #    Media    #
@@ -168,6 +221,7 @@
       - light.hue_lightstrip_plus_1
       - group.light_scenes
 
+
 ############################
 #__All Living Room Lights__#
 
@@ -182,6 +236,7 @@
       - light.color_temperature_light_1
       - light.color_temperature_light_1_2
       - light.color_temperature_light_1_3
+      - light.gateway_light_7811dcb8d944
 
 ############################
 #__Downstairs Living Room Lights__#
@@ -245,6 +300,7 @@
       - switch.command_off
       - switch.kettle
       - switch.living_room_media_master
+      - switch.switch
 
 ######################
 #__Kitchen Switches__#
@@ -275,6 +331,7 @@
       - switch.fibaro_system_fgwpef_wall_plug_gen5_switch
       - script.living_room_media_off
       - switch.living_room_media_master
+      - switch.switch
 
 #################
 #    Devices    #
@@ -504,6 +561,7 @@
       - group.arrive_home_automations
       - group.leave_home_automations
       - group.everyone_left_automations
+#      - automation.update_meta_tracker
 
 ############################
 #__Leave Home Automations__#
@@ -648,6 +706,7 @@
     icon: mdi:biohazard
     view: yes
     entities:
+      - zwave.neo_coolcam_power_plug_12a
       - input_number.libreelec_volume
       - input_number.ue46es8005_volume
       - input_number.mopidy_volume
@@ -660,7 +719,7 @@
       - switch.desktop
       - switch.living_room_media_master
       - script.everone_left_turn_off_evrything
-      - binary_sensor.aephirhomecombined
+      - ry_sensor.aephirhomecombined
       - binary_sensor.aephirhome360boolean
       - media_player.spotify
       - script.mopidy_reboot
@@ -677,6 +736,9 @@
       - camera.wyze
       - device_tracker.aephir_ping
       - device_tracker.kristina_ping
+      - device_tracker.meta_walden
+      - device_tracker.meta_kristina
+      - device_tracker.meta_emilie
 
 ########################
 #    For The Famliy    #
@@ -714,6 +776,17 @@
       - group.lounge_lights
       - group.stairway_lights
       - light.hue_lightstrip_plus_1
+
+################
+#    Plants    #
+################
+
+  plant_sensors:
+    name: Plants
+    icon: mdi:leaf
+    view: yes
+    entities:
+      - plant.basil
 
 ###############
 #    Rooms    #

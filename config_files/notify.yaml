@@ -10,6 +10,7 @@
 
 - platform: smtp
   name: pigmail
+  server: smtp.gmail.com
   port: 587
   timeout: 15
   sender: !secret pi_gmail
