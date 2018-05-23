@@ -515,19 +515,25 @@
             - state: 'off'
               class: 'door-closed'
 
-        - name: Plant Sensors
+        - name: plant_moisture
           entities:
-             - plant.basil
-          # states:
-          #   - state: 'on'
-          #     class: 'door-open'
-          #   - state: 'off'
-          #     class: 'door-closed'
+             - sensor.plant_sensor_moisture
+          text_template: '${entity.state ? Math.ceil(entity.state) + " %": "undefined"}'
+
+        - name: plant_temperature
+          entities:
+             - sensor.plant_sensor_temperature
+          text_template: '${entity.state ? Math.ceil(entity.state) + " °C": "undefined"}'
+
+        - name: plant_conductivity
+          entities:
+             - sensor.plant_sensor_conductivity
+          text_template: '${entity.state ? Math.ceil(entity.state) + " µS": "undefined"}'
 
         - name: plant_light
           entities:
              - sensor.plant_sensor_light_intensity
-          text_template: '${entity.state ? Math.ceil(entity.state) + "lx": "undefined"}'
+          text_template: '${entity.state ? Math.ceil(entity.state) + " lx": "undefined"}'
           # class_template: '
           #   var batt = parseFloat(entity.state);
           #   if (batt < 5)
@@ -539,6 +545,11 @@
           #   else
           #     return "batt-ok";
           #   '
+
+        - name: plant_battery
+          entities:
+             - sensor.plant_sensor_battery
+          text_template: '${entity.state ? Math.ceil(entity.state) + " %": "undefined"}'
 
 #        - name: NVR
 #          entities:

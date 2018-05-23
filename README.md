@@ -48,7 +48,7 @@ pretty neat, I'll likely get a few more.
 * [Custom UI](https://github.com/andrey-git/home-assistant-custom-ui) from Andrey, another great project to customize your home assistant frontend.
 
 ![Screenshot Floorplan](https://github.com/Aephir/Images/blob/master/floorplan_20180503.png)
-Floorplan - Under construction
+Floorplan - Large lightbulbs control room lighting while the smaller black or yellow circles control individual bulbs.
 
 ![Screenshot Custom_UI](https://github.com/Aephir/Images/blob/master/frontend_20180503.png)
 Frontend using "custom UI".
