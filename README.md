@@ -48,7 +48,7 @@ pretty neat, I'll likely get a few more.
 * [Custom UI](https://github.com/andrey-git/home-assistant-custom-ui) from Andrey, another great project to customize your home assistant frontend.
 
 ![Screenshot Floorplan](https://github.com/Aephir/Images/blob/master/floorplan_20180523.png)
-Floorplan - Large lightbulbs control room lighting while the smaller black or yellow circles control individual bulbs. Info on the left side (and a bit spread out between), toggles/scripts/scenes on the right side. The outer doors have door sensors, if closed they are "invisible", if opened, they show a big fat red quarter-circle so you're not in doubt.
+Floorplan - Large lightbulbs control room lighting while the smaller black or yellow circles control individual bulbs. Info on the left side (and a bit spread out between), toggles/scripts/scenes on the right side. The outer doors have door sensors, if closed they are "invisible", if opened, they show a big fat red quarter-circle so you're not in doubt. Some stuff, such as phone battery level indicators and temperatures, changes color based on values.
 
 ![Screenshot Custom_UI](https://github.com/Aephir/Images/blob/master/frontend_20180503.png)
 Frontend using "custom UI".
@@ -63,14 +63,14 @@ Frontend using "custom UI".
 **Planned future software:**
 * [Mariadb](https://mariadb.org/) for database, set the database on external USB stick to avoid excessive read/write on SD card. Had this on old home assistant setup on Raspbian Jessie, but having issues setting up on new setup.
 * [MySensors](https://github.com/mysensors/MySensors) to integrate NRF24L01 transceivers.
-
+* [Docker](https://www.docker.com/)... Dang, do I need to get on this. I've just had a few bad experiences with it, so... well... I'll get to it eventually.
 
 **Planned future hardware (purchased, not yet successfully implemented)**
 * Arduino (several, for a few different purposes).
 * NRF24L01 RF transceiver (several, for a few different purposes).
 * [WyzeCam](https://www.wyzecam.com/) - currently not possible (afaik) to integrate, but I contacted them, and they said they would look into it. So let's see.
 * HCSR501 PIR sensors
-* [Matrix Voice](https://www.indiegogo.com/projects/matrix-voice-open-source-voice-platform-for-all) backed on IndieGoGo, should arrive in early 2018. Will then set up either a [snips](https://snips.ai/) or [google assistant](https://assistant.google.com/)/[Alexa](https://www.amazon.com/Amazon-Echo-And-Alexa-Devices/b?ie=UTF8&node=9818047011).
+* [Matrix Voice](https://www.indiegogo.com/projects/matrix-voice-open-source-voice-platform-for-all) backed on IndieGoGo, should arrive in early 2018. Will then set up either a [snips](https://snips.ai/) or [google assistant](https://assistant.google.com/)/[Alexa](https://www.amazon.com/Amazon-Echo-And-Alexa-Devices/b?ie=UTF8&node=9818047011). UPDATE. I have used it, and can successfully set up Google Assistant, but I'm having issues setting up snips (I tried in Docker, maybe I'll give it a go without Docker).
 * [Xiaomi Light Switch](https://xiaomi-mi.com/sockets-and-sensors/xiaomi-aqara-smart-light-control-set/) Not yet implemented, for new home.
 * [Sonoff switch with power consumption measurement](https://www.itead.cc/sonoff-pow.html) for my shed/workshop once I move.
 * [Sonoff Wall Touch Switch](https://www.itead.cc/sonoff-t1.html) for the new house. I have a few different ones I want to test.

@@ -211,7 +211,7 @@
   all_lights:
     name: Lights
     icon: mdi:lightbulb-outline
-    view: yes
+    view: no
     entities:
       - group.living_room_lights
       - group.downstairs_living_room_lights
@@ -578,7 +578,7 @@
 #__Arrive Home Automations__#
 
   arrive_home_automations:
-    name: Leave Home Automations
+    name: Arrive Home Automations
     view: no
     entities:
       - automation.aephir_home_360
@@ -740,26 +740,6 @@
       - device_tracker.meta_kristina
       - device_tracker.meta_emilie
 
-########################
-#    For The Famliy    #
-########################
-
-  family_control:
-    name: Family Control
-    icon: mdi:lightbulb-on
-    view: yes
-    entities:
-      - sensor.someonehome
-      - switch.living_room_media_master
-      - switch.kettle
-      - group.living_room_lights
-      - group.downstairs_living_room_lights
-      - group.lounge_lights
-      - group.bedroom_lights
-      - group.stairway_lights
-      - light.hue_lightstrip_plus_1
-      - group.light_scenes
-
 ######################
 #    For The Kids    #
 ######################
@@ -769,13 +749,11 @@
     icon: mdi:lightbulb-on-outline
     view: yes
     entities:
-      - sensor.someonehome
       - switch.living_room_media_master
       - group.living_room_lights
-      - group.downstairs_living_room_lights
       - group.lounge_lights
       - group.stairway_lights
-      - light.hue_lightstrip_plus_1
+      - group.all_people_battery_badges
 
 ################
 #    Plants    #
@@ -798,7 +776,7 @@
   living_room:
     name: Living Room
     icon: mdi:sofa
-    view: yes
+    view: no
     entities:
       - group.living_room_lights
       - media_player.kodi
@@ -816,11 +794,21 @@
   kitchen:
     icon: mdi:silverware-variant
     name: Kitchen
-    view: yes
+    view: no
     entities:
       - switch.espresso_machine
       - switch.kettle
       - input_select.ikettle_select
+
+##############
+#__Entrance__#
+
+  entrance:
+    name: entrance
+    view: no
+    icon: mdi:open-in-app
+    entities:
+      - group.stairway_lights
 
 #############
 #__Bedroom__#
@@ -828,9 +816,7 @@
   bedroom:
     name: Bedroom
     icon: mdi:hotel
-    view: yes
+    view: no
     entities:
-      - light.bedroom
+      - group.bedroom_lights
       - switch.bedroom_flux
-      - group.bedroom_scenes
-      - script.ifttt_desktop_computer_off

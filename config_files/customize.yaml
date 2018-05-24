@@ -127,11 +127,13 @@ device_tracker.google_maps_110730659630480268471:
 sensor.illumination_7811dcb8d944:
   friendly_name: Xiaomi Gateway Illumination
 light.gateway_light_7811dcb8d944:
+#  state_card_mode: single-line
   friendly_name: Xiaomi Gateway Light
 binary_sensor.motion_sensor_158d0001e62ee2:
   friendly_name: Xiaomi Motion Sensor
 sensor.illumination_158d0001e62ee2:
   friendly_name: Xiaomi Motion Illumination
+#  state_card_mode: single-line
 sensor.humidity_158d00022c66ff:
   friendly_name: Bathroom Humidity
 sensor.pressure_158d00022c66ff:
@@ -156,3 +158,7 @@ binary_sensor.sensor:
   #   {% else %}
   #     mdi:door-closed
   #   {% endif %}
+input_boolean.guest_mode:
+  device_class: occupancy
+sensor.dht22_humidity:
+  device_class: moisture
