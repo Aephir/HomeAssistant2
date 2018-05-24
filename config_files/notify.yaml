@@ -56,3 +56,11 @@
   platform: file
   filename: generated_scene.yaml
   timestamp: false
+
+#####################################
+#    File Output of history data    #
+
+# - platform: file
+#   name: write_history_data
+#   filename: /mnt/hassdata/history.csv
+#   timestamp: true

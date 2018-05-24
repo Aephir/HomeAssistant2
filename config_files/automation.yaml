@@ -532,6 +532,23 @@
 #############################
 
 
+#############################
+#    Export history data    #
+#############################
+
+# - alias: sensor_values_to_file
+#   initial_state: 'on'
+#   trigger:
+#     - platform: time
+#       minutes: '/5'
+#       seconds: 00
+#   action:
+#     - service: notify.filenotify
+#       data_template:
+#         message: ", {{ states.sensor.outside_air_intake_temperature.state }},{{ states.sensor.dark_sky_temperature.state }},{{ states.sensor.dark_sky_humidity.state }},{{ states.sensor.dark_sky_cloud_coverage.state }},{{ states.sensor.dark_sky_uv_index.state }},{{ states.sensor.dark_sky_wind_speed.state }},{{now().strftime("%Y%m%d-%H%M%S")}}"
+
+
+
 ######################################
 #    Dummy switches for floorplan    #
 ######################################

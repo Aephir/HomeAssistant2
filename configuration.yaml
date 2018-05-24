@@ -87,7 +87,7 @@ conversation:
 #discovery:
 #customizer:
 #  custom_ui: local
-history:
+
 recorder:
   purge_interval: 2
   purge_keep_days: 8
@@ -119,6 +119,7 @@ frontend: !include config_files/frontend.yaml
 #google_assistant: !include config_files/google_assistant.yaml
 group: !include config_files/group.yaml
 #group: !include_dir_merge_named group/
+history: !include config_files/history.yaml
 input_boolean: !include config_files/input_boolean.yaml
 input_select: !include config_files/input_select.yaml
 input_number: !include config_files/input_number.yaml
