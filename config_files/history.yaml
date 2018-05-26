@@ -8,7 +8,6 @@ exclude:
     - zone
   entities:
     - binary_sensor.floorplan
-    - sensor.dark_sky_*
     - sensor.date
     - sensor.time
     - sensor.moon

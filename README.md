@@ -13,9 +13,9 @@ Home assistant configuration files and more. This home assistant is running on a
 * [Fibaro Wall Plug](https://www.fibaro.com/en/products/wall-plug/) z-wave power outlet switch. Master switch for the media center (TV, Stereo, PS4, etc.). I have had a very good experience with Fibaro, and plan to include more plugs and/or other Fibaro devices.
 * [NeoCoolCam](http://www.szneo.com/en/products/index.php?id=41) to cut power to my desktop PC (it'll find a better use in a few months after we move)
 * [Raspberry Pi 3B](https://www.raspberrypi.org/products/raspberry-pi-3-model-b/) running [Kodi](https://kodi.tv/) (switch a bit between raspbian + kodi and [LibreELEC](https://libreelec.tv/), connected to TV (CEC commands can be sent to this Pi via SSH to control TV). This has the [HiFiBerry DAC+ Pro](https://www.hifiberry.com/shop/boards/hifiberry-dac-pro/) for high fidelity audio output.
-* [Raspberry Pi 2B](https://www.raspberrypi.org/products/raspberry-pi-2-model-b/) Running [Mopidy](https://www.mopidy.com/). Mostly controlled independently of Home Assistant, though (using primarily the very nice [Iris](https://github.com/jaedb/Iris) interface by jaedb). Connected to proper effect amplifier (NAD c275bee). This has the [Allo BOSS Maser DAC](https://www.modmypi.com/raspberry-pi/audio-dacampdigi/dacs-digital-to-analogue-coverters-1044/allo-boss-raspberry-pi-master-dac/?secumt=I3RhYi1yZXZpZXc=#review-title) for high fidelity audio output.
+* [Raspberry Pi 2B](https://www.raspberrypi.org/products/raspberry-pi-2-model-b/) Running [Mopidy](https://www.mopidy.com/). It is set up via MPD, though mostly controlled independently of Home Assistant, though (using primarily the very nice [Iris](https://github.com/jaedb/Iris) interface by jaedb). Connected to proper effect amplifier (NAD c275bee). This has the [Allo BOSS Maser DAC](https://www.modmypi.com/raspberry-pi/audio-dacampdigi/dacs-digital-to-analogue-coverters-1044/allo-boss-raspberry-pi-master-dac/?secumt=I3RhYi1yZXZpZXc=#review-title) for high fidelity audio output.
 * [SONOS Play 5](https://www.sonos.com/en/shop/play5.html) for low fidelity playback and TTS from home assistant.
-* [iKettle](https://smarter.am/support-ikettle-1-0/). Yeah, even I will admit this one is a bit overkill, unless you use a kettle at least daily. Otherwise (1) the water goes stale before you use it or (2) you have to go and fill/change the water, and then you might as well press the button. Still a nice kettle, even without the connectivity, but probably wouldn't buy again.
+* [iKettle](https://smarter.am/support-ikettle-1-0/). Yeah, even I will admit this one is a bit overkill, unless you use a kettle at least daily. Otherwise (1) the water goes stale before you use it or (2) you have to go and fill/change the water, and then you might as well press the button manually while you're there. Still a nice kettle, even without the connectivity, but probably wouldn't buy a connected kettle again.
 * [Smart TV](http://www.samsung.com/dk/support/model/UE46ES8005UXXE) (though integration is not that useful at the moment, the old fashioned remote or smartphone app is used much more).
 * [Xiaomi Gateway](https://xiaomi-mi.com/mi-smart-home/xiaomi-mi-gateway-2/)
 * [Xiaomi Motion Sensor](https://xiaomi-mi.com/sockets-and-sensors/xiaomi-mi-occupancy-sensor/), that also measures illuminance. Just set up for testing for now, but will likely be used for something "real" once I move.
@@ -24,11 +24,11 @@ pretty neat, I'll likely get a few more.
 * [Xiaomi Temperature/Humidity/Barometric Pressure Sensor](https://xiaomi-mi.com/sockets-and-sensors/aqara-temperature-and-humidity-sensor/). This is pretty neat, I'll likely get a few more.
 * [Xiaomi Door/Window Sensor](https://xiaomi-mi.com/sockets-and-sensors/xiaomi-mi-door-window-sensors/)
 * [Neo CoolCam Door/Window Sensor](http://www.szneo.com/en/products/index.php?id=42) a z-wave door/window sensor.
-* [Huahuacaocao Flower Care Smart Monitor](https://xiaomi-mi.com/sockets-and-sensors/xiaomi-huahuacaocao-flower-care-smart-monitor/). This is
+* [Huahuacaocao Flower Care Smart Monitor](https://xiaomi-mi.com/sockets-and-sensors/xiaomi-huahuacaocao-flower-care-smart-monitor/). This seems very good! I've had it running for maybe 4 days when the battery dropped to 99%, so it looks like I'll get about a year before changing the battery.
 
 **Software on the Rapberry Pi:**
 * [Raspbian Stretch Lite](https://downloads.raspberrypi.org/raspbian_lite_latest) as the OS.
-* [Python3.6.4](https://www.python.org/downloads/source/) Upgraded to newest (at the time of install) python3 version.
+* [Python3.6.4](https://www.python.org/downloads/source/) Upgraded to newest (at the time of install) python3 version before installing Home Assistant.
 * [sSMPT](https://wiki.debian.org/sSMTP) for sending emails from the Raspberry Pi.
 * [Samba](https://www.samba.org/samba/what_is_samba.html) for easy modification of config files.
 * [DuckDNS](http://www.duckdns.org/) for external access to Home Assistant.
@@ -41,7 +41,7 @@ pretty neat, I'll likely get a few more.
 **Useful scripts set up with crontab**
 * [rsync](https://packages.debian.org/stretch/rsync) script run in crontab for keeping a partial backup on SD card. Not entire image, it's much faster, and takes up less space.
 * [Life360](https://www.life360.com/) for device tracking. I've found that owntracks just doesn't cut it (too slow/irregular update of location, so can't use it to automate based on entering/exiting areas), and so far Life360 is the best device tracker I've found. I am using the script provided by [Brazen1445](https://community.home-assistant.io/t/life-360-support/1690/15). The version I use is provided in this repository.
-* script to send email with new IP when IP changes.
+* script to send email with new IP when IP changes. UPDATE: I now use the Google location sharing for my phone, but still use this scipt for the iPhone users in the house.
 
 **Notable Home Assistant components**
 * [Floorplan](https://github.com/pkozul/ha-floorplan), a great project by pkozul to visualize your home with interactive gadgets.
