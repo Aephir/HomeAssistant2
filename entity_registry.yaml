@@ -210,3 +210,43 @@ binary_sensor.door_window_sensor_158d000234dc7b:
   name:
   platform: xiaomi_aqara
   unique_id: status158d000234dc7b
+sensor.neo_coolcam_power_plug_12a_power:
+  name:
+  platform: zwave
+  unique_id: 4-72057594110050434
+sensor.neo_coolcam_power_plug_12a_previous_reading_2:
+  name:
+  platform: zwave
+  unique_id: 4-72057594110050450
+sensor.neo_coolcam_power_plug_12a_interval_2:
+  name:
+  platform: zwave
+  unique_id: 4-72057594110050467
+sensor.neo_coolcam_power_plug_12a_voltage:
+  name:
+  platform: zwave
+  unique_id: 4-72057594110050562
+sensor.neo_coolcam_power_plug_12a_previous_reading_3:
+  name:
+  platform: zwave
+  unique_id: 4-72057594110050578
+sensor.neo_coolcam_power_plug_12a_interval_3:
+  name:
+  platform: zwave
+  unique_id: 4-72057594110050595
+sensor.neo_coolcam_power_plug_12a_current:
+  name:
+  platform: zwave
+  unique_id: 4-72057594110050626
+sensor.neo_coolcam_power_plug_12a_previous_reading_4:
+  name:
+  platform: zwave
+  unique_id: 4-72057594110050642
+sensor.neo_coolcam_power_plug_12a_interval_4:
+  name:
+  platform: zwave
+  unique_id: 4-72057594110050659
+sensor.neo_coolcam_power_plug_12a_exporting:
+  name:
+  platform: zwave
+  unique_id: 4-72057594110050816

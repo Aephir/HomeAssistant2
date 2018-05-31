@@ -25,7 +25,7 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="0.48332335"
-     inkscape:cx="798.56598"
+     inkscape:cx="364.07424"
      inkscape:cy="562.27803"
      inkscape:document-units="px"
      inkscape:current-layer="layer15"
@@ -5165,7 +5165,7 @@
        style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:8.46666718px;line-height:1.25;font-family:Arial;-inkscape-font-specification:'Arial, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:end;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:end;display:inline;opacity:1;fill:#ffff75;fill-opacity:1;stroke:none;stroke-width:0.00625052"
        x="83.292366"
        y="103.9766"
-       id="sensor.dark_sky_daily_low_temperature"
+       id="sensor.dark_sky_overnight_low_temperature"
        inkscape:label="#text1491"><tspan
          sodipodi:role="line"
          id="tspan1404"
@@ -5187,7 +5187,7 @@
        style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:8.46666718px;line-height:1.25;font-family:Arial;-inkscape-font-specification:'Arial, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:end;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:end;display:inline;opacity:1;fill:#ffff75;fill-opacity:1;stroke:none;stroke-width:0.00625052"
        x="83.292366"
        y="92.334938"
-       id="sensor.dark_sky_daily_high_temperature"
+       id="sensor.dark_sky_daytime_high_temperature"
        inkscape:label="#text1491"><tspan
          sodipodi:role="line"
          id="tspan1402"

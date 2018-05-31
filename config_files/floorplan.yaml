@@ -90,9 +90,9 @@
               return "temp-high";
             '
 
-        - name: dark_sky_high_temperature
+        - name: dark_sky_temperature_high
           entities:
-            - sensor.dark_sky_daily_high_temperature
+            - sensor.dark_sky_daytime_high_temperature
           text_template: '${entity.state ? Math.ceil(entity.state) + " °C": "undefined"}'
 #          class_template: 'return "static-temp";'
           class_template: '
@@ -107,9 +107,9 @@
               return "temp-high";
             '
 
-        - name: dark_sky_low_temperature
+        - name: dark_sky_temperature_low
           entities:
-            - sensor.dark_sky_daily_low_temperature
+            - sensor.dark_sky_overnight_low_temperature
           text_template: '${entity.state ? Math.ceil(entity.state) + " °C": "undefined"}'
 #          class_template: 'return "static-temp";'
           class_template: '
@@ -292,6 +292,16 @@
 #              return "batt-ok";
 #            '
 
+        # - name: Gateways
+        #   entities:
+        #     - light.couch_lamp
+        #   rgb_template: '
+        #     return "off-state";
+        #   '
+        #   action:
+        #     service: toggle
+
+
         - name: Lights
           entities:
              - light.bedroom_stairway
@@ -309,6 +319,9 @@
               class: 'light-on'
             - state: 'off'
               class: 'light-off'
+          rgb_template: '
+            return "off-state";
+          '
           action:
 #            domain: class # test
             service: toggle

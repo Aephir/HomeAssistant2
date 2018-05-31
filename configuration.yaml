@@ -52,8 +52,8 @@ zwave:
 #  device_config: !include zwave_device_config.yaml
 wemo:
   static:
-    - 192.168.0.6 # Espresso WeMo
-    - 192.168.0.11 # Desktop WeMo
+    - 192.168.0.6 # Espresso WeMo - Not sure what to use for anymore...
+    - 192.168.0.11 # Desktop WeMo - Not sure what to use for anymore...
 
 homekit:
   pincode: !secret homekit_pincode
@@ -89,10 +89,9 @@ conversation:
 #  custom_ui: local
 
 recorder:
-  db_url: sqlite:////mnt/hassdata/sqlite/home_assistant
+  db_url: sqlite:////mnt/hassdata/sqlite/home_assistant/home-assistant_v2.db
   purge_interval: 2
   purge_keep_days: 8
-#  db_url: !secret mysql_url
 logbook:
 sun:
 tts:

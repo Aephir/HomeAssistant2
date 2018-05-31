@@ -27,14 +27,15 @@
     - visibility
     - nearest_storm_distance
     - temperature
-    - apparent_temperature
+    - apparent_temperature_high
+    - apparent_temperature_low
     - humidity
     - wind_speed
     - wind_bearing
     - hourly_summary
     - daily_summary
-    - temperature_min
-    - temperature_max
+    - temperature_low
+    - temperature_high
     - precip_intensity_max
   units: si
   update_interval: 01:00:00
