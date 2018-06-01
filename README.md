@@ -1,4 +1,7 @@
 # HomeAssistant2
+
+## OBS! This is deprecated. I have moved to new hardware, in anticipation of my new house. See https://github.com/Aephir/Home_Assistant, which I will slowly update. Many of the components and automations are of course the same.
+
 My second version of homeassistant. There is still much unfinished, and many loose ends.
 
 Home assistant configuration files and more. This home assistant is running on a Raspberry Pi 3B+ using a 32 GB SD card, Raspbian Stretch Lite, installed in a python3.6.4 virtual environment. I drew quite a bit of inspiration from [COOSTAN](https://github.com/CCOSTAN/Home-AssistantConfig), so look there if any of this is interesting. If I give my endorsement or negative comments to anything, they are merely things I personally like/dislike. I have no affiliation to any of them or their potential competitors, and my positive or negative comments are based exclusively on my personal preference.
